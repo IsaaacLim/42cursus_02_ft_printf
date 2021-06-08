@@ -5,7 +5,7 @@ void	ft_printf(char *format, ...);
 int	main ()
 {
 	ft_printf("Hello\n");
-	ft_printf("Hello %s\n", "World");
+	ft_printf("Hello %s\n", "World123");
 }
 
 
