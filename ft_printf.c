@@ -4,19 +4,33 @@ int		ft_printf(const char *format, ...);
 
 int	main ()
 {
-	ft_printf("Hello\n");
-	ft_printf("Hello %s\n", "World123\0");
+	int ret;
+
+	ret = ft_printf("HBO\n");
+	printf("ret 1: %d\n", ret);
+	ret = ft_printf("Hello %s\n", "World123");
+	printf("ret 2: %d\n", ret);
+	ret = ft_printf("Hello %c\n", 'A');
+	printf("ret 3: %d\n", ret);
 }
 
 
 void	ft_format_specifier(t_print *info)
 {
-	char *string;
+	char	letter;
+	char	*string;
 
 	info->format++;
+	if (*info->format == 'c')
+	{
+		letter = va_arg(info->args, int);
+		info->total_length += ft_putchar(letter);
+	}
 	if (*info->format == 's')
+	{
 		string = va_arg(info->args, char *);
-	ft_putstr(string);
+		info->total_length += ft_putstr(string);
+	}
 	info->format++;
 }
 
@@ -28,13 +42,14 @@ int	ft_printf(const char *format, ...)
 	info = (t_print *)ft_calloc(1, sizeof(t_print));
 	if (!info)
 		return (-1);
+	ft_initialize_info(info);
 	va_start(info->args, format);
 	info->format = format;
 	while(*info->format)
 	{
 		while (*info->format != '%' && *info->format != '\0')
 		{
-			ft_putchar(*info->format);
+			info->total_length += ft_putchar(*info->format);
 			info->format++;
 			//info->total_length++;
 		}
@@ -42,8 +57,7 @@ int	ft_printf(const char *format, ...)
 			ft_format_specifier(info);
 	}
 	va_end(info->args);
-	len = 1;
-	//len = info->lenght;
+	len = info->total_length;
 	free(info);
 	return (len);
 }

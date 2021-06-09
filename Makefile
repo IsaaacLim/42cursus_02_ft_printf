@@ -1,6 +1,6 @@
-NAME	=	libft.a
+NAME 	=	libftprintf.a
 
-SRCS	=	ft_bzero.c	ft_calloc.c	ft_putchar.c	ft_putstr.c 
+SRCS	=	./libft/ft*.c ./source/ft*.c
 
 OBJS	=	$(SRCS:%.c=%.o)
 
@@ -15,9 +15,9 @@ $(NAME):	$(OBJS)
 clean:
 	rm -f $(OBJS)
 
-fclean:	clean
+fclean: clean
 	rm -f $(NAME)
 
-re:	fclean all
+re: fclean all
 
-.PHONY:	all clean fclean re
+.PHONY: all clean fclean re

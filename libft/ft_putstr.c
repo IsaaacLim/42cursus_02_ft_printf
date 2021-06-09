@@ -1,10 +1,14 @@
 #include "libft.h"
 
-void	ft_putstr(char *string)
+int	ft_putstr(char *string)
 {
+	int ret;
+
+	ret = 0;
 	while (*string)
 	{
-		write(1, string, 1);
+		ret += write(1, string, 1);
 		string++;
 	}
+	return (ret);
 }
