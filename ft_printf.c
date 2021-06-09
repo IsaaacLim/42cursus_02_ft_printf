@@ -30,7 +30,7 @@ void	ft_format_specifier(char *format, ...)
 		}
 		else
 		{
-			write(1, format, 1);
+			write(1, format, 1); //use putchar
 			format++;
 		}
 	}
@@ -45,7 +45,7 @@ int	ft_printf(const char *format, ...)
 	info = (t_info *)ft_calloc(1, sizeof(t_info));
 	if (!info)
 		return NULL;
-	va_start(----va_list----, format);
+	va_start(info->args, format);
 	info->format = format;
 	while(*info->format)
 	{
@@ -59,7 +59,7 @@ int	ft_printf(const char *format, ...)
 			//xxx = va_arg(---va_list---, t_info); //seems like we'll use va_args in the other function it self
 			ft_format_specifier(info);
 	}
-	va_end(---va_list---);
+	va_end(info->args);
 	len = info->lenght;
 	free(info);
 	return (len);
