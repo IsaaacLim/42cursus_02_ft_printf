@@ -2,6 +2,7 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <stdlib.h>
 # include "../includes/ft_printf.h" //don't need?
 
 void	ft_bzero(void *s, size_t n);
