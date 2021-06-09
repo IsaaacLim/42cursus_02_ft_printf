@@ -14,7 +14,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	make -C $(LIBFT) 
-	ar rcs $(NAME) $(OBJS) $(SOURCE)/*.o $(LIBFT)/*.o
+	ar rcs $(NAME) $(OBJS) $(LIBFT)/*.o
 
 clean:
 	rm -f $(OBJS)
