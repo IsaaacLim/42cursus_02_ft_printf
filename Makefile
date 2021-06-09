@@ -4,18 +4,23 @@ SRCS	=	./libft/ft*.c ./source/ft*.c
 
 OBJS	=	$(SRCS:%.c=%.o)
 
+LIBFT	=	./libft
+SOURCE	=	./source
+
 CC		=	gcc
 #CFLAGS	=	-c #add flags -Wall -Werror -Wextra -I
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	make -C $(LIBFT) 
+	ar rcs $(NAME) $(OBJS) $(SOURCE)/*.o $(LIBFT)/*.o
 
 clean:
 	rm -f $(OBJS)
 
 fclean: clean
+	rm -f $(LIBFT)/*.a
 	rm -f $(NAME)
 
 re: fclean all
