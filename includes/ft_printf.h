@@ -10,6 +10,7 @@ typedef struct	s_print
 	const char	*format;
 }	t_print;
 
-void	ft_printf(char *format, ...);
+void	ft_format_specifier(t_print *info);
+int		ft_printf(const char *format, ...);
 
 #endif
