@@ -9,7 +9,7 @@ int	main ()
 }
 
 
-void	ft_printf(char *format, ...)
+void	ft_format_specifier(char *format, ...)
 {
 	char *string;
 	va_list VaList;
@@ -35,4 +35,32 @@ void	ft_printf(char *format, ...)
 		}
 	}
 	va_end(VaList);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	t_info	*info;
+	int		len;
+
+	info = (t_info *)ft_calloc(1, sizeof(t_info));
+	if (!info)
+		return NULL;
+	va_start(----va_list----, format);
+	info->format = format;
+	while(*info->format)
+	{
+		while (*info->format != '%' || *info->format != '\0')
+		{
+			ft_putchar(*info->format); //get ft_putchar
+			info->format++;
+			info->total_length++;
+		}
+		else if (*info->format == '%')
+			//xxx = va_arg(---va_list---, t_info); //seems like we'll use va_args in the other function it self
+			ft_format_specifier(info);
+	}
+	va_end(---va_list---);
+	len = info->lenght;
+	free(info);
+	return (len);
 }

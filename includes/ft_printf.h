@@ -4,6 +4,12 @@
 # include "../libft/libft.h"
 # include <stdarg.h>
 
+typedef struct	s_print
+{
+	va_list		args;
+	const char	*format;
+}	t_print;
+
 void	ft_printf(char *format, ...);
 
 #endif
