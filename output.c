@@ -8,7 +8,7 @@ void	print_char(void)
 	char	singleChar = 'X';
 	int		num = 65;
 
-	printf("-----------=-Characters---=--------\n");
+	printf("-------------Characters------------\n");
 	printf("%%c\t\t: %c\n", singleChar);
 	printf("%%6c\t\t: %6c\n", singleChar);
 	printf("%%-6c\t\t: %-6c\n", singleChar);
@@ -23,7 +23,7 @@ void	print_char(void)
 	printf("%%6.3c\t\t: %6s\n", "-NA-");
 	printf("%%6.*c\t\t: %6s\n", "-NA-");
 
-	printf("---------------Result--------------\n");
+	printf("-----------Sub-Specifiers-----------\n");
 	printf("flag\t\t-\t\tyes\n");
 	printf("flag\t\t0\t\tno\n");
 	printf("width\t\t<num>\t\tyes\n");
@@ -58,7 +58,7 @@ void	print_str(void)
 	printf("%%s\t<- char\t\t: %10s\n", "-NA-");
 	printf("%%s\t<- num\t\t: %10s\n", "-NA-");
 
-	printf("---------------Result---------------\n");
+	printf("-----------Sub-Specifiers-----------\n");
 	printf("flag\t\t-\t\tyes\n");
 	printf("flag\t\t0\t\tno\n");
 	printf("width\t\t<num>\t\tyes\n");
@@ -71,6 +71,6 @@ void	print_str(void)
 
 int		main(void)
 {
-	//print_char();
-	print_str();
+	print_char();
+	//print_str();
 }
