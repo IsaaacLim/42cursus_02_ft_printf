@@ -1,14 +1,14 @@
 NAME 	=	libftprintf.a
 
-SRCS	=	./libft/ft*.c \
-			./source/ft_format_specifier.c ./source/ft_initialize_info.c \
+LIBDIR	=	./libft
+SRCDIR	=	./source
+
+SRCS	=	$(LIBDIR)/ft*.c \
+			$(SRCDIR)/ft_format_specifier.c $(SRCDIR)/ft_initialize_info.c \
 			ft_printf.c 
 #./source/ft*.c
 
 OBJS	=	$(SRCS:%.c=%.o)
-
-LIBFT	=	./libft
-SOURCE	=	./source
 
 CC		=	gcc
 #CFLAGS	=	-c #add flags -Wall -Werror -Wextra -I
@@ -16,14 +16,14 @@ CC		=	gcc
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	make -C $(LIBFT) 
-	ar rcs $(NAME) $(OBJS) $(LIBFT)/*.o
+	make -C $(LIBDIR) 
+	ar rcs $(NAME) $(OBJS) $(LIBDIR)/*.o
 
 clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(LIBFT)/*.a
+	rm -f $(LIBDIR)/*.a
 	rm -f $(NAME)
 
 re: fclean all
