@@ -13,6 +13,7 @@ typedef struct	s_print
 }	t_print;
 
 void	ft_format_specifier(t_print *info);
+void	ft_format_sub_specifier(t_print *info);
 void	ft_initialize_info(t_print *info);
 void	ft_output_char(t_print *info);
 void	ft_output_int(t_print *info);
