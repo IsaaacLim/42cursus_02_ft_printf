@@ -11,8 +11,10 @@ typedef struct	s_print
 	va_list		args;
 	const char	*format;
 	int			total_length;
-	int			width;
+	
 	bool		dash;
+	int			precision;
+	int			width;
 	bool		zero;
 }	t_print;
 
