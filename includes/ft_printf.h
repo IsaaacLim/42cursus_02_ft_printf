@@ -12,7 +12,8 @@ typedef struct	s_print
 	const char	*format;
 	int			total_length;
 	int			width;
-	bool		dash;	
+	bool		dash;
+	bool		zero;
 }	t_print;
 
 void	ft_format_specifier(t_print *info);

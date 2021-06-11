@@ -8,12 +8,11 @@ void	ft_format_sub_specifier(t_print *info)
 	if (*info->format == '-')
 	{
 		info->dash = true;
-		//ft_putchar('-');
 		info->format++;
 	}
 	if (*info->format == '0')
 	{
-		info->total_length += ft_putchar(*info->format);
+		info->zero = true;
 		info->format++;
 	}
 	if (ft_isdigit(*info->format))
@@ -21,7 +20,6 @@ void	ft_format_sub_specifier(t_print *info)
 		info->width = ft_atoi(info->format);
 		itoa = ft_itoa(info->width);
 		info->format += ft_strlen(itoa);
-		//ft_putstr(itoa); // check input num
 		free (itoa);
 	}
 	if (*info->format == '*')
