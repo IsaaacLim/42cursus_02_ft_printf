@@ -15,7 +15,7 @@ void	print_char(void)
 	printf("%%20c\t\t: %20c\n", singleChar);
 	printf("%%*c  <-20,char\t: %*c\n", 20, singleChar);
 	printf("%%-*c <-6,char\t: %-*c\n", 6, singleChar);
-	printf("%%c   <-num'%d'\t: %-3c\n", num, num);
+	printf("%%c   <-num'%d'\t: %c\n", num, num);
 
 	printf("------Output OK (with warning)------\n");
 	printf("%%0c\t\t: %0c\n", singleChar);
