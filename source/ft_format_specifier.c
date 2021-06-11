@@ -24,8 +24,10 @@ void	ft_format_sub_specifier(t_print *info)
 	}
 	if (*info->format == '*')
 	{
-		info->total_length += ft_putchar(*info->format);
+		info->width = va_arg(info->args, int);
+		//info->total_length += ft_putchar(*info->format);
 		info->format++;
+		ft_format_sub_specifier(info);
 	}
 }
 
@@ -35,10 +37,13 @@ void	ft_format_specifier(t_print *info)
 	ft_format_sub_specifier(info);
 	if (*info->format == 'c')
 		ft_output_char(info);
-	if (*info->format == 's')
+	else if (*info->format == 's')
 		ft_output_string(info);
-	if (*info->format == 'd')
+	else if (*info->format == 'd')
 		ft_output_int(info);
-
+	else if (*info->format == '%')
+		info->width += ft_putchar('%');
+	else
+		ft_putstr("-No format specifier found-"); //work on this
 	info->format++;
 }
