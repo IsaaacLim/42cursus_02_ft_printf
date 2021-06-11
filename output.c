@@ -23,7 +23,7 @@ void	print_char(void)
 	printf("%%6.0c\t\t: %6.0c\n", singleChar); //presc no effect
 	printf("%%6.3c\t\t: %6.3c\n", singleChar); //presc no effect
 	printf("%%-6.3c\t\t: %-6.3c\n", singleChar); //presc no effect
-	printf("%%6.*c <-char,5\t: %6.*c\n", singleChar, 5); //presc no effect
+	printf("%%6.*c <-5,char\t: %6.*c\n", 5, singleChar); //presc no effect
 
 	printf("------------Guac-Specific-----------\n");
 	printf("%%06c\t\t: %06c\n", singleChar);
@@ -35,7 +35,7 @@ void	print_char(void)
 	printf("width\t\t<num>\t\tyes\n");
 	printf("width\t\t*\t\tyes\n");
 	printf("pre.s\t\t.<num>\t\tno effect (warning)\n");
-	printf("pre.s\t\t.*\t\tno\n");
+	printf("pre.s\t\t.*\t\tno effect (warning)\n");
 	printf("Note: %%c can input char or num\n");
 
 	printf("------------Weird-Combos------------\n");
