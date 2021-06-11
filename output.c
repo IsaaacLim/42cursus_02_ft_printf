@@ -61,9 +61,7 @@ void	print_char(void)
 	printf("%%-6-c\t\t: %-6-c\n", singleChar); //"unknown conversion type character"
 	printf("%%-0*6.3*c <-2,5,c: %-0*6.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
 	printf("%%-06*.3*c <-2,5,c: %-06*.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
-	printf("%%-0*6.*3c <-2,5,c: %-0*6.*3c\n", 2, 5, singleChar); //"unknown conversion type character"
-*/	
-	
+	printf("%%-0*6.*3c <-2,5,c: %-0*6.*3c\n", 2, 5, singleChar); //"unknown conversion type character"	
 }
 
 void	print_str(void)
