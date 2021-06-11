@@ -4,7 +4,7 @@ LIBDIR	=	./libft
 SRCDIR	=	./source
 
 SRCS	=	$(LIBDIR)/ft*.c \
-			$(SRCDIR)/ft_format_specifier.c $(SRCDIR)/ft_initialize_info.c \
+			$(SRCDIR)/format.c $(SRCDIR)/ft_initialize_info.c \
 			$(SRCDIR)/modify.c \
 			$(SRCDIR)/ft_output_char.c $(SRCDIR)/ft_output_int.c $(SRCDIR)/ft_output_string.c\
 			ft_printf.c 

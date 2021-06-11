@@ -9,7 +9,7 @@ void	print_char(void)
 	int		num = 65;
 
 	printf("-------------Characters------------\n");
-	printf("%%c\t\t: %c\n", singleChar);
+/*	printf("%%c\t\t: %c\n", singleChar);
 	printf("%%6c\t\t: %6c\n", singleChar);
 	printf("%%-6c\t\t: %-6c\n", singleChar);
 	printf("%%20c\t\t: %20c\n", singleChar);
@@ -37,9 +37,10 @@ void	print_char(void)
 	printf("pre.s\t\t.<num>\t\tno effect (warning)\n");
 	printf("pre.s\t\t.*\t\tno effect (warning)\n");
 	printf("Note: %%c can input char or num\n");
-
+*/
 	printf("------------Weird-Combos------------\n");
 	printf("%%*c  <-020,char\t: %*c\n", 020, singleChar);
+	printf("%%6*c <-2,char\t: %6*c\n", 2, singleChar);
 	printf("%%*6.3c\t\t: %*6.3c\n", 2, singleChar); //weird outout
 	printf("%%-0*6.3*c\t: %-0*6.3*c\n", 2, singleChar, 5); //what ever combo	
 }

@@ -17,10 +17,9 @@ int	ft_printf(const char *format, ...)
 		{
 			info->total_length += ft_putchar(*info->format);
 			info->format++;
-			//info->total_length++;
 		}
 		if (*info->format == '%')
-			ft_format_specifier(info);
+			ft_format_flag(info);
 	}
 	va_end(info->args);
 	len = info->total_length;
