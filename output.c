@@ -14,30 +14,34 @@ void	print_char(void)
 	printf("%%-6c\t\t: %-6c\n", singleChar);
 	printf("%%20c\t\t: %20c\n", singleChar);
 	printf("%%*c  <-20,char\t: %*c\n", 20, singleChar);
-	printf("%%*c  <-020,char\t: %*c\n", 020, singleChar);
 	printf("%%-*c <-6,char\t: %-*c\n", 6, singleChar);
-	printf("%%c   <-num'65'\t: %-3c\n", num);
-	printf("%%0c\t\t: %6s\n", "-NA-");
-	printf("%%06c\t\t: %6s\n", "-NA-");
-	printf("%%6.0c\t\t: %6s\n", "-NA-");
-	printf("%%6.1c\t\t: %6s\n", "-NA-");
-	printf("%%6.3c\t\t: %6s\n", "-NA-");
-	printf("%%6.*c\t\t: %6s\n", "-NA-");
-	printf("%%06c\t\t: %06c\n", singleChar);
-	printf("%%-06c\t\t: %-06c\n", singleChar);
-	printf("%%6.0c\t\t: %6.0c\n", singleChar);
-	printf("%%6.3c\t\t: %6.3c\n", singleChar);
-	printf("%%-6.3c\t\t: %-6.3c\n", singleChar);
-	printf("%%*6.3c\t\t: %*6.3c\n", 2, singleChar);
+	printf("%%c   <-num'%d'\t: %-3c\n", num, num);
 
-	printf("-----------Sub-Specifiers-----------\n");
+	printf("------Output OK (with warning)------\n");
+	printf("%%0c\t\t: %0c\n", singleChar);
+	printf("%%-06c\t\t: %-06c\n", singleChar); //0 flag will be ignored
+	printf("%%6.0c\t\t: %6.0c\n", singleChar); //presc no effect
+	printf("%%6.3c\t\t: %6.3c\n", singleChar); //presc no effect
+	printf("%%-6.3c\t\t: %-6.3c\n", singleChar); //presc no effect
+	printf("%%6.*c <-char,5\t: %6.*c\n", singleChar, 5); //presc no effect
+
+	printf("------------Guac-Specific-----------\n");
+	printf("%%06c\t\t: %06c\n", singleChar);
+	printf("%%0*c  <-6,char\t: %0*c\n", 6, singleChar);
+	
+	printf("------------Sub-Specifiers----------\n");
 	printf("flag\t\t-\t\tyes\n");
-	printf("flag\t\t0\t\tno\n");
+	printf("flag\t\t0\t\tyes, (warning)\n");
 	printf("width\t\t<num>\t\tyes\n");
 	printf("width\t\t*\t\tyes\n");
-	printf("pre.s\t\t.<num>\t\tno\n");
+	printf("pre.s\t\t.<num>\t\tno effect (warning)\n");
 	printf("pre.s\t\t.*\t\tno\n");
 	printf("Note: %%c can input char or num\n");
+
+	printf("------------Weird-Combos------------\n");
+	printf("%%*c  <-020,char\t: %*c\n", 020, singleChar);
+	printf("%%*6.3c\t\t: %*6.3c\n", 2, singleChar); //weird outout
+	printf("%%-0*6.3*c\t: %-0*6.3*c\n", 2, singleChar, 5); //what ever combo	
 }
 
 void	print_str(void)
