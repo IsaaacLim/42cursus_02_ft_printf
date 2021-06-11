@@ -3,12 +3,12 @@
 
 void	ft_format_sub_specifier(t_print *info)
 {
-	int atoi;
 	char *itoa;
 
 	if (*info->format == '-')
 	{
-		info->total_length += ft_putchar(*info->format);
+		info->dash = true;
+		//ft_putchar('-');
 		info->format++;
 	}
 	if (*info->format == '0')
@@ -18,10 +18,10 @@ void	ft_format_sub_specifier(t_print *info)
 	}
 	if (ft_isdigit(*info->format))
 	{
-		atoi = ft_atoi(info->format); //use for width
-		itoa = ft_itoa(atoi);
+		info->width = ft_atoi(info->format);
+		itoa = ft_itoa(info->width);
 		info->format += ft_strlen(itoa);
-		info->total_length += ft_putstr(itoa);
+		//ft_putstr(itoa); // check input num
 		free (itoa);
 	}
 	if (*info->format == '*')

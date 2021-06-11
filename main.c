@@ -12,6 +12,6 @@ int	main ()
 //	printf("ret 3: %d\n", ret);
 	ret = ft_printf("Integer: %d\n", 123);
 //	printf("ret 4: %d\n", ret);
-	ret = ft_printf("Character with sub specifiers: %0255*c\n", 'B');
+	ret = ft_printf("Character with sub specifiers: %-3c\n", 'B');
 	printf("ret 5: %d\n", ret);
 }
