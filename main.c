@@ -7,7 +7,7 @@ void	print_char(void)
 	int		num = 65;
 	int 	ret;
 
-	ft_printf("-------------Characters------------\n");
+/*	ft_printf("-------------Characters------------\n");
 	ft_printf("%%c\t\t: %c\n", singleChar);
 	ft_printf("%%6c\t\t: %6c\n", singleChar);
 	ft_printf("%%-6c\t\t: %-6c\n", singleChar);
@@ -20,7 +20,7 @@ void	print_char(void)
 	ft_printf("%%0c\t\t: %0c\n", singleChar);
 	ft_printf("%%-06c\t\t: %-06c\n", singleChar); //0 flag will be ignored
 	ft_printf("%%6.0c\t\t: %6.0c\n", singleChar); //presc no effect
-/*	ft_printf("%%6.3c\t\t: %6.3c\n", singleChar); //presc no effect
+	ft_printf("%%6.3c\t\t: %6.3c\n", singleChar); //presc no effect
 	ft_printf("%%-6.3c\t\t: %-6.3c\n", singleChar); //presc no effect
 	ft_printf("%%6.*c <-5,char\t: %6.*c\n", 5, singleChar); //presc no effect
 
@@ -36,12 +36,34 @@ void	print_char(void)
 	ft_printf("pre.s\t\t.<num>\t\tno effect (warning)\n");
 	ft_printf("pre.s\t\t.*\t\tno effect (warning)\n");
 	ft_printf("Note: %%c can input char or num\n");
-
-	ft_printf("------------Weird-Combos------------\n");
-	ft_printf("%%*c  <-020,char\t: %*c\n", 020, singleChar);
-	ft_printf("%%*6.3c\t\t: %*6.3c\n", 2, singleChar); //weird outout
-	ft_printf("%%-0*6.3*c\t: %-0*6.3*c\n", 2, singleChar, 5); //what ever combo	
 */
+/*	printf("%%006c\t\t: %006c\n", singleChar);
+	printf("%%0006c\t\t: %0006c\n", singleChar);
+	printf("%%*c  <-006,char\t: %*c\n", 006, singleChar);
+	ft_printf("------------Weird-Combos------------\n");
+	printf("%%6*c\t\t: %6*c\n", 2, singleChar);
+	printf("%%6*.3c\t\t: %6*.3c\n", 2, singleChar);
+	printf("%%.06c\t\t: %.06c\n", singleChar);
+	printf("%%6.06c\t\t: %6.06c\n", singleChar);
+	printf("%%6.*c <-06,char\t: %6.*c\n", 06, singleChar);
+	printf("%%.2*c <-3,char\t: %.2*c\n", 3, singleChar);
+	printf("%%*6c  <-1,char\t: %*6c\n", 1, singleChar);
+	printf("%%*0c  <-1,char\t: %*0c\n", 0, singleChar);
+	printf("%%*6.3c\t\t: %*6.3c\n", 2, singleChar);
+	printf("%%.*6c <-1,char\t: %.*6c\n", 1, singleChar);
+
+	ft_printf("-----------Unknown-Flags-----------\n");
+	printf("%%0%%6c\t\t: %0%6c\n", singleChar); //"lacks type at end of format"	
+	printf("%%q%%6c\t\t: %q%6c\n", singleChar); //"lacks type at end of format"
+	printf("%%r%%6c\t\t: %r%6c\n", singleChar); //"unknown conversion type character"
+	printf("%%-6-c\t\t: %-6-c\n", singleChar); //"unknown conversion type character"
+	printf("%%-0*6.3*c <-2,5,c: %-0*6.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
+	printf("%%-06*.3*c <-2,5,c: %-06*.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
+*/	
+	//printf("%%*c  <-020,char\t: %*c\n", 020, singleChar); //just takes as 20
+	
+	
+	printf("%%-0*6.*3c <-2,5,c: %-0*6.*3c\n", 2, 5, singleChar); //what ever combo
 }
 
 void	print_string(void)
