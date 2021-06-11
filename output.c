@@ -13,15 +13,22 @@ void	print_char(void)
 	printf("%%6c\t\t: %6c\n", singleChar);
 	printf("%%-6c\t\t: %-6c\n", singleChar);
 	printf("%%20c\t\t: %20c\n", singleChar);
-	printf("%%*c   <-20,char\t: %*c\n", 20, singleChar);
-	printf("%%-*c  <-6,char\t: %-*c\n", 6, singleChar);
-	printf("%%c    <-num'65'\t: %-3c\n", num);
+	printf("%%*c  <-20,char\t: %*c\n", 20, singleChar);
+	printf("%%*c  <-020,char\t: %*c\n", 020, singleChar);
+	printf("%%-*c <-6,char\t: %-*c\n", 6, singleChar);
+	printf("%%c   <-num'65'\t: %-3c\n", num);
 	printf("%%0c\t\t: %6s\n", "-NA-");
 	printf("%%06c\t\t: %6s\n", "-NA-");
 	printf("%%6.0c\t\t: %6s\n", "-NA-");
 	printf("%%6.1c\t\t: %6s\n", "-NA-");
 	printf("%%6.3c\t\t: %6s\n", "-NA-");
 	printf("%%6.*c\t\t: %6s\n", "-NA-");
+	printf("%%06c\t\t: %06c\n", singleChar);
+	printf("%%-06c\t\t: %-06c\n", singleChar);
+	printf("%%6.0c\t\t: %6.0c\n", singleChar);
+	printf("%%6.3c\t\t: %6.3c\n", singleChar);
+	printf("%%-6.3c\t\t: %-6.3c\n", singleChar);
+	printf("%%*6.3c\t\t: %*6.3c\n", 2, singleChar);
 
 	printf("-----------Sub-Specifiers-----------\n");
 	printf("flag\t\t-\t\tyes\n");
