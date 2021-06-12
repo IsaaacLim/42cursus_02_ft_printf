@@ -4,14 +4,15 @@ void	ft_format_precision(t_print *info)
 {
 	char *itoa;
 
+	info->has_precision = true;
 	info->format++;
-	while (*info->format == '0')
+	while (*info->format == '0' && ft_isdigit(*(info->format + 1))) //handle %.06s along with %.0s
 		info->format++;
 	if (ft_isdigit(*info->format))
 	{
 		info->precision = ft_atoi(info->format);
 		itoa = ft_itoa(info->precision);
-		info->format += ft_strlen(itoa); //if  %.06c??
+		info->format += ft_strlen(itoa);
 		free (itoa);
 	} //if %.6*c?
 	if (*info->format == '*')

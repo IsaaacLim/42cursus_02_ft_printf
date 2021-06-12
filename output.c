@@ -68,12 +68,7 @@ void	print_str(void)
 	char	*string = "Hello";
 
 	printf("---------------String---------------\n");
-	printf("%%s\t\t\t: %s\n", string);
-	printf("%%10s\t\t\t: %10s\n", string);
-	printf("%%-10s\t\t\t: %-10s\n", string);
-	printf("%%1s\t\t\t: %1s\n", string);
-	printf("%%-1s\t\t\t: %-1s\n", string);
-	printf("%%-*s\t<- 10,str\t: %-*s\n", 10, string);
+
 	printf("%%.4s\t\t\t: %.4s\n", string);
 	printf("%%-.3s\t\t\t: %-.3s\n", string);
 	printf("%%-.20s\t\t\t: %-.20s\n", string);

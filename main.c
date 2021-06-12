@@ -72,16 +72,48 @@ void	print_string(void)
 	char *string = "Ab12!?";
 
 	ft_printf("============STRING %%s============\n");
-	ft_printf("--------Standard Specifiers--------\n");
+	ft_printf("--------Dash & Width--------\n");
 	ft_printf("%%s\t\t: %s\n", string);
 	ft_printf("%%10s\t\t: %10s\n", string);
 	ft_printf("%%-10s\t\t: %-10s\n", string);
-//	ft_printf("%%3s\t\t: %3s\n", string);
-//	ft_printf("%%-3s\t\t: %-3s\n", string);
-//	ft_printf("%%*s  <-10,char\t: %*s\n", 10, string);
-//	ft_printf("%%-*s <-10,char\t: %-*s\n", 10, string);
-//	ft_printf("%%*s <-0012,char\t: %*s\n", 0012, string);//prints as %12s
-//	ft_printf("%%-*s <-020,char\t: %-*s\n", 020, string); //just takes as -20
+	ft_printf("%%3s\t\t: %3s\n", string);
+	ft_printf("%%-3s\t\t: %-3s\n", string);
+	ft_printf("%%*s  <-10,char\t: %*s\n", 10, string);
+	ft_printf("%%-*s <-10,char\t: %-*s\n", 10, string);
+	ft_printf("%%*s <-0012,char\t: %*s\n", 0012, string);//prints as %12s
+	ft_printf("%%-*s <-020,char\t: %-*s\n", 020, string); //just takes as -20
+	ft_printf("%%0s\t\t: %0s\n", string); //taken as width
+
+	ft_printf("---Zero & Width---> Can't compile---\n"); //check if 0 should be printed
+	ft_printf("%%010s\t\t: %010s\n", string); 
+	ft_printf("%%06s\t\t: %06s\n", string);
+	ft_printf("%%0*s  <-10,char\t: %0*s\n", 10, string);
+	ft_printf("%%-010s\t\t: %-010s\n", string);
+ 
+	ft_printf("------Width & Precision------\n");
+	ft_printf("%%10.0s\t\t: %10.0s\n", string);
+	ft_printf("%%10.3s\t\t: %10.3s\n", string);
+	ft_printf("%%10.6s\t\t: %10.6s\n", string); //precision = strlen(string)
+	ft_printf("%%10.10s\t\t: %10.10s\n", string); //will not print extra
+	ft_printf("%%10.010s\t: %10.010s\n", string); //taken as 10
+	ft_printf("%%10.0010s\t: %10.0010s\n", string); //taken as 10
+	ft_printf("%%-10.3s\t\t: %-10.3s\n", string);
+	ft_printf("%%10.*s <-5,char\t: %10.*s\n", 5, string);
+	ft_printf("%%.06s\t\t: %.06s\n", string);
+	ft_printf("%%10.06s\t\t: %10.06s\n", string);
+	ft_printf("%%10.*s<-07,char\t: %10.*s\n", 07, string);
+	//ft_printf("%%10.*s <-08,char\t: %10.*s\n", 08, string); //correct, can't run => invalid, octal constant?
+	
+	ft_printf("----------Specifiers Usage--------\n");
+	ft_printf("flag\t\t-\t\tyes\n");
+	ft_printf("flag\t\t0\t\tsupposedly no\n");
+	ft_printf("width\t\t<num>\t\tyes\n");
+	ft_printf("width\t\t*\t\tyes\n");
+	ft_printf("pre.s\t\t.<num>\t\tyes\n");
+	ft_printf("pre.s\t\t.*\t\tyes\n");
+
+	//%10.-3s
+	//%010.0s
 }
 /*
 void	print_int(void)
@@ -99,4 +131,6 @@ int	main ()
 	//ret = ft_printf("Just string\n");
 	//print_char();
 	print_string();
+
+	//add test when no argument is given / incomplete number of arguments
 }
