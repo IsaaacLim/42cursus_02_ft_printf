@@ -1,6 +1,6 @@
 #include "../includes/ft_printf.h"
 
-static void	ft_format_precision(t_print *info)
+void	ft_format_precision(t_print *info)
 {
 	char *itoa;
 
@@ -18,7 +18,7 @@ static void	ft_format_precision(t_print *info)
 		info->format++;
 	}
 }
-static void	ft_format_specifier(t_print *info)
+void	ft_format_specifier(t_print *info)
 {
 	char *itoa;
 
