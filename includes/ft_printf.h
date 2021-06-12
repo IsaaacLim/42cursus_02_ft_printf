@@ -19,8 +19,8 @@ typedef struct	s_print
 }	t_print;
 
 void		ft_format_flag(t_print *info);
-static void	ft_format_precision(t_print *info);
-static void	ft_format_specifier(t_print *info);
+void	ft_format_precision(t_print *info); //removed static
+void	ft_format_specifier(t_print *info); //removed static
 void		ft_initialize_info(t_print *info);
 void		ft_mod_right_c(t_print *info);
 void		ft_mod_left_c(t_print *info);

@@ -30,7 +30,7 @@ static void	ft_format_specifier(t_print *info)
 	if (*info->format == '0' && !info->zero)
 	{
 		info->zero = true;
-		while (*info->format == '0')
+		//while (*info->format == '0') //no need to iterate zeros, func don't handle
 			info->format++;
 	}
 	if (ft_isdigit(*info->format))
