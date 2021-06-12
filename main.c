@@ -112,6 +112,9 @@ void	print_string(void)
 	ft_printf("pre.s\t\t.<num>\t\tyes\n");
 	ft_printf("pre.s\t\t.*\t\tyes\n");
 
+	//printf("%%-.3s\t\t\t: %-.3s\n", string);
+	//printf("%%-.20s\t\t\t: %-.20s\n", string);
+	//printf("%%*.*s\t<- 10,3,str\t: %*.*s\n", 10, 3, string);
 	//%10.-3s
 	//%010.0s
 }

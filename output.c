@@ -62,37 +62,6 @@ void	print_char(void)
 //	printf("%%-0*6.*3c <-2,5,c: %-0*6.*3c\n", 2, 5, singleChar); //"unknown conversion type character"	
 }
 
-void	print_str(void)
-{
-	// Strings
-	char	*string = "Hello";
-
-	printf("---------------String---------------\n");
-
-	printf("%%.4s\t\t\t: %.4s\n", string);
-	printf("%%-.3s\t\t\t: %-.3s\n", string);
-	printf("%%-.20s\t\t\t: %-.20s\n", string);
-	printf("%%-1.3s\t\t\t: %-1.3s\n", string);
-	printf("%%-10.3s\t\t\t: %-10.3s\n", string);
-	printf("%%-10.0s\t\t\t: %-10.0s\n", string);
-	printf("%%10.*s\t<- 2,str\t: %10.*s\n", 2, string);
-	printf("%%*.*s\t<- 10,3,str\t: %*.*s\n", 10, 3, string);
-	printf("%%0s\t\t\t: %10s\n", "-NA-");
-	printf("%%06s\t\t\t: %10s\n", "-NA-");
-	printf("%%s\t<- char\t\t: %10s\n", "-NA-");
-	printf("%%s\t<- num\t\t: %10s\n", "-NA-");
-
-	printf("-----------Sub-Specifiers-----------\n");
-	printf("flag\t\t-\t\tyes\n");
-	printf("flag\t\t0\t\tno\n");
-	printf("width\t\t<num>\t\tyes\n");
-	printf("width\t\t*\t\tyes\n");
-	printf("pre.s\t\t.<num>\t\tyes\n");
-	printf("pre.s\t\t.*\t\tyes\n");
-	printf("Note: %%s strictly only for char *\n"); 
-	printf("Note: only sub-specifier not allowed: '0'\n");
-}
-
 int		main(void)
 {
 	print_char();
