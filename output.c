@@ -17,28 +17,28 @@ void	print_char(void)
 	printf("%%-*c <-6,char\t: %-*c\n", 6, singleChar);
 	printf("%%c   <-num'%d'\t: %c\n", num, num);
 */
-	printf("------Output OK (with warning)------\n");
-	printf("%%0c\t\t: %0c\n", singleChar);
-/*	printf("%%-06c\t\t: %-06c\n", singleChar); //0 flag will be ignored
-	printf("%%6.0c\t\t: %6.0c\n", singleChar); //presc no effect
-	printf("%%6.3c\t\t: %6.3c\n", singleChar); //presc no effect
-	printf("%%-6.3c\t\t: %-6.3c\n", singleChar); //presc no effect
-	printf("%%6.*c <-5,char\t: %6.*c\n", 5, singleChar); //presc no effect
+//	printf("------Doesn't compile------\n");
+//	printf("%%0c\t\t: %0c\n", singleChar);//no compile
+//	printf("%%-06c\t\t: %-06c\n", singleChar); //0 flag will be ignored
+//	printf("%%6.0c\t\t: %6.0c\n", singleChar); //presc no effect
+//	printf("%%6.3c\t\t: %6.3c\n", singleChar); //presc no effect
+//	printf("%%-6.3c\t\t: %-6.3c\n", singleChar); //presc no effect
+//	printf("%%6.*c <-5,char\t: %6.*c\n", 5, singleChar); //presc no effect
 
-	printf("------------Guac-Specific-----------\n");
-	printf("%%06c\t\t: %06c\n", singleChar);
-	printf("%%0*c  <-6,char\t: %0*c\n", 6, singleChar);
-	printf("%%006c\t\t: %006c\n", singleChar);
-	printf("%%0006c\t\t: %0006c\n", singleChar);
-	printf("%%*c  <-006,char\t: %*c\n", 006, singleChar);
+//	printf("%%06c\t\t: %06c\n", singleChar);
+//	printf("%%0*c  <-6,char\t: %0*c\n", 6, singleChar);
+//	printf("%%006c\t\t: %006c\n", singleChar);
+//	printf("%%0006c\t\t: %0006c\n", singleChar);
+//
+	printf("%%*c  <-006,char\t: %*c\n", 006, singleChar);//prints as %6c
 	
-	printf("------------Sub-Specifiers----------\n");
+/*	printf("------------Sub-Specifiers----------\n");
 	printf("flag\t\t-\t\tyes\n");
-	printf("flag\t\t0\t\tyes, (warning)\n");
+	printf("flag\t\t0\t\tno\n");
 	printf("width\t\t<num>\t\tyes\n");
 	printf("width\t\t*\t\tyes\n");
-	printf("pre.s\t\t.<num>\t\tno effect (warning)\n");
-	printf("pre.s\t\t.*\t\tno effect (warning)\n");
+	printf("pre.s\t\t.<num>\t\tno\n");
+	printf("pre.s\t\t.*\t\tno\n");
 	printf("Note: %%c can input char or num\n");
 
 	printf("------------Weird-Combos------------\n");
