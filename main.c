@@ -23,12 +23,15 @@ void	print_char(void)
 	ft_printf("%%6.3c\t\t: %6.3c\n", singleChar); //presc no effect
 	ft_printf("%%-6.3c\t\t: %-6.3c\n", singleChar); //presc no effect
 	ft_printf("%%6.*c <-5,char\t: %6.*c\n", 5, singleChar); //presc no effect
-
+*/
 	ft_printf("------------Guac-Specific-----------\n");
 	ft_printf("%%06c\t\t: %06c\n", singleChar);
 	ft_printf("%%0*c  <-6,char\t: %0*c\n", 6, singleChar);
+	ft_printf("%%006c\t\t: %006c\n", singleChar);
+	ft_printf("%%0006c\t\t: %0006c\n", singleChar);
+	ft_printf("%%*c  <-006,char\t: %*c\n", 006, singleChar);
 	
-	ft_printf("------------Sub-Specifiers----------\n");
+/*	ft_printf("------------Sub-Specifiers----------\n");
 	ft_printf("flag\t\t-\t\tyes\n");
 	ft_printf("flag\t\t0\t\tyes, (warning)\n");
 	ft_printf("width\t\t<num>\t\tyes\n");
@@ -37,9 +40,7 @@ void	print_char(void)
 	ft_printf("pre.s\t\t.*\t\tno effect (warning)\n");
 	ft_printf("Note: %%c can input char or num\n");
 */
-/*	printf("%%006c\t\t: %006c\n", singleChar);
-	printf("%%0006c\t\t: %0006c\n", singleChar);
-	printf("%%*c  <-006,char\t: %*c\n", 006, singleChar);
+/*	
 	ft_printf("------------Weird-Combos------------\n");
 	printf("%%6*c\t\t: %6*c\n", 2, singleChar);
 	printf("%%6*.3c\t\t: %6*.3c\n", 2, singleChar);

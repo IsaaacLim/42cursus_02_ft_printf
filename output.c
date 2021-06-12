@@ -6,9 +6,9 @@ void	print_char(void)
 {
 	// Characters
 	char	singleChar = 'X';
-	int		num = 65;
+//	int		num = 65;
 
-	printf("-------------Characters------------\n");
+/*	printf("-------------Characters------------\n");
 	printf("%%c\t\t: %c\n", singleChar);
 	printf("%%6c\t\t: %6c\n", singleChar);
 	printf("%%-6c\t\t: %-6c\n", singleChar);
@@ -16,10 +16,10 @@ void	print_char(void)
 	printf("%%*c  <-20,char\t: %*c\n", 20, singleChar);
 	printf("%%-*c <-6,char\t: %-*c\n", 6, singleChar);
 	printf("%%c   <-num'%d'\t: %c\n", num, num);
-
+*/
 	printf("------Output OK (with warning)------\n");
 	printf("%%0c\t\t: %0c\n", singleChar);
-	printf("%%-06c\t\t: %-06c\n", singleChar); //0 flag will be ignored
+/*	printf("%%-06c\t\t: %-06c\n", singleChar); //0 flag will be ignored
 	printf("%%6.0c\t\t: %6.0c\n", singleChar); //presc no effect
 	printf("%%6.3c\t\t: %6.3c\n", singleChar); //presc no effect
 	printf("%%-6.3c\t\t: %-6.3c\n", singleChar); //presc no effect
@@ -62,6 +62,7 @@ void	print_char(void)
 	printf("%%-0*6.3*c <-2,5,c: %-0*6.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
 	printf("%%-06*.3*c <-2,5,c: %-06*.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
 	printf("%%-0*6.*3c <-2,5,c: %-0*6.*3c\n", 2, 5, singleChar); //"unknown conversion type character"	
+*/
 }
 
 void	print_str(void)

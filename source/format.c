@@ -30,7 +30,8 @@ static void	ft_format_specifier(t_print *info)
 	if (*info->format == '0' && !info->zero)
 	{
 		info->zero = true;
-		info->format++;
+		while (*info->format == '0')
+			info->format++;
 	}
 	if (ft_isdigit(*info->format))
 	{
