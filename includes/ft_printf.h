@@ -22,7 +22,7 @@ void		ft_format_flag(t_print *info);
 void	ft_format_precision(t_print *info); //removed static
 void	ft_format_specifier(t_print *info); //removed static
 void		ft_initialize_info(t_print *info);
-void		ft_mod_right_c(t_print *info);
+void		ft_mod_right_cs(t_print *info, int argument_len);
 void		ft_mod_left_c(t_print *info);
 void		ft_output_char(t_print *info);
 void		ft_output_int(t_print *info);

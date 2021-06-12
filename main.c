@@ -75,13 +75,13 @@ void	print_string(void)
 	ft_printf("--------Standard Specifiers--------\n");
 	ft_printf("%%s\t\t: %s\n", string);
 	ft_printf("%%10s\t\t: %10s\n", string);
-	ft_printf("%%-10s\t\t: %-10s\n", string);
-	ft_printf("%%3s\t\t: %3s\n", string);
-	ft_printf("%%-3s\t\t: %-3s\n", string);
-	ft_printf("%%*s  <-10,char\t: %*s\n", 10, string);
-	ft_printf("%%-*s <-10,char\t: %-*s\n", 10, string);
-	ft_printf("%%*s  <-0012,char\t: %*s\n", 0012, string);//prints as %12s
-	ft_printf("%%-*s <-020,char\t: %-*s\n", 020, string); //just takes as -20
+//	ft_printf("%%-10s\t\t: %-10s\n", string);
+//	ft_printf("%%3s\t\t: %3s\n", string);
+//	ft_printf("%%-3s\t\t: %-3s\n", string);
+//	ft_printf("%%*s  <-10,char\t: %*s\n", 10, string);
+//	ft_printf("%%-*s <-10,char\t: %-*s\n", 10, string);
+//	ft_printf("%%*s <-0012,char\t: %*s\n", 0012, string);//prints as %12s
+//	ft_printf("%%-*s <-020,char\t: %-*s\n", 020, string); //just takes as -20
 }
 /*
 void	print_int(void)
