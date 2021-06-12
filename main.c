@@ -1,14 +1,13 @@
 #include "includes/ft_printf.h"
 
-void	print_char(void)
+/*void	print_char(void)
 {
 	// Characters
 	char	singleChar = 'X';
-	//int		num = 65;
-	//int 	ret;
+	int		num = 65;
 
 	ft_printf("===========CHARACTER %%c===========\n");
-/*	ft_printf("--------Standard Specifiers--------\n");
+	ft_printf("--------Standard Specifiers--------\n");
 	ft_printf("%%c\t\t: %c\n", singleChar);
 	ft_printf("%%6c\t\t: %6c\n", singleChar);
 	ft_printf("%%-6c\t\t: %-6c\n", singleChar);
@@ -32,8 +31,8 @@ void	print_char(void)
 	ft_printf("%%6.06c\t\t: %6.07c\n", singleChar);
 	ft_printf("%%6.*c <-07,char\t: %6.*c\n", 07, singleChar);
 	//ft_printf("%%6.*c <-08,char\t: %6.*c\n", 08, singleChar); //invalid, octal constant?
-*/	
-/*	ft_printf("----------Specifiers Usage--------\n");
+	
+	ft_printf("----------Specifiers Usage--------\n");
 	ft_printf("flag\t\t-\t\tyes\n");
 	ft_printf("flag\t\t0\t\tsupposedly no\n");
 	ft_printf("width\t\t<num>\t\tyes\n");
@@ -41,40 +40,50 @@ void	print_char(void)
 	ft_printf("pre.s\t\t.<num>\t\tno\n");
 	ft_printf("pre.s\t\t.*\t\tno\n");
 	ft_printf("Note: %%c can input char or num\n");
-*/
-//	STILL NOT HANDLED
-//	ft_printf("------------Weird-Combos--doesn't compile--------\n");
-//	ft_printf("%%006c\t\t: %006c\n", singleChar);
-//	ft_printf("%%0006c\t\t: %0006c\n", singleChar);
-//	ft_printf("%%6*c   <-2,char\t: %6*c\n", 2, singleChar); //check again.Currently * overrides 6
-//	ft_printf("%%6*.3c <-2,char\t: %6*.3c\n", 2, singleChar); //check again
-//	ft_printf("%%.2*c  <-3,char\t: %.2*c\n", 3, singleChar); //check again
-//	ft_printf("%%*6c   <-9,char\t: %*6c\n", 9, singleChar);
-//	ft_printf("%%*06c  <-9,char\t: %*06c\n", 9, singleChar);	
-//	ft_printf("%%*-6c  <-9,char\t: %*-6c\n", 9, singleChar);
-//	ft_printf("%%0-6c\t\t: %0-6c\n", singleChar);
-//	ft_printf("%%*0-6c <-9,char\t: %*0-6c\n", 9, singleChar);
-//	ft_printf("%%*0c  <-1,char\t: %*0c\n", 0, singleChar);//invalid specifier, not cuz of '0'
-//	ft_printf("%%*6.3c\t\t: %*6.3c\n", 2, singleChar);
-//	ft_printf("%%.*6c <-1,char\t: %.*6c\n", 1, singleChar);
-//	ft_printf("%%0%%6c\t\t: %0%6c\n", singleChar); //"lacks type at end of format"
-//	ft_printf("%%q%%6c\t\t: %q%6c\n", singleChar); //"unused argument"
-//	ft_printf("%%q%%6c\t\t: %q%6c\n"); //WILL PRINT %6c
-//	ft_printf("%%r%%6c\t\t: %r%6c\n"); //"unknown conversion type character"
-//	ft_printf("%%-6-c\t\t: %-6-c\n", singleChar); //"unknown conversion type character"
-//	ft_printf("%%-0*6.3*c <-2,5,c: %-0*6.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
-//	ft_printf("%%-06*.3*c <-2,5,c: %-06*.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
-//	ft_printf("%%-0*6.*3c <-2,5,c: %-0*6.*3c\n", 2, 5, singleChar); //"unknown conversion type character"	
-}
-/*
+
+	//	STILL NOT HANDLED
+	ft_printf("------------Weird-Combos--doesn't compile--------\n");
+	ft_printf("%%006c\t\t: %006c\n", singleChar);
+	ft_printf("%%0006c\t\t: %0006c\n", singleChar);
+	ft_printf("%%6*c   <-2,char\t: %6*c\n", 2, singleChar); //check again.Currently * overrides 6
+	ft_printf("%%6*.3c <-2,char\t: %6*.3c\n", 2, singleChar); //check again
+	ft_printf("%%.2*c  <-3,char\t: %.2*c\n", 3, singleChar); //check again
+	ft_printf("%%*6c   <-9,char\t: %*6c\n", 9, singleChar);
+	ft_printf("%%*06c  <-9,char\t: %*06c\n", 9, singleChar);	
+	ft_printf("%%*-6c  <-9,char\t: %*-6c\n", 9, singleChar);
+	ft_printf("%%0-6c\t\t: %0-6c\n", singleChar);
+	ft_printf("%%*0-6c <-9,char\t: %*0-6c\n", 9, singleChar);
+	ft_printf("%%*0c  <-1,char\t: %*0c\n", 0, singleChar);//invalid specifier, not cuz of '0'
+	ft_printf("%%*6.3c\t\t: %*6.3c\n", 2, singleChar);
+	ft_printf("%%.*6c <-1,char\t: %.*6c\n", 1, singleChar);
+	ft_printf("%%0%%6c\t\t: %0%6c\n", singleChar); //"lacks type at end of format"
+	ft_printf("%%q%%6c\t\t: %q%6c\n", singleChar); //"unused argument"
+	ft_printf("%%q%%6c\t\t: %q%6c\n"); //WILL PRINT %6c
+	ft_printf("%%r%%6c\t\t: %r%6c\n"); //"unknown conversion type character"
+	ft_printf("%%-6-c\t\t: %-6-c\n", singleChar); //"unknown conversion type character"
+	ft_printf("%%-0*6.3*c <-2,5,c: %-0*6.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
+	ft_printf("%%-06*.3*c <-2,5,c: %-06*.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
+	ft_printf("%%-0*6.*3c <-2,5,c: %-0*6.*3c\n", 2, 5, singleChar); //"unknown conversion type character"	
+
+} */
+
 void	print_string(void)
 {
-	int ret;
+	char *string = "Ab12!?";
 
-	ret = ft_printf("String: %s\n", "World1234");
-	printf("ret 3: %d\n", ret);
+	ft_printf("============STRING %%s============\n");
+	ft_printf("--------Standard Specifiers--------\n");
+	ft_printf("%%s\t\t: %s\n", string);
+	ft_printf("%%10s\t\t: %10s\n", string);
+	ft_printf("%%-10s\t\t: %-10s\n", string);
+	ft_printf("%%3s\t\t: %3s\n", string);
+	ft_printf("%%-3s\t\t: %-3s\n", string);
+	ft_printf("%%*s  <-10,char\t: %*s\n", 10, string);
+	ft_printf("%%-*s <-10,char\t: %-*s\n", 10, string);
+	ft_printf("%%*s  <-0012,char\t: %*s\n", 0012, string);//prints as %12s
+	ft_printf("%%-*s <-020,char\t: %-*s\n", 020, string); //just takes as -20
 }
-
+/*
 void	print_int(void)
 {
 	int ret;
@@ -88,5 +97,6 @@ int	main ()
 	//int ret;
 
 	//ret = ft_printf("Just string\n");
-	print_char();
+	//print_char();
+	print_string();
 }
