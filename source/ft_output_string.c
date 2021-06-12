@@ -8,4 +8,6 @@ void	ft_output_string(t_print *info)
 	if (info->width && !info->dash)
 		ft_mod_right_cs(info, ft_strlen(string));
 	info->total_length += ft_putstr(string);
+	if (info->width && info->dash)
+		ft_mod_left_cs(info, ft_strlen(string));
 }
