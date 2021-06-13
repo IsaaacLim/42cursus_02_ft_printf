@@ -10,6 +10,7 @@ typedef struct	s_print
 {
 	va_list		args;
 	const char	*format;
+	int			argument_length;
 	int			total_length;
 	
 	bool		dash;
