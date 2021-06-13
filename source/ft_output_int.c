@@ -3,10 +3,14 @@
 void	ft_output_int(t_print *info)
 {
 	int		number;
-	char	*string;
+	char	*itoa;
 
 	number = va_arg(info->args, int);
-	string = ft_itoa(number);
-	info->total_length += ft_putstr(string);
-	free(string);
+	itoa = ft_itoa(number);
+	if (info->width && !info->dash)
+		ft_mod_right_digit(info, ft_strlen(itoa));
+	info->total_length += ft_putstr(itoa);
+	if (info->width && info->dash)
+		ft_mod_left_digit(info, ft_strlen(itoa));
+	free(itoa);
 }

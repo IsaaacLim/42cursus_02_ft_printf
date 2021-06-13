@@ -153,10 +153,23 @@ void	print_string(void)
 
 void	print_int(void)
 {
-	int num = 123.456;
+	int num = 123456.789;
 
-	ft_printf("Integer: %d\n", num);
-	ft_printf("%%010.2d\t\t: %010.2d\n", num);
+	ft_printf("============INTEGERS %%s============\n");
+	ft_printf("--------Dash & Width--------\n");
+	ft_printf("%%d\t\t: %d\n", num);
+	ft_printf("%%10d\t\t: %10d\n", num);
+	ft_printf("%%-10d\t\t: %-10d\n", num);
+	ft_printf("%%3d\t\t: %3d\n", num);
+	ft_printf("%%-3d\t\t: %-3d\n", num);
+	ft_printf("%%*d  <-10,num\t: %*d\n", 10, num);
+	ft_printf("%%-*d <-10,num\t: %-*d\n", 10, num);
+	ft_printf("%%*d <-0012,num\t: %*d\n", 0012, num);//prints as %12s
+	ft_printf("%%-*d <-020,num\t: %-*d\n", 020, num); //just takes as -20
+	ft_printf("%%0d\t\t: %0d\n", num); //taken as width
+
+	//ft_printf("%%010.2i\t\t: %010.2d\n", num);
+	
 }
 
 int	main ()
