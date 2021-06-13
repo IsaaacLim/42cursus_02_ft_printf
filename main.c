@@ -166,7 +166,7 @@ void	print_int(void)
 	//int Smin = -2147483649; //gcc warning
 	//int Smax = 2147483648;
 
-	int num = num_arr[4];
+	int num = num_arr[5];
 
 	ft_printf("============INTEGERS %%s============\n");
 /*	ft_printf("--------Dash & Width--------\n");
