@@ -150,7 +150,6 @@ void	print_string(void)
 } 
 */
 
-
 void	print_int(void)
 {
 	int num_arr[] = {
@@ -167,9 +166,10 @@ void	print_int(void)
 	//int Smax = 2147483648;
 
 	int num = num_arr[4];
-
+	ft_printf("%%d\t\t: %d\n", num); //just to avoid compile error
 	ft_printf("============INTEGERS %%s============\n");
-/*	ft_printf("--------Dash & Width--------\n");
+	/*	
+	ft_printf("--------Dash & Width--------\n");
 	ft_printf("%%d\t\t: %d\n", num);
 	ft_printf("%%13d\t\t: %13d\n", num);
 	ft_printf("%%-13d\t\t: %-13d\n", num);
@@ -210,8 +210,9 @@ void	print_int(void)
 	ft_printf("%%-.12d\t\t: %-.12d\n", num);
 	ft_printf("%%-.13d\t\t: %-.13d\n", num);
 	ft_printf("%%-.14d\t\t: %-.14d\n", num);
-*/
-/*	ft_printf("--Zero-Dash-Width-Precision--\n");
+	*/
+	/*	
+	ft_printf("--Zero-Dash-Width-Precision--\n");
 	ft_printf("%%13d\t\t: %13d\n", num);
 	ft_printf("%%13.d\t\t: %13.d\n", num);
 	ft_printf("%%13.0d\t\t: %13.0d\n", num);
@@ -264,7 +265,8 @@ void	print_int(void)
 	ft_printf("%%-13.12i\t: %-13.12i\n", num);
 	ft_printf("%%-13.13i\t: %-13.13i\n", num);
 	ft_printf("%%-13.14i\t: %-13.14i\n", num);
-*/
+	*/
+	/*	
 	ft_printf("---------All with Star-------\n");
 	ft_printf("%%*.3d   <-5,num\t\t: %*.3d\n", 5, num);
 	ft_printf("%%13.*d  <-2,num\t\t: %13.*d\n", 2, num);
@@ -277,10 +279,11 @@ void	print_int(void)
 	ft_printf("%%13.013d\t: %13.013d\n", num); //taken as 13
 	ft_printf("%%-013.013d\t: %-013.013d\n", num); //taken as -13.13
 	ft_printf("%%-0013.08d\t: %-0013.08d\n", num); //taken as -13.8
-	
+	*/	
 
-//	STILL NOT HANDLED
-/*	printf("------------Weird-Combos--doesn't compile--------\n");
+	//	STILL NOT HANDLED
+	/*	
+	printf("------------Weird-Combos--doesn't compile--------\n");
 	ft_printf("%%10.-3i\t\t: %10.-3i\n", num);
 	ft_printf("%%0010i\t\t: %0010i\n", num);
 	ft_printf("%%0006i\t\t: %0006i\n", num);
@@ -303,7 +306,182 @@ void	print_int(void)
 	ft_printf("%%-0*6.3*i <-2,5,i: %-0*6.3*i\n", 2, 5, num); //"unknown conversion type character"
 	ft_printf("%%-06*.3*i <-2,5,i: %-06*.3*i\n", 2, 5, num); //"unknown conversion type character"
 	ft_printf("%%-0*6.*i <-2,5,i: %-0*6.*i\n", 2, 5, num); //"unknown conversion type character"	
-*/
+	*/
+
+}
+
+void	print_unsigned_int(void)
+{
+	unsigned int num_arr[] = {
+		0, 				// [0]
+		4294967295,		// [1]
+		-1,			 	// [2]
+		-2147483648		// [3] //smallest neg, overflow to it's +ve value
+		};
+ 	//Overflow
+	//unsigned int dec = 123.789 // can't compile
+	//unsinged int Smin = -2147483649; //can't compile
+	//unsigned int Smax = 4294967296; //can't compile
+	unsigned int num = num_arr[3];
+
+	ft_printf("============UNSIGNED_INT %%s============\n");
+	ft_printf("-------Quick Summar-------\n");
+	ft_printf("%%13.9u\t\t: %13.9u\n", num);
+ 	ft_printf("%%13.10u\t\t: %13.10u\n", num);
+ 	ft_printf("%%13.12u\t\t: %13.12u\n", num);
+ 	ft_printf("%%13.13u\t\t: %13.13u\n", num);
+ 	ft_printf("%%13.14u\t\t: %13.14u\n", num);
+ 	ft_printf("%%-13.9u\t\t: %-13.9u\n", num);
+ 	ft_printf("%%-13.10u\t: %-13.10u\n", num);
+ 	ft_printf("%%-13.12u\t: %-13.12u\n", num);
+ 	ft_printf("%%-13.13u\t: %-13.13u\n", num);
+ 	ft_printf("%%-13.14u\t: %-13.14u\n", num);
+	ft_printf("%%013u\t\t: %013u\n", num);
+ 	ft_printf("%%013.9u\t\t: %013.9u\n", num);
+	ft_printf("%%013.10u\t: %013.10u\n", num);
+	ft_printf("%%013.12u\t: %013.12u\n", num);
+	ft_printf("%%013.13u\t: %013.13u\n", num);
+ 	ft_printf("%%013.14u\t: %013.14u\n", num);
+
+	/*	
+	ft_printf("--------Dash & Width--------\n");
+	ft_printf("%%d\t\t: %d\n", num);
+	ft_printf("%%13d\t\t: %13d\n", num);
+	ft_printf("%%-13d\t\t: %-13d\n", num);
+	ft_printf("%%3d\t\t: %3d\n", num);
+	ft_printf("%%-3d\t\t: %-3d\n", num);
+	ft_printf("%%*d  <-13,num\t: %*d\n", 13, num);
+	ft_printf("%%-*d <-13,num\t: %-*d\n", 13, num);
+	ft_printf("%%*d <-0013,num\t: %*d\n", 0013, num);//prints as %12s
+	ft_printf("%%-*d <-020,num\t: %-*d\n", 020, num); //just takes as -20
+	ft_printf("%%0d\t\t: %0d\n", num); //taken as width
+
+	ft_printf("--------Zero & Width--------\n");
+	ft_printf("%%015i\t\t: %015i\n", num); 
+	ft_printf("%%06i\t\t: %06i\n", num);
+	ft_printf("%%0*i  <-15,char\t: %0*i\n", 15, num);
+	ft_printf("%%-015i\t\t: %-015i\n", num);
+	ft_printf("%%006i\t\t: %006i\n", num);
+	ft_printf("%%00015i\t\t: %00015i\n", num);
+
+	ft_printf("------Dash & Precision------\n");
+	ft_printf("%%.d\t\t: %.d\n", num);
+	ft_printf("%%.2d\t\t: %.2d\n", num);
+	ft_printf("%%.4d\t\t: %.4d\n", num);
+	ft_printf("%%.5d\t\t: %.5d\n", num);
+	ft_printf("%%.6d\t\t: %.6d\n", num);
+	ft_printf("%%.10d\t\t: %.10d\n", num);
+	ft_printf("%%.11d\t\t: %.11d\n", num);
+	ft_printf("%%.12d\t\t: %.12d\n", num);
+	ft_printf("%%.13d\t\t: %.13d\n", num);
+	ft_printf("%%.14d\t\t: %.14d\n", num);
+	ft_printf("%%-.d\t\t: %-.d\n", num);
+	ft_printf("%%-.2d\t\t: %-.2d\n", num);
+	ft_printf("%%-.4d\t\t: %-.4d\n", num);
+	ft_printf("%%-.5d\t\t: %-.5d\n", num);
+	ft_printf("%%-.6d\t\t: %-.6d\n", num);
+	ft_printf("%%-.10d\t\t: %-.10d\n", num);
+	ft_printf("%%-.11d\t\t: %-.11d\n", num);
+	ft_printf("%%-.12d\t\t: %-.12d\n", num);
+	ft_printf("%%-.13d\t\t: %-.13d\n", num);
+	ft_printf("%%-.14d\t\t: %-.14d\n", num);
+	*/
+	/*	
+	ft_printf("--Zero-Dash-Width-Precision--\n");
+	ft_printf("%%13d\t\t: %13d\n", num);
+	ft_printf("%%13.d\t\t: %13.d\n", num);
+	ft_printf("%%13.0d\t\t: %13.0d\n", num);
+	ft_printf("%%13.1d\t\t: %13.1d\n", num);
+	ft_printf("%%13.2d\t\t: %13.2d\n", num);
+	ft_printf("%%13.3d\t\t: %13.3d\n", num);
+	ft_printf("%%13.4d\t\t: %13.4d\n", num);
+	ft_printf("%%13.5d\t\t: %13.5d\n", num);
+	ft_printf("%%13.6d\t\t: %13.6d\n", num);
+	ft_printf("%%13.7d\t\t: %13.7d\n", num);
+	ft_printf("%%13.8d\t\t: %13.8d\n", num);
+	ft_printf("%%13.9d\t\t: %13.9d\n", num);
+	ft_printf("%%13.10d\t\t: %13.10d\n", num);
+	ft_printf("%%13.11d\t\t: %13.11d\n", num);
+	ft_printf("%%13.12d\t\t: %13.12d\n", num);
+	ft_printf("%%13.13d\t\t: %13.13d\n", num);
+	ft_printf("%%13.14d\t\t: %13.14d\n", num);
+
+	ft_printf("%%013d\t\t: %013d\n", num);
+	ft_printf("%%013.d\t\t: %013.d\n", num);
+	ft_printf("%%013.0d\t\t: %013.0d\n", num);
+	ft_printf("%%013.1d\t\t: %013.1d\n", num);
+	ft_printf("%%013.2d\t\t: %013.2d\n", num);
+	ft_printf("%%013.3d\t\t: %013.3d\n", num);
+	ft_printf("%%013.4d\t\t: %013.4d\n", num);
+	ft_printf("%%013.5d\t\t: %013.5d\n", num);
+	ft_printf("%%013.6d\t\t: %013.6d\n", num);
+	ft_printf("%%013.7d\t\t: %013.7d\n", num);
+	ft_printf("%%013.8d\t\t: %013.8d\n", num);
+	ft_printf("%%013.9d\t\t: %013.9d\n", num);
+	ft_printf("%%013.10d\t: %013.10d\n", num);
+	ft_printf("%%013.11d\t: %013.11d\n", num);
+	ft_printf("%%013.12d\t: %013.12d\n", num);
+	ft_printf("%%013.13d\t: %013.13d\n", num);
+	ft_printf("%%13.14d\t\t: %13.14d\n", num);
+
+	ft_printf("%%-13.i\t\t: %-13.i\n", num);
+	ft_printf("%%-13.0i\t\t: %-13.0i\n", num);
+	ft_printf("%%-13.1i\t\t: %-13.1i\n", num);
+	ft_printf("%%-13.2i\t\t: %-13.2i\n", num);
+	ft_printf("%%-13.3i\t\t: %-13.3i\n", num);
+	ft_printf("%%-13.4i\t\t: %-13.4i\n", num);
+	ft_printf("%%-13.5i\t\t: %-13.5i\n", num);
+	ft_printf("%%-13.6i\t\t: %-13.6i\n", num);
+	ft_printf("%%-13.7i\t\t: %-13.7i\n", num);
+	ft_printf("%%-13.8i\t\t: %-13.8i\n", num);
+	ft_printf("%%-13.9i\t\t: %-13.9i\n", num);
+	ft_printf("%%-13.10i\t: %-13.10i\n", num);
+	ft_printf("%%-13.11i\t: %-13.11i\n", num);
+	ft_printf("%%-13.12i\t: %-13.12i\n", num);
+	ft_printf("%%-13.13i\t: %-13.13i\n", num);
+	ft_printf("%%-13.14i\t: %-13.14i\n", num);
+	*/
+	/*	
+	ft_printf("---------All with Star-------\n");
+	ft_printf("%%*.3d   <-5,num\t\t: %*.3d\n", 5, num);
+	ft_printf("%%13.*d  <-2,num\t\t: %13.*d\n", 2, num);
+	ft_printf("%%*.*d   <-013,13,num\t: %0*.*d\n", 013, 13, num);
+	ft_printf("%%-*.*d  <-13,14,num\t: %-*.*d\n", 13, 14,num);
+
+	ft_printf("---------Repeated Zeros-------\n");
+	ft_printf("%%13.0010d\t: %13.0010d\n", num); //taken as 10
+	ft_printf("%%13.00001d\t: %13.01d\n", num); //taken as 1
+	ft_printf("%%13.013d\t: %13.013d\n", num); //taken as 13
+	ft_printf("%%-013.013d\t: %-013.013d\n", num); //taken as -13.13
+	ft_printf("%%-0013.08d\t: %-0013.08d\n", num); //taken as -13.8
+	*/	
+
+	//	STILL NOT HANDLED
+	/*	
+	printf("------------Weird-Combos--doesn't compile--------\n");
+	ft_printf("%%10.-3i\t\t: %10.-3i\n", num);
+	ft_printf("%%0010i\t\t: %0010i\n", num);
+	ft_printf("%%0006i\t\t: %0006i\n", num);
+	ft_printf("%%6*i   <-2,char\t: %6*i\n", 2, num); //check again.Currently * overridei 6
+	ft_printf("%%6*.i <-2,char\t: %6*.i\n", 2, num); //check again
+	ft_printf("%%.2*i  <-3,char\t: %.2*i\n", 3, num); //check again
+	ft_printf("%%*6i   <-9,char\t: %*6i\n", 9, num);
+	ft_printf("%%*06i  <-9,char\t: %*06i\n", 9, num);	
+	ft_printf("%%*-6i  <-9,char\t: %*-6i\n", 9, num);
+	ft_printf("%%0-6i\t\t: %0-6i\n", num);
+	ft_printf("%%*0-6i <-9,char\t: %*0-6i\n", 9, num);
+	ft_printf("%%*0i  <-1,char\t: %*0i\n", 0, num);//invalid specifier, not cuz of '0'
+	ft_printf("%%*6.i\t\t: %*6.i\n", 2, num);
+	ft_printf("%%.*6i <-1,char\t: %.*6i\n", 1, num);
+	ft_printf("%%0%%6i\t\t: %0%6i\n", num); //"lacks type at end of format"
+	ft_printf("%%q%%6i\t\t: %q%6i\n", num); //"unused argument"
+	ft_printf("%%q%%6i\t\t: %q%6i\n"); //WILL PRINT %6s
+	ft_printf("%%r%%6i\t\t: %r%6i\n"); //"unknown conversion type character"
+	ft_printf("%%-6-i\t\t: %-6-i\n", num); //"unknown conversion type character"
+	ft_printf("%%-0*6.3*i <-2,5,i: %-0*6.3*i\n", 2, 5, num); //"unknown conversion type character"
+	ft_printf("%%-06*.3*i <-2,5,i: %-06*.3*i\n", 2, 5, num); //"unknown conversion type character"
+	ft_printf("%%-0*6.*i <-2,5,i: %-0*6.*i\n", 2, 5, num); //"unknown conversion type character"	
+	*/
 }
 
 int	main ()
@@ -313,7 +491,9 @@ int	main ()
 	//ret = ft_printf("Just string\n");
 	//print_char();
 	//print_string();
-	print_int();
+	//print_int();
+	print_unsigned_int();
 
+	//test int with num = 0;
 	//add test when no argument is given / incomplete number of arguments
 }

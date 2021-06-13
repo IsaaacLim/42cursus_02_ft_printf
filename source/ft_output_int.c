@@ -1,27 +1,22 @@
 #include "../includes/ft_printf.h"
 
-/* *************************************** */
-/* Print sequence:	| Criteria:
-/* 1. right spaces	| !dash && (width > num_len && width > precision + neg)
-/* 2. neg sign		| num < 0
-/* 3. zeros			| (zero && !precision) || precision > absolute
-/* 4. arg values	| absolute
-/* 5. left spaces	| width > absolute && dash
-/*
-/* Example:
-/* -000000123456$
-/*      -123456$ // big width, no zero, or precision < ft_strlen(abs_itoa)
-/*   -0000123456$ // big width, precision > ft_strlen(abs_itoa)
-/* -0000123456$ // small width, precision > ft_strlen(abs_itoa)
-/* -123456$ //default	
-/* -123456      $ //  big width, no zero, or precision < absolute, dash
-/* -0001234     $ // big width, precision > ft_strlen(abs_itoa) , dash
-/*
-/*
-/*
-/*
-/*
-/* *************************************** */
+/* ************************************************************************ */
+/* Print sequence:	| Criteria:												*/
+/* 1. right spaces	| !dash && (width > num_len && width > precision + neg)	*/
+/* 2. neg sign		| num < 0												*/
+/* 3. zeros			| (zero && !precision) || precision > absolute			*/
+/* 4. arg values	| absolute												*/
+/* 5. left spaces	| width > absolute && dash								*/
+/*																			*/
+/* Example:																	*/
+/* -000000123456$															*/
+/*      -123456$															*/
+/*   -0000123456$															*/
+/* -0000123456$																*/
+/* -123456$																	*/
+/* -123456      $															*/
+/* -0001234     $															*/
+/* ************************************************************************ */
 void	ft_output_int(t_print *info)
 {
 	int		number;
