@@ -65,7 +65,7 @@
 	ft_printf("%%-06*.3*c <-2,5,c: %-06*.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
 	ft_printf("%%-0*6.*3c <-2,5,c: %-0*6.*3c\n", 2, 5, singleChar); //"unknown conversion type character"	
 } */
-
+/*
 void	print_string(void)
 {
 	char *string = "Ab12!?";
@@ -111,7 +111,7 @@ void	print_string(void)
 	ft_printf("%%-*.*s   <-10,3,str\t: %-*.*s\n", 10, 3, string);
 	
 	ft_printf("-Zero & Width & Precision--> Can't compile-\n"); //check if 0 should be printed
-	ft_printf("%%010.0s\t\t: %010.0s\n", string); //others won't display 0
+	ft_printf("%%010.0s\t\t: %010.0s\n", string); //modi mod_cs so that it won't print 0s
 	ft_printf("%%010.1s\t\t: %010.1s\n", string);
 
 	ft_printf("----------Specifiers Usage--------\n");
@@ -123,7 +123,7 @@ void	print_string(void)
 	ft_printf("pre.s\t\t.*\t\tyes\n");
 
 	//	STILL NOT HANDLED
-/*	printf("------------Weird-Combos--doesn't compile--------\n");
+	printf("------------Weird-Combos--doesn't compile--------\n");
 	ft_printf("%%10.-3s\t\t: %10.-3s\n", string);
 	ft_printf("%%0010s\t\t: %0010s\n", string);
 	ft_printf("%%0006c\t\t: %0006c\n", string);
@@ -146,24 +146,27 @@ void	print_string(void)
 	ft_printf("%%-0*6.3*s <-2,5,s: %-0*6.3*s\n", 2, 5, string); //"unknown conversion type character"
 	ft_printf("%%-06*.3*s <-2,5,s: %-06*.3*s\n", 2, 5, string); //"unknown conversion type character"
 	ft_printf("%%-0*6.*s <-2,5,s: %-0*6.*s\n", 2, 5, string); //"unknown conversion type character"	
+	
+} 
 */
-}
-/*
+
+
 void	print_int(void)
 {
-	int ret;
+	int num = 123.456;
 
-	ret = ft_printf("Integer: %d\n", 123);
-	printf("ret 4: %d\n", ret);
+	ft_printf("Integer: %d\n", num);
+	ft_printf("%%010.2d\t\t: %010.2d\n", num);
 }
-*/
+
 int	main ()
 {
 	//int ret;
 
 	//ret = ft_printf("Just string\n");
 	//print_char();
-	print_string();
+	//print_string();
+	print_int();
 
 	//add test when no argument is given / incomplete number of arguments
 }
