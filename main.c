@@ -126,7 +126,7 @@ void	print_string(void)
 	printf("------------Weird-Combos--doesn't compile--------\n");
 	ft_printf("%%10.-3s\t\t: %10.-3s\n", string);
 	ft_printf("%%0010s\t\t: %0010s\n", string);
-	ft_printf("%%0006c\t\t: %0006c\n", string);
+	ft_printf("%%0006s\t\t: %0006s\n", string);
 	ft_printf("%%6*s   <-2,char\t: %6*s\n", 2, string); //check again.Currently * overrides 6
 	ft_printf("%%6*.s <-2,char\t: %6*.s\n", 2, string); //check again
 	ft_printf("%%.2*s  <-3,char\t: %.2*s\n", 3, string); //check again
@@ -153,20 +153,41 @@ void	print_string(void)
 
 void	print_int(void)
 {
-	int num = 123456.789;
+	int num_arr[] = {
+		12345, 				// [0]
+		213456.789, 		// [1]
+		-2147483648, 		// [2]
+		2147483647, 		// [3]
+		-2147483648.567,	// [4]
+		2147483647.567		// [5]
+		};
+
+	//Overflow
+	//int Smin = -2147483649; //gcc warning
+	//int Smax = 2147483648;
+
+	int num = num_arr[4];
 
 	ft_printf("============INTEGERS %%s============\n");
-	ft_printf("--------Dash & Width--------\n");
+/*	ft_printf("--------Dash & Width--------\n");
 	ft_printf("%%d\t\t: %d\n", num);
-	ft_printf("%%10d\t\t: %10d\n", num);
-	ft_printf("%%-10d\t\t: %-10d\n", num);
+	ft_printf("%%13d\t\t: %13d\n", num);
+	ft_printf("%%-13d\t\t: %-13d\n", num);
 	ft_printf("%%3d\t\t: %3d\n", num);
 	ft_printf("%%-3d\t\t: %-3d\n", num);
-	ft_printf("%%*d  <-10,num\t: %*d\n", 10, num);
-	ft_printf("%%-*d <-10,num\t: %-*d\n", 10, num);
-	ft_printf("%%*d <-0012,num\t: %*d\n", 0012, num);//prints as %12s
+	ft_printf("%%*d  <-13,num\t: %*d\n", 13, num);
+	ft_printf("%%-*d <-13,num\t: %-*d\n", 13, num);
+	ft_printf("%%*d <-0013,num\t: %*d\n", 0013, num);//prints as %12s
 	ft_printf("%%-*d <-020,num\t: %-*d\n", 020, num); //just takes as -20
 	ft_printf("%%0d\t\t: %0d\n", num); //taken as width
+*/
+	ft_printf("--------Zero & Width--------\n");
+	ft_printf("%%015i\t\t: %015i\n", num); 
+	ft_printf("%%06i\t\t: %06i\n", num);
+	ft_printf("%%0*i  <-15,char\t: %0*i\n", 15, num);
+	ft_printf("%%-015i\t\t: %-015i\n", num);
+	ft_printf("%%006i\t\t: %006i\n", num);
+	ft_printf("%%00015i\t\t: %00015i\n", num);
 
 	//ft_printf("%%010.2i\t\t: %010.2d\n", num);
 	

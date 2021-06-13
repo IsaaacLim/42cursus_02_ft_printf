@@ -18,7 +18,7 @@ void	ft_mod_left_alpha(t_print *info, int argument_len)
 void	ft_mod_right_digit(t_print *info, int argument_len)
 {
 	while (info->width-- > argument_len)
-		if (info->zero && !info->has_precision) //!precision is for %s
+		if (info->zero)
 			info->total_length += ft_putchar('0');
 		else
 			info->total_length += ft_putchar(' ');

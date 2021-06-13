@@ -60,7 +60,7 @@ void		ft_format_flag(t_print *info)
 		ft_output_char(info);
 	else if (*info->format == 's')
 		ft_output_string(info);
-	else if (*info->format == 'd')
+	else if (*info->format == 'd' || *info->format == 'i')
 		ft_output_int(info);
 	else if (*info->format == '%')
 		info->width += ft_putchar('%');
