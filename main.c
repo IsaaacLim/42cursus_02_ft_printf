@@ -278,6 +278,32 @@ void	print_int(void)
 	ft_printf("%%-013.013d\t: %-013.013d\n", num); //taken as -13.13
 	ft_printf("%%-0013.08d\t: %-0013.08d\n", num); //taken as -13.8
 */	
+
+//	STILL NOT HANDLED
+/*	printf("------------Weird-Combos--doesn't compile--------\n");
+	ft_printf("%%10.-3i\t\t: %10.-3i\n", num);
+	ft_printf("%%0010i\t\t: %0010i\n", num);
+	ft_printf("%%0006i\t\t: %0006i\n", num);
+	ft_printf("%%6*i   <-2,char\t: %6*i\n", 2, num); //check again.Currently * overridei 6
+	ft_printf("%%6*.i <-2,char\t: %6*.i\n", 2, num); //check again
+	ft_printf("%%.2*i  <-3,char\t: %.2*i\n", 3, num); //check again
+	ft_printf("%%*6i   <-9,char\t: %*6i\n", 9, num);
+	ft_printf("%%*06i  <-9,char\t: %*06i\n", 9, num);	
+	ft_printf("%%*-6i  <-9,char\t: %*-6i\n", 9, num);
+	ft_printf("%%0-6i\t\t: %0-6i\n", num);
+	ft_printf("%%*0-6i <-9,char\t: %*0-6i\n", 9, num);
+	ft_printf("%%*0i  <-1,char\t: %*0i\n", 0, num);//invalid specifier, not cuz of '0'
+	ft_printf("%%*6.i\t\t: %*6.i\n", 2, num);
+	ft_printf("%%.*6i <-1,char\t: %.*6i\n", 1, num);
+	ft_printf("%%0%%6i\t\t: %0%6i\n", num); //"lacks type at end of format"
+	ft_printf("%%q%%6i\t\t: %q%6i\n", num); //"unused argument"
+	ft_printf("%%q%%6i\t\t: %q%6i\n"); //WILL PRINT %6s
+	ft_printf("%%r%%6i\t\t: %r%6i\n"); //"unknown conversion type character"
+	ft_printf("%%-6-i\t\t: %-6-i\n", num); //"unknown conversion type character"
+	ft_printf("%%-0*6.3*i <-2,5,i: %-0*6.3*i\n", 2, 5, num); //"unknown conversion type character"
+	ft_printf("%%-06*.3*i <-2,5,i: %-06*.3*i\n", 2, 5, num); //"unknown conversion type character"
+	ft_printf("%%-0*6.*i <-2,5,i: %-0*6.*i\n", 2, 5, num); //"unknown conversion type character"	
+*/
 }
 
 int	main ()
