@@ -64,7 +64,6 @@
 	ft_printf("%%-0*6.3*c <-2,5,c: %-0*6.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
 	ft_printf("%%-06*.3*c <-2,5,c: %-06*.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
 	ft_printf("%%-0*6.*3c <-2,5,c: %-0*6.*3c\n", 2, 5, singleChar); //"unknown conversion type character"	
-
 } */
 
 void	print_string(void)
@@ -102,8 +101,19 @@ void	print_string(void)
 	ft_printf("%%.06s\t\t: %.06s\n", string);
 	ft_printf("%%10.06s\t\t: %10.06s\n", string);
 	ft_printf("%%10.*s<-07,char\t: %10.*s\n", 07, string);
-	//ft_printf("%%10.*s <-08,char\t: %10.*s\n", 08, string); //correct, can't run => invalid, octal constant?
+	ft_printf("%%*.*s   <- 10,3,str\t: %*.*s\n", 10, 3, string);
+	//ft_printf("%%10.*s <-08,char\t: %10.*s\n", 08, string); //can't run => invalid, octal constant?
 	
+	ft_printf("---Dash & Width & Precision---\n");
+	ft_printf("%%-.3s\t\t\t: %-.3s\n", string);
+	ft_printf("%%-.20s\t\t\t: %-.20s\n", string);
+	ft_printf("%%-10.3s\t\t\t: %-10.3s\n", string);
+	ft_printf("%%-*.*s   <-10,3,str\t: %-*.*s\n", 10, 3, string);
+	
+	ft_printf("-Zero & Width & Precision--> Can't compile-\n"); //check if 0 should be printed
+	ft_printf("%%010.0s\t\t: %010.0s\n", string); //others won't display 0
+	ft_printf("%%010.1s\t\t: %010.1s\n", string);
+
 	ft_printf("----------Specifiers Usage--------\n");
 	ft_printf("flag\t\t-\t\tyes\n");
 	ft_printf("flag\t\t0\t\tsupposedly no\n");
@@ -112,11 +122,31 @@ void	print_string(void)
 	ft_printf("pre.s\t\t.<num>\t\tyes\n");
 	ft_printf("pre.s\t\t.*\t\tyes\n");
 
-	//printf("%%-.3s\t\t\t: %-.3s\n", string);
-	//printf("%%-.20s\t\t\t: %-.20s\n", string);
-	//printf("%%*.*s\t<- 10,3,str\t: %*.*s\n", 10, 3, string);
-	//%10.-3s
-	//%010.0s
+	//	STILL NOT HANDLED
+/*	printf("------------Weird-Combos--doesn't compile--------\n");
+	ft_printf("%%10.-3s\t\t: %10.-3s\n", string);
+	ft_printf("%%0010s\t\t: %0010s\n", string);
+	ft_printf("%%0006c\t\t: %0006c\n", string);
+	ft_printf("%%6*s   <-2,char\t: %6*s\n", 2, string); //check again.Currently * overrides 6
+	ft_printf("%%6*.s <-2,char\t: %6*.s\n", 2, string); //check again
+	ft_printf("%%.2*s  <-3,char\t: %.2*s\n", 3, string); //check again
+	ft_printf("%%*6s   <-9,char\t: %*6s\n", 9, string);
+	ft_printf("%%*06s  <-9,char\t: %*06s\n", 9, string);	
+	ft_printf("%%*-6s  <-9,char\t: %*-6s\n", 9, string);
+	ft_printf("%%0-6s\t\t: %0-6s\n", string);
+	ft_printf("%%*0-6s <-9,char\t: %*0-6s\n", 9, string);
+	ft_printf("%%*0s  <-1,char\t: %*0s\n", 0, string);//invalid specifier, not cuz of '0'
+	ft_printf("%%*6.s\t\t: %*6.s\n", 2, string);
+	ft_printf("%%.*6s <-1,char\t: %.*6s\n", 1, string);
+	ft_printf("%%0%%6s\t\t: %0%6s\n", string); //"lacks type at end of format"
+	ft_printf("%%q%%6s\t\t: %q%6s\n", string); //"unused argument"
+	ft_printf("%%q%%6s\t\t: %q%6s\n"); //WILL PRINT %6s
+	ft_printf("%%r%%6s\t\t: %r%6s\n"); //"unknown conversion type character"
+	ft_printf("%%-6-s\t\t: %-6-s\n", string); //"unknown conversion type character"
+	ft_printf("%%-0*6.3*s <-2,5,s: %-0*6.3*s\n", 2, 5, string); //"unknown conversion type character"
+	ft_printf("%%-06*.3*s <-2,5,s: %-06*.3*s\n", 2, 5, string); //"unknown conversion type character"
+	ft_printf("%%-0*6.*s <-2,5,s: %-0*6.*s\n", 2, 5, string); //"unknown conversion type character"	
+*/
 }
 /*
 void	print_int(void)
