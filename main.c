@@ -265,7 +265,7 @@ void	print_int(void)
 	ft_printf("%%-13.13i\t: %-13.13i\n", num);
 	ft_printf("%%-13.14i\t: %-13.14i\n", num);
 */
-/*	ft_printf("---------All with Star-------\n");
+	ft_printf("---------All with Star-------\n");
 	ft_printf("%%*.3d   <-5,num\t\t: %*.3d\n", 5, num);
 	ft_printf("%%13.*d  <-2,num\t\t: %13.*d\n", 2, num);
 	ft_printf("%%*.*d   <-013,13,num\t: %0*.*d\n", 013, 13, num);
@@ -277,7 +277,7 @@ void	print_int(void)
 	ft_printf("%%13.013d\t: %13.013d\n", num); //taken as 13
 	ft_printf("%%-013.013d\t: %-013.013d\n", num); //taken as -13.13
 	ft_printf("%%-0013.08d\t: %-0013.08d\n", num); //taken as -13.8
-*/	
+	
 
 //	STILL NOT HANDLED
 /*	printf("------------Weird-Combos--doesn't compile--------\n");
