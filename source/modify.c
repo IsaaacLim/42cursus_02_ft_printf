@@ -43,9 +43,9 @@ void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
 	}
 }
 
-void	ft_mod_left_digit(t_print *info, int argument_len)
+void	ft_mod_left_digit(t_print *info)
 {
-	while (info->width-- > argument_len)
+	while (info->width-- > info->argument_length)
 			info->total_length += ft_putchar(' ');
 }
 

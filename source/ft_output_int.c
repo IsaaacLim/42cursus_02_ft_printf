@@ -31,7 +31,6 @@ void	ft_output_int(t_print *info)
 	ft_mod_right_digit(info, itoa, neg);
 	info->argument_length += ft_putstr(&itoa[neg]);
 	info->total_length += info->argument_length;
-	while (info->width-- > info->argument_length)
-		info->total_length += ft_putchar(' ');
+	ft_mod_left_digit(info);
 	free(itoa);
 }
