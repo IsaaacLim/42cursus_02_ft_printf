@@ -64,7 +64,7 @@ void		ft_format_flag(t_print *info)
 		ft_output_int(info);
 	else if (*info->format == 'u')
 		ft_output_unsigned(info);
-	else if (*info->format == 'x')
+	else if (*info->format == 'x' || *info->format == 'X')
 		ft_output_hex(info);
 	else if (*info->format == '%')
 		info->width += ft_putchar('%');

@@ -10,12 +10,13 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isdigit(int c);
 char	*ft_itoa(int n);
-char	*ft_utoa_hex(unsigned int dec_num);
 int		ft_putchar(char c);
 int		ft_putstr(char *string);
 char	*ft_strdup(const char *s1);
 char	*ft_strndup(const char *s1, size_t dstsize);
 size_t	ft_strlen(const char *s);
+void	ft_toupper(char *string);
 char	*ft_utoa(unsigned int n);
+char	*ft_utoa_hex(unsigned int dec_num);
 
 #endif

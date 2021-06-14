@@ -56,6 +56,8 @@ void	ft_output_hex(t_print *info)
 	
 	number = va_arg(info->args, unsigned int);
 	utoa_hex = ft_utoa_hex(number);
+	if (*info->format == 'X')
+		ft_toupper(utoa_hex);
 	ft_mod_right_digit(info, utoa_hex, 0);
 	info->argument_length += ft_putstr(utoa_hex);
 	info->total_length += info->argument_length;
