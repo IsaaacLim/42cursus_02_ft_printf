@@ -51,14 +51,14 @@ void	ft_output_unsigned(t_print *info)
 
 void	ft_output_hex(t_print *info)
 {
-	char	*utoa;
+	char	*utoa_hex;
 	unsigned int		number;
 	
 	number = va_arg(info->args, unsigned int);
-	utoa = ft_utoa_hex(number);
-	ft_mod_right_digit(info, utoa, 0);
-	info->argument_length += ft_putstr(utoa);
+	utoa_hex = ft_utoa_hex(number);
+	ft_mod_right_digit(info, utoa_hex, 0);
+	info->argument_length += ft_putstr(utoa_hex);
 	info->total_length += info->argument_length;
 	ft_mod_left_digit(info);
-	free(utoa);
+	free(utoa_hex);
 }
