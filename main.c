@@ -373,7 +373,7 @@ void	print_hex(void)
 	//unsigned int dec = 123.789 // can't compile
 	//unsinged int Smin = -2147483649; //can't compile
 	//unsigned int Smax = 4294967296; //can't compile
-	unsigned int num = num_arr[1];
+	unsigned int num = num_arr[0];
 
 	ft_printf("============UNSIGNED_INT %%s============\n");
 	ft_printf("-------Quick Summary-------\n");
@@ -406,6 +406,14 @@ void	print_hex(void)
 	ft_printf("%%*.*x <-11,14,n\t: %*.*x\n", 11, 14, num);
 }
 
+void	print_pointer(void)
+{
+	char *string = "abcde";
+
+	printf("ori\t\t: %p\n", string);
+	printf("lib hex\t\t: %x\n", string);
+	ft_printf("lib pointer\t: %p\n", string);
+}
 int	main ()
 {
 	//int ret;
@@ -415,7 +423,8 @@ int	main ()
 	//print_string();
 	//print_int();
 	//print_unsigned_int();
-	print_hex();
+	//print_hex();
+	print_pointer();
 
 	//test int with num = 0;
 	//add test when no argument is given / incomplete number of arguments

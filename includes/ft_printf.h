@@ -32,6 +32,7 @@ void		ft_mod_precision(t_print *info, char **string);
 void		ft_output_char(t_print *info);
 void		ft_output_hex(t_print *info);
 void		ft_output_int(t_print *info);
+void		ft_output_pointer(t_print *info);
 void		ft_output_string(t_print *info);
 int			ft_printf(const char *format, ...);
 void		ft_output_unsigned(t_print *info);
