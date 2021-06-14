@@ -358,7 +358,6 @@ void	print_unsigned_int(void)
 	ft_printf("%%013.12u\t: %013.12u\n", num);
 	ft_printf("%%013.13u\t: %013.13u\n", num);
  	ft_printf("%%013.14u\t: %013.14u\n", num);
-
 	/*	
 	ft_printf("--------Dash & Width--------\n");
 	ft_printf("%%d\t\t: %d\n", num);
@@ -507,8 +506,8 @@ int	main ()
 	//ret = ft_printf("Just string\n");
 	//print_char();
 	//print_string();
-	print_int();
-	//print_unsigned_int();
+	//print_int();
+	print_unsigned_int();
 
 	//test int with num = 0;
 	//add test when no argument is given / incomplete number of arguments

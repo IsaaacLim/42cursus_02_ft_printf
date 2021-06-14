@@ -15,7 +15,6 @@ void	ft_mod_left_alpha(t_print *info, int argument_len)
 		info->total_length += ft_putchar(' ');
 }
 
-//not used
 void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
 {
 	int num_len;

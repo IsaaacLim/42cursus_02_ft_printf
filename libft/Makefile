@@ -1,8 +1,9 @@
 NAME	=	libft.a
 
 SRCS	=	ft_atoi.c ft_bzero.c	ft_calloc.c	ft_isdigit.c ft_itoa.c\
-			ft_putchar.c	ft_putstr.c  ft_strdup.c ft_strndup.c ft_strlen.c
-
+			ft_putchar.c	ft_putstr.c  ft_strdup.c ft_strndup.c ft_strlen.c \
+			ft_utoa.c
+			
 OBJS	=	$(SRCS:%.c=%.o)
 
 CC		=	gcc

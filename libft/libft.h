@@ -15,5 +15,6 @@ int		ft_putstr(char *string);
 char	*ft_strdup(const char *s1);
 char	*ft_strndup(const char *s1, size_t dstsize);
 size_t	ft_strlen(const char *s);
+char	*ft_utoa(unsigned int n);
 
 #endif
