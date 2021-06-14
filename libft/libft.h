@@ -10,6 +10,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isdigit(int c);
 char	*ft_itoa(int n);
+char	*ft_itoa_hex(unsigned int dec_num, char *base_to);
 int		ft_putchar(char c);
 int		ft_putstr(char *string);
 char	*ft_strdup(const char *s1);
