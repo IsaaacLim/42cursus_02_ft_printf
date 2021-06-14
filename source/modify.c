@@ -16,13 +16,31 @@ void	ft_mod_left_alpha(t_print *info, int argument_len)
 }
 
 //not used
-void	ft_mod_right_digit(t_print *info, int argument_len)
+void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
 {
-	while (info->width-- > argument_len)
-		if (info->zero && !info->has_precision) //precision removes 0 flag
-			info->total_length += ft_putchar('0');
-		else
-			info->total_length += ft_putchar(' ');
+	int num_len;
+
+	num_len = ft_strlen(itoa);
+	if (!info->dash && (!info->zero || info->has_precision))
+	{
+		while (info->width > num_len && info->width > (info->precision + neg))
+		{
+			info->argument_length += ft_putchar(' ');
+			info->width--;
+		}
+	}
+	if (neg)
+		info->argument_length += ft_putchar('-');
+	if ((info->zero && !info->has_precision && !info->dash))
+	{
+		while (info->width-- > num_len)
+			info->argument_length += ft_putchar('0'); 
+	}
+	else if (info->has_precision)
+	{
+		while (info->precision-- > ft_strlen(&itoa[neg]))
+			info->argument_length += ft_putchar('0');
+	}
 }
 
 void	ft_mod_left_digit(t_print *info, int argument_len)

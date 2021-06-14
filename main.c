@@ -166,8 +166,24 @@ void	print_int(void)
 	//int Smax = 2147483648;
 
 	int num = num_arr[4];
-	ft_printf("%%d\t\t: %d\n", num); //just to avoid compile error
 	ft_printf("============INTEGERS %%s============\n");
+	ft_printf("-------Quick Summary-------\n");
+	ft_printf("%%13.9d\t\t: %13.9d\n", num);
+ 	ft_printf("%%13.10d\t\t: %13.10d\n", num);
+ 	ft_printf("%%13.12d\t\t: %13.12d\n", num);
+ 	ft_printf("%%13.13d\t\t: %13.13d\n", num);
+ 	ft_printf("%%13.14d\t\t: %13.14d\n", num);
+ 	ft_printf("%%-13.9d\t\t: %-13.9d\n", num);
+ 	ft_printf("%%-13.10d\t: %-13.10d\n", num);
+ 	ft_printf("%%-13.12d\t: %-13.12d\n", num);
+ 	ft_printf("%%-13.13d\t: %-13.13d\n", num);
+ 	ft_printf("%%-13.14d\t: %-13.14d\n", num);
+	ft_printf("%%013d\t\t: %013d\n", num);
+ 	ft_printf("%%013.9d\t\t: %013.9d\n", num);
+	ft_printf("%%013.10d\t: %013.10d\n", num);
+	ft_printf("%%013.12d\t: %013.12d\n", num);
+	ft_printf("%%013.13d\t: %013.13d\n", num);
+ 	ft_printf("%%013.14d\t: %013.14d\n", num);
 	/*	
 	ft_printf("--------Dash & Width--------\n");
 	ft_printf("%%d\t\t: %d\n", num);
@@ -325,7 +341,7 @@ void	print_unsigned_int(void)
 	unsigned int num = num_arr[3];
 
 	ft_printf("============UNSIGNED_INT %%s============\n");
-	ft_printf("-------Quick Summar-------\n");
+	ft_printf("-------Quick Summary-------\n");
 	ft_printf("%%13.9u\t\t: %13.9u\n", num);
  	ft_printf("%%13.10u\t\t: %13.10u\n", num);
  	ft_printf("%%13.12u\t\t: %13.12u\n", num);
@@ -491,8 +507,8 @@ int	main ()
 	//ret = ft_printf("Just string\n");
 	//print_char();
 	//print_string();
-	//print_int();
-	print_unsigned_int();
+	print_int();
+	//print_unsigned_int();
 
 	//test int with num = 0;
 	//add test when no argument is given / incomplete number of arguments
