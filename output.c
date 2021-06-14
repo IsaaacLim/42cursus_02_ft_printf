@@ -11,5 +11,5 @@ int		main(void)
 	//unsigned int ui = 345;
 
 	for (int i = 0; i >= -50; i--)
-		printf("%x\n", i);
+		printf("%p\n", &i);
 }
