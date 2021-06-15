@@ -165,11 +165,13 @@ void	print_int(void)
 	//int Smin = -2147483649; //gcc warning
 	//int Smax = 2147483648;
 
-	int num = num_arr[0];
-	ft_printf("============INTEGERS %%s============\n");
+	int num = num_arr[3];
+	ft_printf("============INTEGERS %%id============\n");
 	ft_printf("-------Quick Summary-------\n");
 	ft_printf("%%0d\t\t: %0d\n", num); //test with num = 0
 	ft_printf("%%00d\t\t: %00d\n", num); //test with num = 0
+	ft_printf("%%0.d\t\t: %0.d\n", num); //test with num = 0
+	ft_printf("%%00.d\t\t: %00.d\n", num); //test with num = 0
 	ft_printf("%%0.0d\t\t: %0.0d\n", num); //test with num = 0
 	ft_printf("%%13d\t\t: %13d\n", num);
 	ft_printf("%%13.d\t\t: %13.d\n", num); //test with num = 0
@@ -192,8 +194,16 @@ void	print_int(void)
 	ft_printf("%%013.12d\t: %013.12d\n", num);
 	ft_printf("%%013.13d\t: %013.13d\n", num);
  	ft_printf("%%013.14d\t: %013.14d\n", num);
-	 ft_printf("%%*.*d <-0,0,n\t: %*.*d\n", 0, 0, num); //test with num = 0
-	/*	
+	ft_printf("%%*.*d <-0,0,n\t: %*.*d\n", 0, 0, num); //test with num = 0
+ 	
+/*	ft_printf("%%-013d\t\t: %-013d\n", num);  //test with num = 0
+	ft_printf("%%-013.d\t\t: %-013.d\n", num);  //test with num = 0
+ 	ft_printf("%%-013.9d\t: %-013.9d\n", num);
+ 	ft_printf("%%-013.10d\t: %-013.10d\n", num);
+ 	ft_printf("%%-013.12d\t: %-013.12d\n", num);
+ 	ft_printf("%%-013.13d\t: %-013.13d\n", num);
+	ft_printf("%%-013.14d\t: %-013.14d\n", num);
+*/	/*	
 	ft_printf("--------Dash & Width--------\n");
 	ft_printf("%%d\t\t: %d\n", num);
 	ft_printf("%%13d\t\t: %13d\n", num);
