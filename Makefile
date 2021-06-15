@@ -6,7 +6,7 @@ SRCDIR	=	./source
 SRCS	=	$(LIBDIR)/ft*.c \
 			$(SRCDIR)/format.c $(SRCDIR)/ft_initialize_info.c \
 			$(SRCDIR)/modify.c \
-			$(SRCDIR)/ft_output_char.c $(SRCDIR)/ft_output_int.c $(SRCDIR)/ft_output_string.c\
+			$(SRCDIR)/ft_output_alpha.c $(SRCDIR)/ft_output_num.c \
 			ft_printf.c 
 #./source/ft*.c
 
