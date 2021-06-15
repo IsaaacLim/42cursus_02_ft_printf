@@ -54,12 +54,17 @@ void	ft_output_unsigned(t_print *info)
 	unsigned int		number;
 	
 	number = va_arg(info->args, unsigned int);
-	utoa = ft_utoa(number);
-	ft_mod_right_digit(info, utoa, 0);
-	info->argument_length += ft_putstr(utoa);
-	info->total_length += info->argument_length;
-	ft_mod_left_digit(info);
-	free(utoa);
+	if (info->has_precision && info->precision == 0 && number == 0)
+		ft_output_blank(info);
+	else
+	{	
+		utoa = ft_utoa(number);
+		ft_mod_right_digit(info, utoa, 0);
+		info->argument_length += ft_putstr(utoa);
+		info->total_length += info->argument_length;
+		ft_mod_left_digit(info);
+		free(utoa);
+	}
 }
 
 void	ft_output_hex(t_print *info)
@@ -68,17 +73,19 @@ void	ft_output_hex(t_print *info)
 	unsigned int		number;
 	
 	number = va_arg(info->args, unsigned int);
-	utoa_hex = ft_utoa_hex(number);
-	if (*info->format == 'X')
-		ft_toupper(utoa_hex);
-	ft_mod_right_digit(info, utoa_hex, 0);
-	if (info->has_precision && info->precision < 0 && *utoa_hex == '0')//should be able to use numner
-		info->argument_length += ft_putchar(' ');//
-	else 	
+	if (info->has_precision && info->precision == 0 && number == 0)
+		ft_output_blank(info);
+	else
+	{
+		utoa_hex = ft_utoa_hex(number);
+		if (*info->format == 'X')
+			ft_toupper(utoa_hex);
+		ft_mod_right_digit(info, utoa_hex, 0);	
 		info->argument_length += ft_putstr(utoa_hex);
-	info->total_length += info->argument_length;
-	ft_mod_left_digit(info);
-	free(utoa_hex);
+		info->total_length += info->argument_length;
+		ft_mod_left_digit(info);
+		free(utoa_hex);
+	}
 }
 
 void	ft_output_pointer(t_print *info)

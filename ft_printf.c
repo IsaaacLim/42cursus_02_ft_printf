@@ -8,7 +8,6 @@ int	ft_printf(const char *format, ...)
 	info = (t_print *)ft_calloc(1, sizeof(t_print));
 	if (!info)
 		return (-1);
-	ft_initialize_info(info);
 	va_start(info->args, format);
 	info->format = format;
 	while(*info->format)
