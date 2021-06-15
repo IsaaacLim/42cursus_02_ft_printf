@@ -18,6 +18,8 @@ void	ft_format_precision(t_print *info)
 	if (*info->format == '*')
 	{
 		info->precision = va_arg(info->args, int);
+		if (info->precision < 0)
+			info->has_precision = false;
 		info->format++;
 	}
 }
@@ -46,6 +48,11 @@ void	ft_format_specifier(t_print *info)
 	if (*info->format == '*')
 	{
 		info->width = va_arg(info->args, int);
+		if (info->width < 0)
+		{
+			info->dash = true;
+			info->width *= -1;
+		}
 		info->format++;
 	}
 }
