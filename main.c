@@ -1,6 +1,6 @@
 #include "includes/ft_printf.h"
 
-/*void	print_char(void)
+void	print_char(void)
 {
 	// Characters
 	char	singleChar = 'X';
@@ -32,7 +32,7 @@
 	ft_printf("%%6.*c <-07,char\t: %6.*c\n", 07, singleChar);
 	//ft_printf("%%6.*c <-08,char\t: %6.*c\n", 08, singleChar); //invalid, octal constant?
 	
-	ft_printf("----------Specifiers Usage--------\n");
+/*	ft_printf("----------Specifiers Usage--------\n");
 	ft_printf("flag\t\t-\t\tyes\n");
 	ft_printf("flag\t\t0\t\tsupposedly no\n");
 	ft_printf("width\t\t<num>\t\tyes\n");
@@ -64,11 +64,12 @@
 	ft_printf("%%-0*6.3*c <-2,5,c: %-0*6.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
 	ft_printf("%%-06*.3*c <-2,5,c: %-06*.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
 	ft_printf("%%-0*6.*3c <-2,5,c: %-0*6.*3c\n", 2, 5, singleChar); //"unknown conversion type character"	
-} */
-/*
+*/
+}
+
 void	print_string(void)
 {
-	char *string = "Ab12!?";
+	char *string = "Ab12!?"; //test with empty string
 
 	ft_printf("============STRING %%s============\n");
 	ft_printf("--------Dash & Width--------\n");
@@ -113,8 +114,11 @@ void	print_string(void)
 	ft_printf("-Zero & Width & Precision--> Can't compile-\n"); //check if 0 should be printed
 	ft_printf("%%010.0s\t\t: %010.0s\n", string); //modi mod_cs so that it won't print 0s
 	ft_printf("%%010.1s\t\t: %010.1s\n", string);
+	ft_printf("%%010.6s\t\t: %010.6s\n", string);
+	ft_printf("%%010.10s\t: %010.10s\n", string);
+	ft_printf("%%010.13s\t: %010.13s\n", string);
 
-	ft_printf("----------Specifiers Usage--------\n");
+/*	ft_printf("----------Specifiers Usage--------\n");
 	ft_printf("flag\t\t-\t\tyes\n");
 	ft_printf("flag\t\t0\t\tsupposedly no\n");
 	ft_printf("width\t\t<num>\t\tyes\n");
@@ -146,9 +150,9 @@ void	print_string(void)
 	ft_printf("%%-0*6.3*s <-2,5,s: %-0*6.3*s\n", 2, 5, string); //"unknown conversion type character"
 	ft_printf("%%-06*.3*s <-2,5,s: %-06*.3*s\n", 2, 5, string); //"unknown conversion type character"
 	ft_printf("%%-0*6.*s <-2,5,s: %-0*6.*s\n", 2, 5, string); //"unknown conversion type character"	
-	
+*/	
 } 
-*/
+
 
 void	print_int(void)
 {
@@ -364,7 +368,7 @@ void	print_unsigned_int(void)
 
 	ft_printf("============UNSIGNED_INT %%u============\n");
 	ft_printf("-------Quick Summary-------\n");
-/*	ft_printf("%%0u\t\t: %0u\n", num); //test with num = 0
+	ft_printf("%%0u\t\t: %0u\n", num); //test with num = 0
 	ft_printf("%%00u\t\t: %00u\n", num); //test with num = 0
 	ft_printf("%%0.u\t\t: %0.u\n", num); //test with num = 0
 	ft_printf("%%00.u\t\t: %00.u\n", num); //test with num = 0
@@ -382,7 +386,7 @@ void	print_unsigned_int(void)
 	ft_printf("%%-013.u\t\t: %-013.u\n", num);
 	ft_printf("%%-13.9u\t\t: %-13.9u\n", num);
  	ft_printf("%%-13.10u\t: %-13.10u\n", num);
- */	ft_printf("%%-13.12u\t: %-13.12u\n", num);
+ 	ft_printf("%%-13.12u\t: %-13.12u\n", num);
  	ft_printf("%%-13.13u\t: %-13.13u\n", num);
  	ft_printf("%%-13.14u\t: %-13.14u\n", num);
 	ft_printf("%%013u\t\t: %013u\n", num);
@@ -506,9 +510,9 @@ int	main ()
 
 	//ret = ft_printf("Just string\n");
 	//print_char();
-	//print_string();
+	print_string();
 	//print_int();
-	print_unsigned_int();
+	//print_unsigned_int();
 	//print_hex();
 	//print_pointer();
 
