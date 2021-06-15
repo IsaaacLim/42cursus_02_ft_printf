@@ -168,7 +168,7 @@ void	print_int(void)
 	int num = num_arr[0];
 	ft_printf("============INTEGERS %%id============\n");
 	ft_printf("-------Quick Summary-------\n");
-/*	ft_printf("%%0d\t\t: %0d\n", num); //test with num = 0
+	ft_printf("%%0d\t\t: %0d\n", num); //test with num = 0
 	ft_printf("%%00d\t\t: %00d\n", num); //test with num = 0
 	ft_printf("%%0.d\t\t: %0.d\n", num); //test with num = 0
 	ft_printf("%%00.d\t\t: %00.d\n", num); //test with num = 0
@@ -194,7 +194,7 @@ void	print_int(void)
 	ft_printf("%%013.12d\t: %013.12d\n", num);
 	ft_printf("%%013.13d\t: %013.13d\n", num);
  	ft_printf("%%013.14d\t: %013.14d\n", num);
-*/	ft_printf("%%*.*d <-0,0,n\t: %*.*d\n", 0, 0, num); //test with num = 0
+	ft_printf("%%*.*d <-0,0,n\t: %*.*d\n", 0, 0, num); //test with num = 0
 	ft_printf("%%*.*d <--0,0,n\t: %*.*d\n", -0, 0, num); //test with num = 0
 	ft_printf("%%*.*d <-0,-0,n\t: %*.*d\n", 0, -0, num); //test with num = 0
 	ft_printf("%%*.*d <--13,0,n\t: %*.*d\n", -13, 0, num); //test with num = 0
