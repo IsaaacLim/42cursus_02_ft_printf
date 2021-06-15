@@ -8,28 +8,29 @@ SRCS	=	$(LIBDIR)/ft*.c \
 			$(SRCDIR)/format.c $(SRCDIR)/ft_initialize_info.c \
 			$(SRCDIR)/modify.c \
 			$(SRCDIR)/ft_output_alpha.c $(SRCDIR)/ft_output_num.c \
-			ft_printf.c 
+			$(SRCDIR)/ft_printf.c 
 #./source/ft*.c
 
-OBJS	=	$(SRCS:%.c=%.o)
+#OBJS	=	$(SRCS:%.c=%.o)
+OBJS	=	ft*.o format.o modify.o
 
-CC		=	gcc -c
-#CFLAGS	=	-c #add flags -Wall -Werror -Wextra -I
+CC		=	gcc
+CFLAGS	=	-Wall -Werror -Wextra -c
 
 all:	$(NAME)
 
-$(NAME):	$(OBJS)
-	make re -C $(LIBDIR)
-	$(CC) -g3 $(SRCS) -I $(INCLUDES)
-	ar rcs $(NAME) $(OBJS) $(LIBDIR)/*.o
-	ranlib $(NAME)
+$(NAME):
+	@make re -C $(LIBDIR)
+	@$(CC) -g3 $(CFLAGS) $(SRCS) -I $(INCLUDES)
+	@ar rcs $(NAME) $(OBJS) $(LIBDIR)/*.o
+	@ranlib $(NAME)
 
 clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(LIBDIR)/*.a
 	rm -f $(NAME)
+#rm -f $(LIBDIR)/*.a
 
 re: fclean all
 

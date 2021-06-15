@@ -37,7 +37,7 @@ void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
 	}
 	else if (info->has_precision)
 	{
-		while (info->precision-- > ft_strlen(&itoa[neg]))
+		while (info->precision-- > (int)ft_strlen(&itoa[neg]))
 			info->argument_length += ft_putchar('0');
 	}
 }
@@ -64,7 +64,7 @@ void	ft_mod_right_pointer(t_print *info, char *ulltoa)
 	}
 	else if (info->has_precision)
 	{
-		while (info->precision-- > ft_strlen(ulltoa))
+		while (info->precision-- > (int)ft_strlen(ulltoa))
 			info->argument_length += ft_putchar('0');
 	}
 }
@@ -81,7 +81,7 @@ void	ft_mod_precision(t_print *info, char **string)
 
 	if (info->precision == 0)
 		temp = ft_calloc(1, 1);
-	else if (info->precision < ft_strlen(*string))
+	else if (info->precision < (int)ft_strlen(*string))
 		temp = ft_strndup(*string, (info->precision + 1));
 	else
 		temp = ft_strdup(*string);
