@@ -42,6 +42,33 @@ void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
 	}
 }
 
+void	ft_mod_right_pointer(t_print *info, char *ulltoa)
+{
+	int num_len;
+
+	num_len = ft_strlen(ulltoa);
+	num_len += 2;
+	if (!info->dash && (!info->zero || info->has_precision))
+	{
+		while (info->width > num_len && info->width > (info->precision + 2))
+		{
+			info->argument_length += ft_putchar(' ');
+			info->width--;
+		}
+	}
+	info->argument_length += ft_putstr("0x");
+	if ((info->zero && !info->has_precision && !info->dash))
+	{
+		while (info->width-- > num_len)
+			info->argument_length += ft_putchar('0'); 
+	}
+	else if (info->has_precision)
+	{
+		while (info->precision-- > ft_strlen(ulltoa))
+			info->argument_length += ft_putchar('0');
+	}
+}
+
 void	ft_mod_left_digit(t_print *info)
 {
 	while (info->width-- > info->argument_length)

@@ -6,10 +6,11 @@ int		main(void)
 {
 	//char character = 'a';
 	//char *string = "abcd";
-	//int		num = 16;
+	//int		num = 0;
 	//int		num2 = 17;
-	//unsigned int ui = 345;
+	unsigned int ui = 0;
 
-	for (int i = 0; i >= -50; i--)
-		printf("%p\n", &i);
+
+	printf("11.0: %11.0x\n", ui);
+	printf("011.0: %011.0x\n", ui);
 }

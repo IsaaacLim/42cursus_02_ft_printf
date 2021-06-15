@@ -27,6 +27,7 @@ void		ft_initialize_info(t_print *info);
 void		ft_mod_right_alpha(t_print *info, int argument_len);
 void		ft_mod_left_alpha(t_print *info, int argument_len);
 void	ft_mod_right_digit(t_print *info, char *itoa, int neg);
+void	ft_mod_right_pointer(t_print *info, char *ulltoa);
 void	ft_mod_left_digit(t_print *info);
 void		ft_mod_precision(t_print *info, char **string);
 void		ft_output_char(t_print *info);

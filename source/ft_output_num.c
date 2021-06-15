@@ -59,7 +59,10 @@ void	ft_output_hex(t_print *info)
 	if (*info->format == 'X')
 		ft_toupper(utoa_hex);
 	ft_mod_right_digit(info, utoa_hex, 0);
-	info->argument_length += ft_putstr(utoa_hex);
+	if (info->has_precision && info->precision < 0 && *utoa_hex == '0')
+		info->argument_length += ft_putchar(' ');
+	else 	
+		info->argument_length += ft_putstr(utoa_hex);
 	info->total_length += info->argument_length;
 	ft_mod_left_digit(info);
 	free(utoa_hex);
@@ -72,7 +75,7 @@ void	ft_output_pointer(t_print *info)
 	
 	number = (unsigned long long)va_arg(info->args, void *);
 	ulltoa_hex = ft_ulltoa_hex(number);
-	ft_mod_right_digit(info, ulltoa_hex, 0);
+	ft_mod_right_pointer(info, ulltoa_hex);
 	info->argument_length += ft_putstr(ulltoa_hex);
 	info->total_length += info->argument_length;
 	ft_mod_left_digit(info);

@@ -153,7 +153,7 @@ void	print_string(void)
 void	print_int(void)
 {
 	int num_arr[] = {
-		12345, 				// [0]
+		0, 				// [0]
 		213456.789, 		// [1]
 		-2147483648, 		// [2]
 		2147483647, 		// [3]
@@ -165,25 +165,34 @@ void	print_int(void)
 	//int Smin = -2147483649; //gcc warning
 	//int Smax = 2147483648;
 
-	int num = num_arr[4];
+	int num = num_arr[0];
 	ft_printf("============INTEGERS %%s============\n");
 	ft_printf("-------Quick Summary-------\n");
+	ft_printf("%%0d\t\t: %0d\n", num); //test with num = 0
+	ft_printf("%%00d\t\t: %00d\n", num); //test with num = 0
+	ft_printf("%%0.0d\t\t: %0.0d\n", num); //test with num = 0
+	ft_printf("%%13d\t\t: %13d\n", num);
+	ft_printf("%%13.d\t\t: %13.d\n", num); //test with num = 0
+	ft_printf("%%13.0d\t\t: %13.d\n", num); //test with num = 0
 	ft_printf("%%13.9d\t\t: %13.9d\n", num);
  	ft_printf("%%13.10d\t\t: %13.10d\n", num);
  	ft_printf("%%13.12d\t\t: %13.12d\n", num);
  	ft_printf("%%13.13d\t\t: %13.13d\n", num);
- 	ft_printf("%%13.14d\t\t: %13.14d\n", num);
+	ft_printf("%%13.14d\t\t: %13.14d\n", num);
+ 	ft_printf("%%-13d\t\t: %-13d\n", num);  //test with num = 0
  	ft_printf("%%-13.9d\t\t: %-13.9d\n", num);
  	ft_printf("%%-13.10d\t: %-13.10d\n", num);
  	ft_printf("%%-13.12d\t: %-13.12d\n", num);
  	ft_printf("%%-13.13d\t: %-13.13d\n", num);
  	ft_printf("%%-13.14d\t: %-13.14d\n", num);
-	ft_printf("%%013d\t\t: %013d\n", num);
+	ft_printf("%%013d\t\t: %013d\n", num); 
+	ft_printf("%%013.d\t\t: %013.0d\n", num);  //test with num = 0
  	ft_printf("%%013.9d\t\t: %013.9d\n", num);
 	ft_printf("%%013.10d\t: %013.10d\n", num);
 	ft_printf("%%013.12d\t: %013.12d\n", num);
 	ft_printf("%%013.13d\t: %013.13d\n", num);
  	ft_printf("%%013.14d\t: %013.14d\n", num);
+	 ft_printf("%%*.*d <-0,0,n\t: %*.*d\n", 0, 0, num); //test with num = 0
 	/*	
 	ft_printf("--------Dash & Width--------\n");
 	ft_printf("%%d\t\t: %d\n", num);
@@ -340,7 +349,7 @@ void	print_unsigned_int(void)
 	//unsigned int Smax = 4294967296; //can't compile
 	unsigned int num = num_arr[1];
 
-	ft_printf("============UNSIGNED_INT %%s============\n");
+	ft_printf("============UNSIGNED_INT %%u============\n");
 	ft_printf("-------Quick Summary-------\n");
 	ft_printf("%%13.9u\t\t: %13.9u\n", num);
  	ft_printf("%%13.10u\t\t: %13.10u\n", num);
@@ -377,8 +386,13 @@ void	print_hex(void)
 
 	ft_printf("============UNSIGNED_INT %%s============\n");
 	ft_printf("-------Quick Summary-------\n");
+	ft_printf("%%0x\t\t: %0x\n", num); //test with num = 0
+	ft_printf("%%00x\t\t: %00x\n", num); //test with num = 0
+	ft_printf("%%0.0x\t\t: %0.0x\n", num); //test with num = 0
 	ft_printf("%%11x\t\t: %11x\n", num);
-	ft_printf("%%11.x\t\t: %11.x\n", num);
+	ft_printf("%%11.x\t\t: %11.x\n", num); //test with num = 0
+	ft_printf("%%11.0x\t\t: %11.x\n", num); //test with num = 0
+	ft_printf("%%11.1x\t\t: %11.1x\n", num);
  	ft_printf("%%11.5x\t\t: %11.5x\n", num);
  	ft_printf("%%11.8x\t\t: %11.8x\n", num);
  	ft_printf("%%11.9x\t\t: %11.9x\n", num);
@@ -386,7 +400,7 @@ void	print_hex(void)
 	ft_printf("%%11.11x\t\t: %11.11x\n", num);
 	ft_printf("%%11.12x\t\t: %11.12x\n", num);
 	ft_printf("%%11.13x\t\t: %11.13x\n", num);
-	ft_printf("%%-6X\t\t: %-6X\n", num);
+	ft_printf("%%-6X\t\t: %-6X\n", num); //test with num = 0
 	ft_printf("%%-11.8X\t\t: %-11.8X\n", num);
  	ft_printf("%%-11.9X\t\t: %-11.9X\n", num);
  	ft_printf("%%-11.10X\t: %-11.10X\n", num);
@@ -395,6 +409,7 @@ void	print_hex(void)
  	ft_printf("%%-11.13X\t: %-11.13X\n", num);
  	ft_printf("%%-11.14X\t: %-11.14X\n", num);
 	ft_printf("%%011x\t\t: %011x\n", num);
+	ft_printf("%%011.0\t\t: %011.0x\n", num); //test with num = 0;
  	ft_printf("%%011.9x\t\t: %011.9x\n", num);
 	ft_printf("%%011.10x\t: %011.10x\n", num);
 	ft_printf("%%011.11x\t: %011.11x\n", num);
@@ -404,23 +419,32 @@ void	print_hex(void)
 	 ft_printf("%%-011.4x\t: %-011.4x\n", num);
 	ft_printf("%%-011.14x\t: %-011.14x\n", num);
 	ft_printf("%%*.*x <-11,14,n\t: %*.*x\n", 11, 14, num);
+	ft_printf("%%*.*x <-0,0,n\t: %*.*x\n", 0, 0, num); //test with num = 0
 }
 
 void	print_pointer(void)
 {
-	void *string = "abcde";
+	void *mem = "abcde";
 
-	printf("printf %%p\t\t: %p\n", string);
-	//ft_printf("ft_printf %%x\t\t: %x\n", (unsigned int *)string);
-	ft_printf("ft_printf %%p\t\t: %p\n", string);
-
-	
-	char *pnt = ft_utoa_hex((long long)string);
-	//printf("unsigned int to hex\t: %s\n", pnt);
-	free(pnt);
-	printf("printf %%lld\t\t: %lld\n", (long long)string);
-	//printf("%%lld to hex\t\t: 558c5aae254c\n");
-	
+	ft_printf("============POINTER %%p============\n");
+	ft_printf("-------Quick Summary-------\n");
+	ft_printf("%%17.9p\t\t: %17.9p\n", mem);
+ 	ft_printf("%%17.15p\t\t: %17.15p\n", mem);
+ 	ft_printf("%%17.16p\t\t: %17.16p\n", mem);
+ 	ft_printf("%%17.17p\t\t: %17.17p\n", mem);
+	ft_printf("%%17.18p\t\t: %16.18p\n", mem);
+ 	ft_printf("%%-16.9p\t\t: %-16.9p\n", mem);
+ 	ft_printf("%%-16.15p\t: %-16.15p\n", mem);
+ 	ft_printf("%%-16.16p\t: %-16.16p\n", mem);
+ 	ft_printf("%%-16.17p\t: %-16.17p\n", mem);
+	ft_printf("%%-16.18p\t: %-16.18p\n", mem);
+	ft_printf("%%016p\t\t: %016p\n", mem);
+	ft_printf("%%016.p\t\t: %016.p\n", mem);
+ 	ft_printf("%%016.9p\t\t: %016.9p\n", mem);
+	ft_printf("%%016.15p\t: %016.15p\n", mem);
+	ft_printf("%%016.16p\t: %016.16p\n", mem);
+ 	ft_printf("%%016.17p\t: %016.17p\n", mem);	
+	ft_printf("%%016.18p\t: %016.18p\n", mem);
 }
 int	main ()
 {
@@ -429,10 +453,10 @@ int	main ()
 	//ret = ft_printf("Just string\n");
 	//print_char();
 	//print_string();
-	//print_int();
+	print_int();
 	//print_unsigned_int();
 	//print_hex();
-	print_pointer();
+	//print_pointer();
 
 	//test int with num = 0;
 	//add test when no argument is given / incomplete number of arguments

@@ -23,7 +23,6 @@ char	*ft_ulltoa_hex(unsigned long long dec_num)
 
 	
 	hex_len = ft_base_num_len(dec_num);
-	printf("Hex_len\t\t\t: %d\n", hex_len);
 	if (!(hex_alpha = (char *)malloc((hex_len + 1) * sizeof(char))))
 		return (NULL);
 	rev = hex_len;
