@@ -408,11 +408,19 @@ void	print_hex(void)
 
 void	print_pointer(void)
 {
-	char *string = "abcde";
+	void *string = "abcde";
 
-	printf("ori\t\t: %p\n", string);
-	printf("lib hex\t\t: %x\n", string);
-	ft_printf("lib pointer\t: %p\n", string);
+	printf("printf %%p\t\t: %p\n", string);
+	//ft_printf("ft_printf %%x\t\t: %x\n", (unsigned int *)string);
+	ft_printf("ft_printf %%p\t\t: %p\n", string);
+
+	
+	char *pnt = ft_utoa_hex((long long)string);
+	//printf("unsigned int to hex\t: %s\n", pnt);
+	free(pnt);
+	printf("printf %%lld\t\t: %lld\n", (long long)string);
+	//printf("%%lld to hex\t\t: 558c5aae254c\n");
+	
 }
 int	main ()
 {

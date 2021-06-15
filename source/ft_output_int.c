@@ -67,14 +67,14 @@ void	ft_output_hex(t_print *info)
 
 void	ft_output_pointer(t_print *info)
 {
-	char	*ultoa_hex;
-	unsigned long		number;
+	char	*ulltoa_hex;
+	unsigned long long		number;
 	
-	number = (unsigned long)va_arg(info->args, void *);
-	ultoa_hex = ft_utoa_hex(number);
-	ft_mod_right_digit(info, ultoa_hex, 0);
-	info->argument_length += ft_putstr(ultoa_hex);
+	number = (unsigned long long)va_arg(info->args, void *);
+	ulltoa_hex = ft_ulltoa_hex(number);
+	ft_mod_right_digit(info, ulltoa_hex, 0);
+	info->argument_length += ft_putstr(ulltoa_hex);
 	info->total_length += info->argument_length;
 	ft_mod_left_digit(info);
-	free(ultoa_hex);
+	free(ulltoa_hex);
 }

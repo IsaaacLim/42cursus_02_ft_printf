@@ -16,6 +16,7 @@ char	*ft_strdup(const char *s1);
 char	*ft_strndup(const char *s1, size_t dstsize);
 size_t	ft_strlen(const char *s);
 void	ft_toupper(char *string);
+char	*ft_ulltoa_hex(unsigned long long dec_num);
 char	*ft_utoa(unsigned int n);
 char	*ft_utoa_hex(unsigned int dec_num);
 

@@ -1,9 +1,9 @@
 #include "libft.h"
 
-static int	ft_base_num_len(unsigned int dec_num)
+static int	ft_base_num_len(unsigned long long dec_num)
 {
 	int hex_len;
-	int	remainder;
+	unsigned long long	remainder;
 
 	hex_len = 1;
 	remainder = dec_num / 16;
@@ -15,13 +15,15 @@ static int	ft_base_num_len(unsigned int dec_num)
 	return (hex_len);
 }
 
-char	*ft_utoa_hex(unsigned int dec_num)
+char	*ft_ulltoa_hex(unsigned long long dec_num)
 {
 	char	*hex_alpha;
 	int		hex_len;
 	int		rev;
 
+	
 	hex_len = ft_base_num_len(dec_num);
+	printf("Hex_len\t\t\t: %d\n", hex_len);
 	if (!(hex_alpha = (char *)malloc((hex_len + 1) * sizeof(char))))
 		return (NULL);
 	rev = hex_len;
