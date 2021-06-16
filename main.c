@@ -540,12 +540,9 @@ void	mazoise(void)
 	*/
 	int		a = 12;
 	int		i = 8;
-	int		j = -12;
-	int		l = 0;
 
 	ft_printf(" --- Return : %d\n", ft_printf("%-00000-----*i, %---0.*d, %0-0-0-0-0.*d, %-0-0-0-0-.*d, %-----.*d", a, i, a, i, a, i, a, i, a, i));
-	ft_printf(" --- Return : %d\n", ft_printf("%-00000-----*i, %---0.*d, %0-0-0-0-0.*d, %-0-0-0-0-.*d, %-----.*d", a, j, a, j, a, j, a, j, a, j));
-	ft_printf(" --- Return : %d\n", ft_printf("%-00000-----*i, %---0.*d, %0-0-0-0-0.*d, %-0-0-0-0-.*d, %-----.*d", a, l, a, l, a, l, a, l, a, l));
+	
 }
 int	main ()
 {
@@ -560,6 +557,7 @@ int	main ()
 	//print_pointer();
 	mazoise();
 
+	//printf("%10%\n");
 	/*ret = ft_printf("%%*.c%c%%*.s*%ps%%*.X\n", '0', NULL);
 	ft_printf("ret: %d\n", ret);
 	*/

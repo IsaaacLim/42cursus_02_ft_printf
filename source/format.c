@@ -1,20 +1,26 @@
 #include "../includes/ft_printf.h"
 
-void	ft_format_precision(t_print *info)
+static void	ft_eval_digit(t_print *info)
 {
 	char *itoa;
 
+	if (!info->has_precision)
+		info->width = ft_atoi(info->format);
+	else
+		info->precision = ft_atoi(info->format);
+	itoa = ft_itoa(info->width);
+	info->format += ft_strlen(itoa);
+	free (itoa);
+}
+
+void	ft_format_precision(t_print *info)
+{
 	info->has_precision = true;
 	info->format++;
-	while (*info->format == '0' && ft_isdigit(*(info->format + 1))) //handle %.06s along with %.0s
+	while (*info->format == '0' && ft_isdigit(*(info->format + 1)))
 		info->format++;
 	if (ft_isdigit(*info->format))
-	{
-		info->precision = ft_atoi(info->format);
-		itoa = ft_itoa(info->precision);
-		info->format += ft_strlen(itoa);
-		free (itoa);
-	} //if %.6*c?
+		ft_eval_digit(info);
 	if (*info->format == '*')
 	{
 		info->precision = va_arg(info->args, int);
@@ -24,25 +30,8 @@ void	ft_format_precision(t_print *info)
 	}
 }
 
-void	ft_format_dash(t_print *info)
-{
-	if (*info->format == '-' && !info->dash)
-	{
-		info->dash = true;
-		info->format++;
-	}
-}
 void	ft_format_specifier(t_print *info)
 {
-	char *itoa;
-
-	//ft_format_dash(info);
-	/*if (*info->format == '0' && !info->zero)
-	{
-		info->zero = true;
-		while (*info->format == '0')
-			info->format++;
-	}*/
 	while (*info->format == '-' || *info->format == '0')
 	{
 		if (*info->format == '-')
@@ -51,15 +40,8 @@ void	ft_format_specifier(t_print *info)
 			info->zero = true;
 		info->format++;
 	}
-
-	//ft_format_dash(info);
 	if (ft_isdigit(*info->format))
-	{
-		info->width = ft_atoi(info->format);
-		itoa = ft_itoa(info->width);
-		info->format += ft_strlen(itoa);
-		free (itoa);
-	} //if %6*c?
+		ft_eval_digit(info);
 	if (*info->format == '*')
 	{
 		info->width = va_arg(info->args, int);
@@ -93,7 +75,7 @@ void		ft_format_flag(t_print *info)
 	else if (*info->format == '%')
 		info->total_length += ft_putchar('%');
 	else
-		ft_putstr("-No format specifier found-"); //work on this
+		ft_putstr("UNKNOWN SPECIFIER");
 	info->format++;
 	ft_reset_arg_info(info);
 }
