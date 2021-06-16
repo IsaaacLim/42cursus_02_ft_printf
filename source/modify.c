@@ -22,7 +22,7 @@ void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
 
 	gap = neg;
 	num_len = ft_strlen(itoa);
-	if (info->space || info->plus)
+	if ((info->space || info->plus) && !neg)
 	{
 		num_len++;
 		gap = 1;

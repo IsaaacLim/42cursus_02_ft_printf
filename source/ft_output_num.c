@@ -21,13 +21,14 @@
 
 void	ft_output_blank(t_print *info)
 {
-	if (info-> width == 0)
+	if (info->plus)
 	{
-		if (info->plus)
-			info->total_length += ft_putchar('+');
-		else if (info->space)
+		while (info->width-- > 1)
 			info->total_length += ft_putchar(' ');
+		info->total_length += ft_putchar('+');
 	}
+	else if (info->space && info->width == 0)
+		info->total_length += ft_putchar(' ');
 	while (info->width-- > 0)
 		info->total_length += ft_putchar(' ');
 }

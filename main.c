@@ -417,7 +417,7 @@ void	print_int(void)
 
 void	print_unsigned_int(void)
 {
-	unsigned int num_arr[] = {
+	/*unsigned int num_arr[] = {
 		0, 				// [0]
 		4294967295,		// [1]
 		-1,			 	// [2]
@@ -429,7 +429,7 @@ void	print_unsigned_int(void)
 	//unsigned int Smax = 4294967296; //can't compile
 	unsigned int num = num_arr[0];
 
-	ft_printf("============UNSIGNED_INT %%u============\n");
+	*/ft_printf("============UNSIGNED_INT %%u============\n");
 	/*ft_printf("-------Quick Summary-------\n");
 	ft_printf("%%0u\t\t: %0u\n", num); //test with num = 0
 	ft_printf("%%00u\t\t: %00u\n", num); //test with num = 0
@@ -545,7 +545,7 @@ void	print_hex(void)
 
 void	print_pointer(void)
 {
-	//oid *mem = NULL;
+	//void *mem = NULL;
 
 	ft_printf("============POINTER %%p============\n");
 	/*ft_printf("-------Quick Summary-------\n");
@@ -611,12 +611,18 @@ int	main ()
 	//print_char();
 	//print_string();
 	//print_int();
-	print_unsigned_int();
+	//print_unsigned_int();
 	//print_hex();
 	//print_pointer();
 	//mazoise();
 
-	//printf("%10%\n");
+	printf("printf   : %+3.d\n", 0);
+	printf("printf   : %+03d\n", -1);
+	printf("printf   : % 03d\n", -1);
+	ft_printf("ft_printf: %+-03.d\n", 0);
+	ft_printf("ft_printf: %+03d\n", -1);
+	ft_printf("ft_printf: % 03d\n", -1);
+
 	/*ret = ft_printf("%%*.c%c%%*.s*%ps%%*.X\n", '0', NULL);
 	ft_printf("ret: %d\n", ret);
 	*/
