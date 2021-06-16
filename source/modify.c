@@ -22,20 +22,30 @@ void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
 
 	gap = neg;
 	num_len = ft_strlen(itoa);
-	if (info->space)
+	if (info->space || info->plus)
 	{
 		num_len++;
 		gap = 1;
 	}
+	
+	
 	if (!info->dash && (!info->zero || info->has_precision))
 	{
 		while (info->width > num_len && info->width-- > (info->precision + gap))
 			info->argument_length += ft_putchar(' ');
 	}
+	
+	
+	
 	if (neg)
 		info->argument_length += ft_putchar('-');
+	else if (info->plus)
+		info->argument_length += ft_putchar('+');
 	else if(info->space)
 		info->argument_length += ft_putchar(' ');
+	
+	
+	
 	if ((info->zero && !info->has_precision && !info->dash))
 	{
 		while (info->width-- > num_len)

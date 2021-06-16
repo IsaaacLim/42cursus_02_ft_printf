@@ -158,7 +158,7 @@ void	print_int(void)
 {
 	int num_arr[] = {
 		0, 				// [0]
-		213456, 		// [1]
+		1, 		// [1]
 		-2147483648, 		// [2]
 		2147483647		// [3]
 		//-2147483648.567,	// [4]
@@ -169,11 +169,11 @@ void	print_int(void)
 	//int Smin = -2147483649; //gcc warning
 	//int Smax = 2147483648;
 
-	int num = num_arr[0];
+	int num = num_arr[2];
 	ft_printf("============INTEGERS %%id============\n");
 	ft_printf("-------BONUS-Space-------\n");
-	ft_printf("%%  0d\t\t: % 0d\n", num); //test with num = 0
-	ft_printf("%%0  d\t\t: %0 d\n", num); //test with num = 0
+	ft_printf("%% 0d\t\t: % 0d\n", num); //test with num = 0
+	ft_printf("%%0 d\t\t: %0 d\n", num); //test with num = 0
 	ft_printf("%% 13d\t\t: % 13d\n", num);
 	ft_printf("%% 13.d\t\t: % 13.d\n", num); //test with num = 0
 	ft_printf("%% 13.0d\t\t: % 13.0d\n", num); //test with num = 0
@@ -202,6 +202,38 @@ void	print_int(void)
 	ft_printf("%% *.*d <-13,-4,n: % *.*d\n", 13, -4, num); //test with num = 0
 	ft_printf("%% *.*d <-13,-15,n: % *.*d\n", 13, -15, num); //test with num = 0
 	ft_printf("%% *.*d<--13,-15,n: % *.*d\n", -13, -15, num); //test with num = 0
+
+	ft_printf("-------BONUS-Plus------\n"); //can't pair with Space
+	ft_printf("%%+0d\t\t: %+0d\n", num); //test with num = 0
+	ft_printf("%%0+d\t\t: %0+d\n", num); //test with num = 0
+	ft_printf("%%+13d\t\t: %+13d\n", num);
+	ft_printf("%%+13.d\t\t: %+13.d\n", num); //test with num = 0
+	ft_printf("%%+13.0d\t\t: %+13.0d\n", num); //test with num = 0
+	ft_printf("%%+13.9d\t\t: %+13.9d\n", num);
+ 	ft_printf("%%+13.10d\t: %+13.10d\n", num);
+ 	ft_printf("%%+13.12d\t: %+13.12d\n", num);
+ 	ft_printf("%%+13.13d\t: %+13.13d\n", num);
+	ft_printf("%%+13.14d\t: %+13.14d\n", num);
+ 	ft_printf("%%+-13d\t\t: %+-13d\n", num);  //test with num = 0
+	ft_printf("%%+-13.d\t\t: %+-13.d\n", num);  //test with num = 0
+ 	ft_printf("%%+-13.9d\t: %+-13.9d\n", num);
+ 	ft_printf("%%+-13.10d\t: %+-13.10d\n", num);
+ 	ft_printf("%%-+13.12d\t: %-+13.12d\n", num);
+ 	ft_printf("%%-+13.13d\t: %-+13.13d\n", num);
+ 	ft_printf("%%-+13.14d\t: %-+13.14d\n", num);
+	ft_printf("%%0+13d\t\t: %0+13d\n", num); 
+	ft_printf("%%+013d\t\t: %+013d\n", num); 
+	ft_printf("%%+*.*d <-0,0,n\t: %+*.*d\n", 0, 0, num); //test with num = 0
+	ft_printf("%%+*.*d <--0,0,n\t: %+*.*d\n", -0, 0, num); //test with num = 0
+	ft_printf("%%+*.*d <-0,-0,n\t: %+*.*d\n", 0, -0, num); //test with num = 0
+	ft_printf("%%+*.*d<--13,0,n\t: %+*.*d\n", -13, 0, num); //test with num = 0
+	ft_printf("%%+*.*d <--13,4,n: %+*.*d\n", -13, 4, num);
+	ft_printf("%%-+*.*d <--13,4,n: %-+*.*d\n", -13, 4, num);
+	ft_printf("%%+*.*d <-13,4,n\t: %+*.*d\n", 13, 4, num);
+	ft_printf("%%+*.*d <-0,-4,n\t: %+*.*d\n", 0, -4, num);
+	ft_printf("%%+*.*d <-13,-4,n: %+*.*d\n", 13, -4, num); //test with num = 0
+	ft_printf("%%+*.*d <-13,-15,n: %+*.*d\n", 13, -15, num); //test with num = 0
+	ft_printf("%%+*.*d<--13,-15,n: %+*.*d\n", -13, -15, num); //test with num = 0
 
 	/*ft_printf("-------Quick Summary-------\n");
 	ft_printf("%%0d\t\t: %0d\n", num); //test with num = 0

@@ -37,7 +37,7 @@ void	ft_format_precision(t_print *info)
 
 void	ft_format_specifier(t_print *info)
 {
-	while (ft_strchr("-0 ", *info->format))
+	while (ft_strchr("-0 +", *info->format))
 	{
 		if (*info->format == '-')
 			info->dash = true;
@@ -45,6 +45,8 @@ void	ft_format_specifier(t_print *info)
 			info->zero = true;
 		if (*info->format == ' ')
 			info->space = true;
+		if (*info->format == '+')
+			info->plus = true;
 		info->format++;
 	}
 	if (ft_isdigit(*info->format))
