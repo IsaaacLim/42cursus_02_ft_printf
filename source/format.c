@@ -5,10 +5,15 @@ static void	ft_eval_digit(t_print *info)
 	char *itoa;
 
 	if (!info->has_precision)
+	{
 		info->width = ft_atoi(info->format);
+		itoa = ft_itoa(info->width);	
+	}
 	else
+	{
 		info->precision = ft_atoi(info->format);
-	itoa = ft_itoa(info->width);
+		itoa = ft_itoa(info->precision);
+	}
 	info->format += ft_strlen(itoa);
 	free (itoa);
 }
@@ -32,12 +37,15 @@ void	ft_format_precision(t_print *info)
 
 void	ft_format_specifier(t_print *info)
 {
-	while (*info->format == '-' || *info->format == '0')
+	//while (*info->format == '-' || *info->format == '0')
+	while (ft_strchr("-0 ", *info->format))
 	{
 		if (*info->format == '-')
 			info->dash = true;
 		if (*info->format == '0')
 			info->zero = true;
+		if (*info->format == ' ')
+			info->space = true;
 		info->format++;
 	}
 	if (ft_isdigit(*info->format))

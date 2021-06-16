@@ -12,6 +12,7 @@ int		ft_isdigit(int c);
 char	*ft_itoa(int n);
 int		ft_putchar(char c);
 int		ft_putstr(char *string);
+char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 char	*ft_strndup(const char *s1, size_t dstsize);
 size_t	ft_strlen(const char *s);

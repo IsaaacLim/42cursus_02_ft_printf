@@ -15,6 +15,7 @@ typedef struct	s_print
 	
 	bool		dash;
 	bool		has_precision;
+	bool		space;
 	bool		zero;
 	int			precision;
 	int			width;
