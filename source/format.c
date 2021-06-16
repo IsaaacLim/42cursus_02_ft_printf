@@ -36,14 +36,23 @@ void	ft_format_specifier(t_print *info)
 {
 	char *itoa;
 
-	ft_format_dash(info);
-	if (*info->format == '0' && !info->zero)
+	//ft_format_dash(info);
+	/*if (*info->format == '0' && !info->zero)
 	{
 		info->zero = true;
 		while (*info->format == '0')
 			info->format++;
+	}*/
+	while (*info->format == '-' || *info->format == '0')
+	{
+		if (*info->format == '-')
+			info->dash = true;
+		if (*info->format == '0')
+			info->zero = true;
+		info->format++;
 	}
-	ft_format_dash(info);
+
+	//ft_format_dash(info);
 	if (ft_isdigit(*info->format))
 	{
 		info->width = ft_atoi(info->format);

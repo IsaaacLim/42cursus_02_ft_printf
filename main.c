@@ -538,8 +538,14 @@ void	mazoise(void)
 	char	*t = "0x12345678";
 	char	*u = "-0";
 	*/
-	//ft_printf(" --- Return : %d\n", ft_printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X", i, j, k, l, m, n, c, c, j, j, j));
-	ft_printf(" --- Return : %d\n", ft_printf("%p, %x, %p, %x, %p, %x, %p, %x", (void *)209590960, 209590960, (void *)207038912, 207038912, (void *)1, 1, NULL, 0)); //T347
+	int		a = 12;
+	int		i = 8;
+	int		j = -12;
+	int		l = 0;
+
+	ft_printf(" --- Return : %d\n", ft_printf("%-00000-----*i, %---0.*d, %0-0-0-0-0.*d, %-0-0-0-0-.*d, %-----.*d", a, i, a, i, a, i, a, i, a, i));
+	ft_printf(" --- Return : %d\n", ft_printf("%-00000-----*i, %---0.*d, %0-0-0-0-0.*d, %-0-0-0-0-.*d, %-----.*d", a, j, a, j, a, j, a, j, a, j));
+	ft_printf(" --- Return : %d\n", ft_printf("%-00000-----*i, %---0.*d, %0-0-0-0-0.*d, %-0-0-0-0-.*d, %-----.*d", a, l, a, l, a, l, a, l, a, l));
 }
 int	main ()
 {
@@ -551,8 +557,8 @@ int	main ()
 	//print_int();
 	//print_unsigned_int();
 	//print_hex();
-	print_pointer();
-	//mazoise();
+	//print_pointer();
+	mazoise();
 
 	/*ret = ft_printf("%%*.c%c%%*.s*%ps%%*.X\n", '0', NULL);
 	ft_printf("ret: %d\n", ret);
