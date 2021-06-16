@@ -25,6 +25,8 @@ $(NAME):
 	@ar rcs $(NAME) $(OBJS) $(LIBDIR)/*.o
 	@ranlib $(NAME)
 
+bonus:	re
+
 clean:
 	rm -f $(OBJS)
 
@@ -34,4 +36,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
