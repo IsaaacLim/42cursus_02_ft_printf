@@ -17,6 +17,8 @@ void	ft_output_string(t_print *info)
 	char	*string;
 
 	string = va_arg(info->args, char *);
+	if (!string)
+		string = "(null)";
 	if (info->has_precision)
 			ft_mod_precision(info, &string);
 	
