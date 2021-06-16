@@ -82,7 +82,7 @@ void		ft_format_flag(t_print *info)
 	else if (*info->format == 'p')
 		ft_output_pointer(info);
 	else if (*info->format == '%')
-		info->width += ft_putchar('%');
+		info->total_length += ft_putchar('%');
 	else
 		ft_putstr("-No format specifier found-"); //work on this
 	info->format++;

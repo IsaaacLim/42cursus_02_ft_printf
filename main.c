@@ -543,17 +543,22 @@ void	mazoise(void)
 }
 int	main ()
 {
-	//int ret;
+	int ret;
 
 	//ret = ft_printf("Just string\n");
 	//print_char();
 	//print_string();
-	print_int();
+	//print_int();
 	//print_unsigned_int();
 	//print_hex();
 	//print_pointer();
 	//mazoise();
 
-	//test int with num = 0;
+	ret = ft_printf("%s = <3 %s\n", "", "");
+	ft_printf("ret: %d\n", ret);
+	ret = ft_printf("%s\n", NULL);
+	ft_printf("ret: %d\n", ret);
+	ret = ft_printf("%%*.c%c%%*.s*%ps%%*.X\n", '0', NULL);
+	ft_printf("ret: %d\n", ret);
 	//add test when no argument is given / incomplete number of arguments
 }
