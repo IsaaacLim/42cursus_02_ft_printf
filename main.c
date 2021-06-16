@@ -32,7 +32,7 @@ void	print_char(void)
 	ft_printf("%%6.*c <-07,char\t: %6.*c\n", 07, singleChar);
 	//ft_printf("%%6.*c <-08,char\t: %6.*c\n", 08, singleChar); //invalid, octal constant?
 	
-/*	ft_printf("----------Specifiers Usage--------\n");
+	/*	ft_printf("----------Specifiers Usage--------\n");
 	ft_printf("flag\t\t-\t\tyes\n");
 	ft_printf("flag\t\t0\t\tsupposedly no\n");
 	ft_printf("width\t\t<num>\t\tyes\n");
@@ -64,7 +64,7 @@ void	print_char(void)
 	ft_printf("%%-0*6.3*c <-2,5,c: %-0*6.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
 	ft_printf("%%-06*.3*c <-2,5,c: %-06*.3*c\n", 2, 5, singleChar); //"unknown conversion type character"
 	ft_printf("%%-0*6.*3c <-2,5,c: %-0*6.*3c\n", 2, 5, singleChar); //"unknown conversion type character"	
-*/
+	*/
 }
 
 void	print_string(void)
@@ -118,7 +118,7 @@ void	print_string(void)
 	ft_printf("%%010.10s\t: %010.10s\n", string);
 	ft_printf("%%010.13s\t: %010.13s\n", string);
 
-/*	ft_printf("----------Specifiers Usage--------\n");
+	/*	ft_printf("----------Specifiers Usage--------\n");
 	ft_printf("flag\t\t-\t\tyes\n");
 	ft_printf("flag\t\t0\t\tsupposedly no\n");
 	ft_printf("width\t\t<num>\t\tyes\n");
@@ -150,9 +150,8 @@ void	print_string(void)
 	ft_printf("%%-0*6.3*s <-2,5,s: %-0*6.3*s\n", 2, 5, string); //"unknown conversion type character"
 	ft_printf("%%-06*.3*s <-2,5,s: %-06*.3*s\n", 2, 5, string); //"unknown conversion type character"
 	ft_printf("%%-0*6.*s <-2,5,s: %-0*6.*s\n", 2, 5, string); //"unknown conversion type character"	
-*/	
+	*/	
 } 
-
 
 void	print_int(void)
 {
@@ -431,7 +430,7 @@ void	print_unsigned_int(void)
 	unsigned int num = num_arr[0];
 
 	ft_printf("============UNSIGNED_INT %%u============\n");
-	ft_printf("-------Quick Summary-------\n");
+	/*ft_printf("-------Quick Summary-------\n");
 	ft_printf("%%0u\t\t: %0u\n", num); //test with num = 0
 	ft_printf("%%00u\t\t: %00u\n", num); //test with num = 0
 	ft_printf("%%0.u\t\t: %0.u\n", num); //test with num = 0
@@ -474,7 +473,7 @@ void	print_unsigned_int(void)
 	ft_printf("%%*.*u <-13,-4,n\t: %*.*u\n", 13, -4, num); //test with num = 0
 	ft_printf("%%*.*u <-13,-14,n: %*.*u\n", 13, -14, num); //test with num = 0
 	ft_printf("%%*.*u<--13,-14,n: %*.*u\n", -13, -14, num); //test with num = 0
-
+	*/
 }
 
 void	print_hex(void)
@@ -603,6 +602,7 @@ void	mazoise(void)
 	ft_printf(" --- Return : %d\n", ft_printf("%-00000-----*i, %---0.*d, %0-0-0-0-0.*d, %-0-0-0-0-.*d, %-----.*d", a, i, a, i, a, i, a, i, a, i));
 	
 }
+
 int	main ()
 {
 	//int ret;
@@ -610,8 +610,8 @@ int	main ()
 	//ret = ft_printf("Just string\n");
 	//print_char();
 	//print_string();
-	print_int();
-	//print_unsigned_int();
+	//print_int();
+	print_unsigned_int();
 	//print_hex();
 	//print_pointer();
 	//mazoise();
