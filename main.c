@@ -156,7 +156,7 @@ void	print_string(void)
 
 void	print_int(void)
 {
-	int num_arr[] = {
+	/*int num_arr[] = {
 		0, 				// [0]
 		213456, 		// [1]
 		-2147483648, 		// [2]
@@ -210,7 +210,7 @@ void	print_int(void)
 	ft_printf("%%*.*d <-13,-4,n\t: %*.*d\n", 13, -4, num); //test with num = 0
 	ft_printf("%%*.*d <-13,-15,n: %*.*d\n", 13, -15, num); //test with num = 0
 	ft_printf("%%*.*d<--13,-15,n: %*.*d\n", -13, -15, num); //test with num = 0
-	/*	
+	*//*	
 	ft_printf("--------Dash & Width--------\n");
 	ft_printf("%%d\t\t: %d\n", num);
 	ft_printf("%%13d\t\t: %13d\n", num);
@@ -350,6 +350,11 @@ void	print_int(void)
 	ft_printf("%%-0*6.*i <-2,5,i: %-0*6.*i\n", 2, 5, num); //"unknown conversion type character"	
 	*/
 
+	printf("----------------Tripouille------------\n");
+	ft_printf("12: 0*%0-*.*d*0 0*%0*.*d*0\n", 6, 2, 102, 10, 21, -101);
+	ft_printf("13: 0*%0-*.*d*0 0*%0*.*d*0\n", 2, 6, 102, 21, 10, -101);
+	ft_printf("14: 0*%0-*d*0 0*%0*d*0\n", 21, 1021, 21, -1011);
+
 }
 
 void	print_unsigned_int(void)
@@ -482,10 +487,10 @@ void	print_hex(void)
 
 void	print_pointer(void)
 {
-	void *mem = "abcde";
+	//oid *mem = NULL;
 
 	ft_printf("============POINTER %%p============\n");
-	ft_printf("-------Quick Summary-------\n");
+	/*ft_printf("-------Quick Summary-------\n");
 	ft_printf("%%17.9p\t\t: %17.9p\n", mem);
  	ft_printf("%%17.15p\t\t: %17.15p\n", mem);
  	ft_printf("%%17.16p\t\t: %17.16p\n", mem);
@@ -498,30 +503,34 @@ void	print_pointer(void)
 	ft_printf("%%-16.18p\t: %-16.18p\n", mem);
 	ft_printf("%%016p\t\t: %016p\n", mem);
 	ft_printf("%%016.p\t\t: %016.p\n", mem);
+	ft_printf("%%016.1p\t\t: %016.4p\n", mem);
  	ft_printf("%%016.9p\t\t: %016.9p\n", mem);
 	ft_printf("%%016.15p\t: %016.15p\n", mem);
 	ft_printf("%%016.16p\t: %016.16p\n", mem);
  	ft_printf("%%016.17p\t: %016.17p\n", mem);	
 	ft_printf("%%016.18p\t: %016.18p\n", mem);
+	*/
+	printf("Printf\t: %10p %-10p \n", NULL, NULL);
+	ft_printf("ft_print\t: %10p %-10p \n", NULL, NULL);
 }
 
 void	mazoise(void)
 {
 	/*int		a = -4;
 	int		b = 0;
-	*/char	c = 'a';
-	/*int		d = 2147483647;
+	char	c = 'a';
+	int		d = 2147483647;
 	int		e = -2147483648;
 	int		f = 42;
 	int		g = 25;
 	int		h = 4200;
-	*/int		i = 8;
+	int		i = 8;
 	int		j = -12;
 	int		k = 123456789;
 	int		l = 0;
 	int		m = -12345678;
 	char	*n = "abcdefghijklmnop";
-	/*char	*o = "-a";
+	char	*o = "-a";
 	char	*p = "-12";
 	char	*q = "0";
 	char	*r = "%%";
@@ -529,7 +538,8 @@ void	mazoise(void)
 	char	*t = "0x12345678";
 	char	*u = "-0";
 	*/
-	ft_printf(" --- Return : %d\n", ft_printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X", i, j, k, l, m, n, c, c, j, j, j));
+	//ft_printf(" --- Return : %d\n", ft_printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X", i, j, k, l, m, n, c, c, j, j, j));
+	ft_printf(" --- Return : %d\n", ft_printf("%p, %x, %p, %x, %p, %x, %p, %x", (void *)209590960, 209590960, (void *)207038912, 207038912, (void *)1, 1, NULL, 0)); //T347
 }
 int	main ()
 {
@@ -538,11 +548,11 @@ int	main ()
 	//ret = ft_printf("Just string\n");
 	//print_char();
 	//print_string();
-	//print_int();
+	print_int();
 	//print_unsigned_int();
 	//print_hex();
 	//print_pointer();
-	mazoise();
+	//mazoise();
 
 	//test int with num = 0;
 	//add test when no argument is given / incomplete number of arguments

@@ -23,21 +23,27 @@ void	ft_format_precision(t_print *info)
 		info->format++;
 	}
 }
-void	ft_format_specifier(t_print *info)
-{
-	char *itoa;
 
+void	ft_format_dash(t_print *info)
+{
 	if (*info->format == '-' && !info->dash)
 	{
 		info->dash = true;
 		info->format++;
 	}
+}
+void	ft_format_specifier(t_print *info)
+{
+	char *itoa;
+
+	ft_format_dash(info);
 	if (*info->format == '0' && !info->zero)
 	{
 		info->zero = true;
 		while (*info->format == '0')
 			info->format++;
 	}
+	ft_format_dash(info);
 	if (ft_isdigit(*info->format))
 	{
 		info->width = ft_atoi(info->format);
