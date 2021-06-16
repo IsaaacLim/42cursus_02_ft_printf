@@ -169,9 +169,9 @@ void	print_int(void)
 	//int Smin = -2147483649; //gcc warning
 	//int Smax = 2147483648;
 
-	int num = num_arr[2];
+	int num = num_arr[0];
 	ft_printf("============INTEGERS %%id============\n");
-	ft_printf("-------BONUSES-------\n");
+	ft_printf("-------BONUS-Space-------\n");
 	ft_printf("%%  0d\t\t: % 0d\n", num); //test with num = 0
 	ft_printf("%%0  d\t\t: %0 d\n", num); //test with num = 0
 	ft_printf("%% 13d\t\t: % 13d\n", num);

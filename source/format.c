@@ -37,7 +37,6 @@ void	ft_format_precision(t_print *info)
 
 void	ft_format_specifier(t_print *info)
 {
-	//while (*info->format == '-' || *info->format == '0')
 	while (ft_strchr("-0 ", *info->format))
 	{
 		if (*info->format == '-')

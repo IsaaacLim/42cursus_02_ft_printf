@@ -18,18 +18,24 @@ void	ft_mod_left_alpha(t_print *info, int argument_len)
 void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
 {
 	int num_len;
+	int gap;
 
+	gap = neg;
 	num_len = ft_strlen(itoa);
+	if (info->space)
+	{
+		num_len++;
+		gap = 1;
+	}
 	if (!info->dash && (!info->zero || info->has_precision))
 	{
-		while (info->width > num_len && info->width > (info->precision + neg))
-		{
+		while (info->width > num_len && info->width-- > (info->precision + gap))
 			info->argument_length += ft_putchar(' ');
-			info->width--;
-		}
 	}
 	if (neg)
 		info->argument_length += ft_putchar('-');
+	else if(info->space)
+		info->argument_length += ft_putchar(' ');
 	if ((info->zero && !info->has_precision && !info->dash))
 	{
 		while (info->width-- > num_len)
