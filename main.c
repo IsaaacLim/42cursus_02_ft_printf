@@ -1,4 +1,5 @@
 #include "includes/ft_printf.h"
+#include <limits.h>
 
 void	print_char(void)
 {
@@ -163,12 +164,11 @@ void	print_int(void)
 		//-2147483648.567,	// [4]
 		//2147483647.567		// [5]
 		};
-
 	//Overflow
 	//int Smin = -2147483649; //gcc warning
 	//int Smax = 2147483648;
 
-	int num = num_arr[2];
+	int num = num_arr[3];
 	ft_printf("============INTEGERS %%id============\n");
 	ft_printf("-------BONUS-Space-------\n");
 	ft_printf("%% 0d\t\t: % 0d\n", num); //test with num = 0
@@ -646,21 +646,32 @@ void	mazoise(void)
 
 void	print_len_mod(void)
 {
-	int INT_MAX = 2147483647;
-	short SHRT_MAX = 32767;
-	short SHRT_MIN = -32768;
-	unsigned short USHRT_MAX = 65535;
-	unsigned short USHRT_MIN = 0;
-
-	printf("%hd\n", USHRT_MAX);
-	printf("%hd\n", INT_MIN);
+	//short SHRT_MAX = 32767;
+	//short SHRT_MIN = -32768;
+	//unsigned short USHRT_MIN = 0;
+	//unsigned short USHRT_MAX = 65535;
+	//int INT_MIN = -2147483648;
+	//int INT_MAX = 2147483647;
+	// unsigned int UINT_MIN = 0;
+	//unsigned int UINT_MAX = 4294967295;
+	//long LONG_MIN =  -9223372036854775808;
+	//long LONG_MAX =  9223372036854775807;
+	// unsigned long UINT_MIN = 0;
+	// unsigned long UINT_MAX = 18446744073709551615;
+	
 	ft_printf("-------%%d--------\n");
+	printf("%hd\n", USHRT_MAX);
+	printf("%hd\n", INT_MAX);
 	printf("%hd\n", SHRT_MAX);
 	printf("%hd\n", SHRT_MIN);
 	printf("%hd\n", SHRT_MAX + 1);
 	printf("%hd\n", SHRT_MIN - 1);
 
-	
+	printf("%hd\n", INT_MIN);
+	printf("%ld\n", LONG_MIN);
+	printf("%ld\n", LONG_MAX);
+
+	ft_printf("Int Max %%d\t: %d\n", -2147483649);
 	
 	/*ft_printf("-------%%u--------\n");
 	printf("%hu\n", USHRT_MAX);
@@ -691,7 +702,23 @@ int	main ()
 	//print_hex();
 	//print_pointer();
 	//mazoise();
-	print_len_mod();
+	//print_len_mod();
 
 	//add test when no argument is given / incomplete number of arguments
+
+	int		a = -4;
+	char	c = 'a';
+	int		d = 2147483647;
+	int		e = -2147483648;
+	int		i = 8;
+	int		j = -12;
+	int		k = 123456789;
+	int		l = 0;
+	int		m = -12345678;
+
+	int ret = ft_printf("%*i, %*d, %*d, %*d, %*d, %*d, %*d, %*d\n\n", a, i, a, j, a, k, a, l, a, m, a, c, a, e, a, d);
+	int ret2 = printf("%*i, %*d, %*d, %*d, %*d, %*d, %*d, %*d\n\n", a, i, a, j, a, k, a, l, a, m, a, c, a, e, a, d);
+
+	ft_printf("ret: %d\n", ret);
+	printf("ret2: %d\n", ret2);
 }

@@ -1,7 +1,8 @@
 NAME	=	libft.a
 
 SRCS	=	ft_atoi.c ft_bzero.c	ft_calloc.c	ft_isdigit.c ft_itoa.c \
-			ft_putchar.c	ft_putstr.c  ft_strchr.c ft_strdup.c ft_strndup.c ft_strlen.c \
+			ft_lltoa.c ft_putchar.c	ft_putstr.c  ft_strchr.c ft_strdup.c \
+			ft_strndup.c ft_strlen.c \
 			ft_toupper.c ft_ulltoa_hex.c ft_utoa.c ft_utoa_hex.c
 			
 OBJS	=	$(SRCS:%.c=%.o)
