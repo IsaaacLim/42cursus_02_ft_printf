@@ -646,21 +646,23 @@ void	mazoise(void)
 
 void	print_len_mod(void)
 {
+	int INT_MAX = 2147483647;
 	short SHRT_MAX = 32767;
-	int INT_MAX = 32769;
 	short SHRT_MIN = -32768;
 	unsigned short USHRT_MAX = 65535;
 	unsigned short USHRT_MIN = 0;
 
-	printf("%7hd\n", USHRT_MAX);
-	printf("%7hd\n", INT_MAX);
+	printf("%hd\n", USHRT_MAX);
+	printf("%hd\n", INT_MIN);
 	ft_printf("-------%%d--------\n");
-	printf("%7.8hd\n", SHRT_MAX);
+	printf("%hd\n", SHRT_MAX);
 	printf("%hd\n", SHRT_MIN);
 	printf("%hd\n", SHRT_MAX + 1);
 	printf("%hd\n", SHRT_MIN - 1);
 
-	ft_printf("-------%%u--------\n");
+	
+	
+	/*ft_printf("-------%%u--------\n");
 	printf("%hu\n", USHRT_MAX);
 	printf("%hu\n", USHRT_MAX + 1);
 	printf("%hu\n", USHRT_MIN - 1);
@@ -674,6 +676,7 @@ void	print_len_mod(void)
 	printf("%hX\n", USHRT_MAX);
 	printf("%hX\n", USHRT_MAX + 1);
 	printf("%hX\n", USHRT_MIN - 1);
+	*/
 }
 
 int	main ()
