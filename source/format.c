@@ -7,12 +7,12 @@ static void	ft_eval_digit(t_print *info)
 	if (!info->has_precision)
 	{
 		info->width = ft_atoi(info->format);
-		itoa = ft_itoa(info->width);	
+		itoa = ft_lltoa(info->width);	
 	}
 	else
 	{
 		info->precision = ft_atoi(info->format);
-		itoa = ft_itoa(info->precision);
+		itoa = ft_lltoa(info->precision);
 	}
 	info->format += ft_strlen(itoa);
 	free (itoa);
