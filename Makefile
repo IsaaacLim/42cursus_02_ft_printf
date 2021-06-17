@@ -28,10 +28,10 @@ $(NAME):
 bonus:	re
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(LIBDIR)/ft*.o
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(LIBDIR)/libft.a
 #rm -f $(LIBDIR)/*.a
 
 re: fclean all

@@ -81,7 +81,7 @@ void	ft_output_unsigned(t_print *info)
 	char	*utoa;
 	unsigned long long		number;
 	
-	number = va_arg(info->args, unsigned long);
+	number = va_arg(info->args, unsigned long long);
 	if (info->len_mod_l)
 		number = (unsigned long)number;
 	else if (info->len_mod_h)
@@ -94,7 +94,7 @@ void	ft_output_unsigned(t_print *info)
 		ft_output_blank(info);
 	else
 	{	
-		utoa = ft_utoa(number);
+		utoa = ft_ulltoa(number);
 		ft_mod_right_digit(info, utoa, 0);
 		info->argument_length += ft_putstr(utoa);
 		info->total_length += info->argument_length;
