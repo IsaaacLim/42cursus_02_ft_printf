@@ -17,8 +17,17 @@
 /* -123456$																	*/
 /* -123456      $															*/
 /* -0001234     $															*/
+/* 																			*/
+/* l == long																*/
+/* ll == long long															*/
+/* h = short																*/
+/* hh = signed char															*/
 /* ************************************************************************ */
 
+	
+	
+	
+	
 void	ft_output_blank(t_print *info)
 {
 	if (info->plus)
@@ -38,16 +47,11 @@ void	ft_output_blank(t_print *info)
 
 void	ft_output_int(t_print *info)
 {
-	//l == long
-	//ll == long long
-	//h = short
-	//hh = signed char
-	//take only in the form of signed, int, long, short, x2
-	//lltoa & va(long long)works for all; Test more in this.
-	char	*itoa;
-	long long 	number; //change this for each case
-	int		neg;
-	number = va_arg(info->args, long long); //can keep as long long
+	int			neg;
+	char		*itoa;
+	long long 	number;
+	
+	number = va_arg(info->args, long long);
 	if (info->len_mod_l)
 		number = (long)number;
 	else if (info->len_mod_h)
@@ -56,8 +60,6 @@ void	ft_output_int(t_print *info)
 		number = (signed char)number;
 	else if (!info->len_mod_ll)
 		number = (int)number;
-	//number = va_arg(info->args, int);
-	//number = ft_eval_length_modifier(info, number);
 	if (info->has_precision && info->precision == 0 && number == 0)
 		ft_output_blank(info);
 	else
