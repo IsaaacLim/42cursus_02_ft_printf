@@ -16,6 +16,10 @@ typedef struct	s_print
 	bool		dash;
 	bool		has_precision;
 	bool		hash;
+	bool		len_mod_l;
+	bool		len_mod_ll;
+	bool		len_mod_h;
+	bool		len_mod_hh;
 	bool		plus;
 	bool		space;
 	bool		zero;

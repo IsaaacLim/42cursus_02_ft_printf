@@ -579,7 +579,9 @@ void	print_hex(void)
 	printf("%%#*.*X <-11,-4,n: %#*.*X\n", 11, -4, num); //test with num = 0
 	printf("%%#*.*X <-11,-15,n: %#*.*X\n", 11, -15, num); //test with num = 0
 	printf("%%#*.*X<--11,-15,n: %#*.*X\n", -11, -15, num); //test with num = 0
-
+	printf("%%#x\t\t: %#x\n", num); //test with num = 0
+	printf("%%#2x\t\t: %#2x\n", num); //test with num = 0
+	printf("%%#02x\t\t: %#02x\n", num); //test with num = 0
 }
 
 void	print_pointer(void)
@@ -642,6 +644,38 @@ void	mazoise(void)
 	
 }
 
+void	print_len_mod(void)
+{
+	short SHRT_MAX = 32767;
+	int INT_MAX = 32769;
+	short SHRT_MIN = -32768;
+	unsigned short USHRT_MAX = 65535;
+	unsigned short USHRT_MIN = 0;
+
+	printf("%7hd\n", USHRT_MAX);
+	printf("%7hd\n", INT_MAX);
+	ft_printf("-------%%d--------\n");
+	printf("%7.8hd\n", SHRT_MAX);
+	printf("%hd\n", SHRT_MIN);
+	printf("%hd\n", SHRT_MAX + 1);
+	printf("%hd\n", SHRT_MIN - 1);
+
+	ft_printf("-------%%u--------\n");
+	printf("%hu\n", USHRT_MAX);
+	printf("%hu\n", USHRT_MAX + 1);
+	printf("%hu\n", USHRT_MIN - 1);
+	
+	ft_printf("-------%%x--------\n");
+	printf("%hx\n", USHRT_MAX);
+	printf("%hx\n", USHRT_MAX + 1);
+	printf("%hx\n", USHRT_MIN - 1);
+	
+	ft_printf("-------%%X--------\n");
+	printf("%hX\n", USHRT_MAX);
+	printf("%hX\n", USHRT_MAX + 1);
+	printf("%hX\n", USHRT_MIN - 1);
+}
+
 int	main ()
 {
 	//int ret;
@@ -654,18 +688,7 @@ int	main ()
 	//print_hex();
 	//print_pointer();
 	//mazoise();
+	print_len_mod();
 
-	printf("%#x\n", 0);
-	printf("%#2x\n", 0);
-	printf("%#02x\n", 0);
-	//printf("%#-03x\n", 0);
-	//printf("%#-03.x\n", 0);
-	//printf("%#-03.1x\n", 0);
-	//printf("%#-03.2x\n", 0);
-	//printf("%#-03.*x\n", 2, 0);
-
-	/*ret = ft_printf("%%*.c%c%%*.s*%ps%%*.X\n", '0', NULL);
-	ft_printf("ret: %d\n", ret);
-	*/
 	//add test when no argument is given / incomplete number of arguments
 }

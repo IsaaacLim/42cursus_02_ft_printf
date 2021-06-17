@@ -39,10 +39,11 @@ void	ft_output_blank(t_print *info)
 void	ft_output_int(t_print *info)
 {
 	char	*itoa;
-	int		number;
+	int	number;
 	int		neg;
 	
 	number = va_arg(info->args, int);
+	//number = ft_eval_length_modifier(info, number);
 	if (info->has_precision && info->precision == 0 && number == 0)
 		ft_output_blank(info);
 	else

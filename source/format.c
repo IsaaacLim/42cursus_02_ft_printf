@@ -65,12 +65,37 @@ void	ft_format_specifier(t_print *info)
 	}
 }
 
+static void	ft_format_length_modifier(t_print *info)
+{
+	char c;
+	c = *info->format;
+
+	if(*info->format == c && *(info->format + 1) == c)
+	{
+		if(c == 'l')
+			info->len_mod_ll = true;
+		else if (c == 'h')
+			info->len_mod_hh = true;
+		info->format += 2;
+	}
+	else
+	{
+		if (c == 'l')
+			info->len_mod_l = true;
+		else if (c == 'h')
+			info->len_mod_h = true;
+		info->format++;
+	}
+}
+
 void		ft_format_flag(t_print *info)
 {
 	info->format++;
 	ft_format_specifier(info);
 	if (*info->format == '.')
 		ft_format_precision(info);
+	if (ft_strchr("lh", *info->format))
+		ft_format_length_modifier(info);
 	if (*info->format == 'c')
 		ft_output_char(info);
 	else if (*info->format == 's')
