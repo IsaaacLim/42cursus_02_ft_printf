@@ -19,6 +19,5 @@ size_t	ft_strlen(const char *s);
 void	ft_toupper(char *string);
 char	*ft_ulltoa_hex(unsigned long long dec_num);
 char	*ft_ulltoa(unsigned long long n);
-char	*ft_utoa_hex(unsigned int dec_num);
 
 #endif

@@ -23,10 +23,6 @@
 /* h = short																*/
 /* hh = signed char															*/
 /* ************************************************************************ */
-
-	
-	
-	
 	
 void	ft_output_blank(t_print *info)
 {
@@ -106,14 +102,22 @@ void	ft_output_unsigned(t_print *info)
 void	ft_output_hex(t_print *info)
 {
 	char	*utoa_hex;
-	unsigned int		number;
+	unsigned long long		number;
 	
-	number = va_arg(info->args, unsigned int);
+	number = va_arg(info->args, unsigned long long);
+	if (info->len_mod_l)
+		number = (unsigned long)number;
+	else if (info->len_mod_h)
+		number = (unsigned short)number;
+	else if (info->len_mod_hh)
+		number = (unsigned char)number;
+	else if (!info->len_mod_ll)
+		number = (unsigned int)number;
 	if (info->has_precision && info->precision == 0 && number == 0)
 		ft_output_blank(info);
 	else
 	{
-		utoa_hex = ft_utoa_hex(number);
+		utoa_hex = ft_ulltoa_hex(number);
 		if (*info->format == 'X')
 			ft_toupper(utoa_hex);
 		if (info->hash && number != 0)
