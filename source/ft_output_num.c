@@ -79,9 +79,17 @@ void	ft_output_int(t_print *info)
 void	ft_output_unsigned(t_print *info)
 {
 	char	*utoa;
-	unsigned int		number;
+	unsigned long long		number;
 	
-	number = va_arg(info->args, unsigned int);
+	number = va_arg(info->args, unsigned long);
+	if (info->len_mod_l)
+		number = (unsigned long)number;
+	else if (info->len_mod_h)
+		number = (unsigned short)number;
+	else if (info->len_mod_hh)
+		number = (unsigned char)number;
+	else if (!info->len_mod_ll)
+		number = (unsigned int)number;
 	if (info->has_precision && info->precision == 0 && number == 0)
 		ft_output_blank(info);
 	else
