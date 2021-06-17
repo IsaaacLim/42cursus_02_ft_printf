@@ -1,5 +1,6 @@
 #include "includes/ft_printf.h"
 #include <limits.h>
+#include <wchar.h>
 
 void	print_char(void)
 {
@@ -659,7 +660,7 @@ void	print_len_mod(void)
 	// unsigned long UINT_MIN = 0;
 	// unsigned long UINT_MAX = 18446744073709551615;
 	
-	ft_printf("-------%%d--------\n");
+	/*ft_printf("-------%%d--------\n");
 	printf("%hd\n", USHRT_MAX);
 	printf("%hd\n", INT_MAX);
 	printf("%hd\n", SHRT_MAX);
@@ -672,8 +673,23 @@ void	print_len_mod(void)
 	printf("%ld\n", LONG_MAX);
 
 	printf("%hhd\n", SCHAR_MAX + 1);
-	ft_printf("SCHAR Max %%d\t: %d\n", 128);
+	*/
+	printf("%d\n", CHAR_MAX);
+	ft_printf("%lc\n", u'ƀ');
+	printf("%lc\n", u'ɏ');
+	printf("%lc\n", u'ɐ');
+	printf("%lc\n", u'ʯ');
+	printf("%lc\n", u'ʰ');
+	printf("%lc\n", u'˿');
+	printf("%lc\n", u'ୟ');
+	printf("%lc\n", u'௫');
+	printf("%lc\n", u'࿚');
 	
+	wchar_t	 empty[] = {0};
+	wchar_t	 s[] = {' ', u'ƀ', u'ɏ', u'ɐ', ' ', u'ʯ', ' ', u'ʰ', u'˿', ' ', u'ୟ', ' ', u'௫', ' ', ' ', u'࿚', 0};
+	printf("%ls\n", empty);
+	printf("%ls\n", s);
+		
 	/*ft_printf("-------%%u--------\n");
 	printf("%hu\n", USHRT_MAX);
 	printf("%hu\n", USHRT_MAX + 1);

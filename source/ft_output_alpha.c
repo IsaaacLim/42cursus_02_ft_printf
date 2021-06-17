@@ -2,7 +2,7 @@
 
 void	ft_output_char(t_print *info)
 {
-	char letter;
+	wchar_t letter;
 
 	letter = va_arg(info->args, int);
 	if(info->width && !info->dash)

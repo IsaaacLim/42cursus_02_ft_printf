@@ -3,7 +3,7 @@
 void	ft_mod_right_alpha(t_print *info, int argument_len)
 {
 	while (info->width-- > argument_len)
-		if (info->zero && !info->has_precision) //!precision is for %s (followed Ed)
+		if (info->zero && !info->has_precision)
 			info->total_length += ft_putchar('0');
 		else
 			info->total_length += ft_putchar(' ');
