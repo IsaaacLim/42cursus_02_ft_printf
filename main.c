@@ -721,8 +721,8 @@ int	main ()
 	//mazoise();
 	//print_len_mod();
 
-	char c = a;
-	printf("hellothere %n world\n", &c);
+	char c = 'a';
+	printf("hellothere %hhn world\n", &c);
 	printf("%d\n", c);
 
 	//add test when no argument is given / incomplete number of arguments
