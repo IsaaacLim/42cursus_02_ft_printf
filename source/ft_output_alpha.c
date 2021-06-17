@@ -2,9 +2,9 @@
 
 void	ft_output_char(t_print *info)
 {
-	wchar_t letter;
+	char letter;
 
-	letter = va_arg(info->args, int);
+	letter = va_arg(info->args, char);
 	if(info->width && !info->dash)
 		ft_mod_right_alpha(info, 1);
 	info->total_length += ft_putchar(letter);
