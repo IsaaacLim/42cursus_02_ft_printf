@@ -38,20 +38,31 @@ void	ft_output_blank(t_print *info)
 
 void	ft_output_int(t_print *info)
 {
+	//l == long
+	//ll == long long
+	//h = short
+	//hh = signed char
 	//take only in the form of signed, int, long, short, x2
 	//lltoa & va(long long)works for all; Test more in this.
 	char	*itoa;
-	int 	number; //change this for each case
+	long long 	number; //change this for each case
 	int		neg;
-	number = va_arg(info->args, int); //can keep as long long
-	//printf("number: %hd\n", (short)number);
+	number = va_arg(info->args, long long); //can keep as long long
+	if (info->len_mod_l)
+		number = (long)number;
+	else if (info->len_mod_h)
+		number = (short)number;
+	else if (info->len_mod_hh)
+		number = (signed char)number;
+	else if (!info->len_mod_ll)
+		number = (int)number;
 	//number = va_arg(info->args, int);
 	//number = ft_eval_length_modifier(info, number);
 	if (info->has_precision && info->precision == 0 && number == 0)
 		ft_output_blank(info);
 	else
 	{
-		itoa = ft_itoa(number); //chang here
+		itoa = ft_lltoa(number);
 		neg = 0;
 		if (number < 0)
 				neg = 1;

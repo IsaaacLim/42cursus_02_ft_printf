@@ -671,7 +671,8 @@ void	print_len_mod(void)
 	printf("%ld\n", LONG_MIN);
 	printf("%ld\n", LONG_MAX);
 
-	ft_printf("Int Max %%d\t: %d\n", -2147483649);
+	printf("%hhd\n", SCHAR_MAX + 1);
+	ft_printf("SCHAR Max %%d\t: %d\n", 128);
 	
 	/*ft_printf("-------%%u--------\n");
 	printf("%hu\n", USHRT_MAX);
@@ -702,23 +703,7 @@ int	main ()
 	//print_hex();
 	//print_pointer();
 	//mazoise();
-	//print_len_mod();
+	print_len_mod();
 
 	//add test when no argument is given / incomplete number of arguments
-
-	int		a = -4;
-	char	c = 'a';
-	int		d = 2147483647;
-	int		e = -2147483648;
-	int		i = 8;
-	int		j = -12;
-	int		k = 123456789;
-	int		l = 0;
-	int		m = -12345678;
-
-	int ret = ft_printf("%*i, %*d, %*d, %*d, %*d, %*d, %*d, %*d\n\n", a, i, a, j, a, k, a, l, a, m, a, c, a, e, a, d);
-	int ret2 = printf("%*i, %*d, %*d, %*d, %*d, %*d, %*d, %*d\n\n", a, i, a, j, a, k, a, l, a, m, a, c, a, e, a, d);
-
-	ft_printf("ret: %d\n", ret);
-	printf("ret2: %d\n", ret2);
 }
