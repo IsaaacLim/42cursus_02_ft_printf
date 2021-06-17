@@ -91,7 +91,10 @@ void	ft_output_hex(t_print *info)
 		utoa_hex = ft_utoa_hex(number);
 		if (*info->format == 'X')
 			ft_toupper(utoa_hex);
-		ft_mod_right_digit(info, utoa_hex, 0);	
+		if (info->hash && number != 0)
+			ft_mod_right_pointer(info, utoa_hex);
+		else
+			ft_mod_right_digit(info, utoa_hex, 0);	
 		info->argument_length += ft_putstr(utoa_hex);
 		info->total_length += info->argument_length;
 		ft_mod_left_digit(info);

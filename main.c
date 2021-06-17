@@ -492,7 +492,7 @@ void	print_hex(void)
 	unsigned int num = num_arr[1];
 
 	ft_printf("==============HEX %%x%%X==============\n");
-	ft_printf("-------Quick Summary-------\n");
+	/*ft_printf("-------Quick Summary-------\n");
 	ft_printf("%%0x\t\t: %0x\n", num); //test with num = 0
 	ft_printf("%%00x\t\t: %00x\n", num); //test with num = 0
 	ft_printf("%%0.x\t\t: %0.x\n", num); //test with num = 0
@@ -540,6 +540,45 @@ void	print_hex(void)
 	ft_printf("%%*.*X <-11,-4,n\t: %*.*X\n", 11, -4, num); //test with num = 0
 	ft_printf("%%*.*X <-11,-15,n: %*.*X\n", 11, -15, num); //test with num = 0
 	ft_printf("%%*.*X<--11,-15,n: %*.*X\n", -11, -15, num); //test with num = 0
+	*/
+	ft_printf("-------BONUS-Hash-------\n");
+	printf("%%#0x\t\t: %#0x\n", num); //test with num = 0
+	printf("%%#9x\t\t: %#9x\n", num);
+	printf("%%#10x\t\t: %#10x\n", num);
+	printf("%%#11x\t\t: %#11x\n", num);
+	printf("%%#11.x\t\t: %#11.x\n", num); //test with num = 0
+	printf("%%#11.0x\t\t: %#11.x\n", num); //test with num = 0
+	printf("%%#11.1x\t\t: %#11.1x\n", num);
+ 	printf("%%#11.5x\t\t: %#11.5x\n", num);
+ 	printf("%%#11.8x\t\t: %#11.8x\n", num);
+ 	printf("%%#11.9x\t\t: %#11.9x\n", num);
+ 	printf("%%#11.10x\t: %#11.10x\n", num);
+	printf("%%#11.11x\t: %#11.11x\n", num);
+	printf("%%#11.12x\t: %#11.12x\n", num);
+	printf("%%#11.13x\t: %#11.13x\n", num);
+	printf("%%#011x\t\t: %#011x\n", num);
+	printf("%%-#11X\t\t: %-#11X\n", num); //test with num = 0
+	printf("%%#-11.X\t\t: %#-11.X\n", num); //test with num = 0
+	printf("%%-#11.8X\t: %-#11.8X\n", num);
+ 	printf("%%-#11.9X\t: %-#11.9X\n", num);
+ 	printf("%%#-11.10X\t: %#-11.10X\n", num);
+	printf("%%#-11.11X\t: %#-11.11X\n", num);
+ 	printf("%%#-11.12X\t: %#-11.12X\n", num);
+ 	printf("%%#-11.13X\t: %#-11.13X\n", num);
+ 	printf("%%#-11.14X\t: %#-11.14X\n", num);
+	printf("%%#*.*x <-11,14,n: %#*.*x\n", 11, 14, num);
+	printf("%%#*.*x <-0,0,n\t: %#*.*x\n", 0, 0, num); //test with num = 0
+	printf("%%#-*.*x <-0,0,n\t: %#-*.*x\n", 0, 0, num); //test with num = 0
+	printf("%%#*.*X <--0,0,n\t: %#*.*X\n", -0, 0, num); //test with num = 0
+	printf("%%#*.*X <-0,-0,n\t: %#*.*X\n", 0, -0, num); //test with num = 0
+	printf("%%#*.*X <--11,0,n: %#*.*X\n", -11, 0, num); //test with num = 0
+	printf("%%#*.*X <--11,4,n: %#*.*X\n", -11, 4, num);
+	printf("%%#-*.*X <--11,4,n: %#-*.*X\n", -11, 4, num);
+	printf("%%#*.*X <-11,4,n\t: %#*.*X\n", 11, 4, num);
+	printf("%%#*.*X <-0,-4,n\t: %#*.*X\n", 0, -4, num);
+	printf("%%#*.*X <-11,-4,n: %#*.*X\n", 11, -4, num); //test with num = 0
+	printf("%%#*.*X <-11,-15,n: %#*.*X\n", 11, -15, num); //test with num = 0
+	printf("%%#*.*X<--11,-15,n: %#*.*X\n", -11, -15, num); //test with num = 0
 
 }
 
@@ -616,10 +655,14 @@ int	main ()
 	//print_pointer();
 	//mazoise();
 
-
-	printf("printf   : %+3.d\n", 0);
-	ft_printf("ft_printf: %+-03.d\n", 0);
-;
+	printf("%#x\n", 0);
+	printf("%#2x\n", 0);
+	printf("%#02x\n", 0);
+	//printf("%#-03x\n", 0);
+	//printf("%#-03.x\n", 0);
+	//printf("%#-03.1x\n", 0);
+	//printf("%#-03.2x\n", 0);
+	//printf("%#-03.*x\n", 2, 0);
 
 	/*ret = ft_printf("%%*.c%c%%*.s*%ps%%*.X\n", '0', NULL);
 	ft_printf("ret: %d\n", ret);

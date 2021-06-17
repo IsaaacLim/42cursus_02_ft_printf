@@ -72,7 +72,10 @@ void	ft_mod_right_pointer(t_print *info, char *ulltoa)
 			info->width--;
 		}
 	}
-	info->argument_length += ft_putstr("0x");
+	if (*info->format == 'X')
+		info->argument_length += ft_putstr("0X");
+	else
+		info->argument_length += ft_putstr("0x");
 	if ((info->zero && !info->has_precision && !info->dash))
 	{
 		while (info->width-- > num_len)
