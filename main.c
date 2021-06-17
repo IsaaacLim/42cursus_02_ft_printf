@@ -616,12 +616,10 @@ int	main ()
 	//print_pointer();
 	//mazoise();
 
+
 	printf("printf   : %+3.d\n", 0);
-	printf("printf   : %+03d\n", -1);
-	printf("printf   : % 03d\n", -1);
 	ft_printf("ft_printf: %+-03.d\n", 0);
-	ft_printf("ft_printf: %+03d\n", -1);
-	ft_printf("ft_printf: % 03d\n", -1);
+;
 
 	/*ret = ft_printf("%%*.c%c%%*.s*%ps%%*.X\n", '0', NULL);
 	ft_printf("ret: %d\n", ret);
