@@ -719,7 +719,11 @@ int	main ()
 	//print_hex();
 	//print_pointer();
 	//mazoise();
-	print_len_mod();
+	//print_len_mod();
+
+	char c = a;
+	printf("hellothere %n world\n", &c);
+	printf("%d\n", c);
 
 	//add test when no argument is given / incomplete number of arguments
 }
