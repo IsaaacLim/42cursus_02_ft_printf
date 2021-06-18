@@ -32,3 +32,32 @@ void	ft_output_string(t_print *info)
 	if (info->has_precision)
 		free(string);
 }
+
+void	ft_output_nothing(t_print *info)
+{
+	signed char *sc_num;
+	short *s_num;
+	int		*i_num;
+	long *l_num;
+
+	if (info->len_mod_h)
+	{
+		s_num = va_arg(info->args, short*);
+		*s_num = info->total_length;
+	}
+	else if (info->len_mod_hh)
+	{
+		sc_num = va_arg(info->args, signed char*);
+		*sc_num = info->total_length;
+	}
+	else if (info->len_mod_l || info->len_mod_ll)
+	{
+		l_num = va_arg(info->args, long*);
+		*l_num = info->total_length;
+	}
+	else
+	{	
+		i_num = va_arg(info->args, int*);
+		*i_num = info->total_length;
+	}
+}

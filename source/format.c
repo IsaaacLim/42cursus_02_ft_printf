@@ -109,6 +109,8 @@ void		ft_format_flag(t_print *info)
 		ft_output_hex(info);
 	else if (*info->format == 'p')
 		ft_output_pointer(info);
+	else if (*info->format == 'n')
+		ft_output_nothing(info);
 	else if (*info->format == '%')
 		info->total_length += ft_putchar('%');
 	else
