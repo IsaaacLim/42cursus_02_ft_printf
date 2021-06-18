@@ -8,7 +8,7 @@ SRCS	=	$(LIBDIR)/ft*.c \
 			$(SRCDIR)/src_format.c $(SRCDIR)/ft_reset_arg_info.c \
 			$(SRCDIR)/src_modify.c \
 			$(SRCDIR)/src_output_alpha.c $(SRCDIR)/ft_output_num.c \
-			$(SRCDIR)/ft_printf.c 
+			$(SRCDIR)/ft_printf.c $(SRCDIR)/src_length_mod.c 
 #./source/ft*.c
 
 #OBJS	=	$(SRCS:%.c=%.o)

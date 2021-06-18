@@ -24,7 +24,7 @@
 /* hh = signed char															*/
 /* ************************************************************************ */
 	
-void	ft_output_blank(t_print *info)
+static void	ft_output_blank(t_print *info)
 {
 	if (info->plus)
 	{	
@@ -45,17 +45,9 @@ void	ft_output_int(t_print *info)
 {
 	int			neg;
 	char		*itoa;
-	long long 	number;
-	
-	number = va_arg(info->args, long long);
-	if (info->len_mod_l)
-		number = (long)number;
-	else if (info->len_mod_h)
-		number = (short)number;
-	else if (info->len_mod_hh)
-		number = (signed char)number;
-	else if (!info->len_mod_ll)
-		number = (int)number;
+	long long	number;
+
+	number = ft_length_modifier_id(info);
 	if (info->has_precision && info->precision == 0 && number == 0)
 		ft_output_blank(info);
 	else
@@ -74,18 +66,10 @@ void	ft_output_int(t_print *info)
 
 void	ft_output_unsigned(t_print *info)
 {
-	char	*utoa;
+	char					*utoa;
 	unsigned long long		number;
 	
-	number = va_arg(info->args, unsigned long long);
-	if (info->len_mod_l)
-		number = (unsigned long)number;
-	else if (info->len_mod_h)
-		number = (unsigned short)number;
-	else if (info->len_mod_hh)
-		number = (unsigned char)number;
-	else if (!info->len_mod_ll)
-		number = (unsigned int)number;
+	number = ft_length_modifier_uxX(info);
 	if (info->has_precision && info->precision == 0 && number == 0)
 		ft_output_blank(info);
 	else
@@ -104,15 +88,7 @@ void	ft_output_hex(t_print *info)
 	char	*utoa_hex;
 	unsigned long long		number;
 	
-	number = va_arg(info->args, unsigned long long);
-	if (info->len_mod_l)
-		number = (unsigned long)number;
-	else if (info->len_mod_h)
-		number = (unsigned short)number;
-	else if (info->len_mod_hh)
-		number = (unsigned char)number;
-	else if (!info->len_mod_ll)
-		number = (unsigned int)number;
+	number = ft_length_modifier_uxX(info);
 	if (info->has_precision && info->precision == 0 && number == 0)
 		ft_output_blank(info);
 	else
