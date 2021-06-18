@@ -15,20 +15,26 @@ void	ft_output_char(t_print *info)
 void	ft_output_string(t_print *info)
 {
 	char	*string;
+	char	*temp;
 
 	string = va_arg(info->args, char *);
 	if (!string)
 		string = "(null)";
 	if (info->has_precision)
-			ft_mod_precision(info, &string);
-	
-	
+	{
+		if (info->precision == 0)
+			temp = ft_calloc(1, 1);
+		else if (info->precision < (int)ft_strlen(string))
+			temp = ft_strndup(string, (info->precision + 1));
+		else
+			temp = ft_strdup(string);
+		string = temp;
+	}
 	if (info->width && !info->dash)
 		ft_mod_right_alpha(info, ft_strlen(string));
 	info->total_length += ft_putstr(string);
 	if (info->width && info->dash)
 		ft_mod_left_alpha(info, ft_strlen(string));
-	
 	if (info->has_precision)
 		free(string);
 }
