@@ -2,12 +2,12 @@
 
 static void	ft_eval_digit(t_print *info)
 {
-	char *itoa;
+	char	*itoa;
 
 	if (!info->has_precision)
 	{
 		info->width = ft_atoi(info->format);
-		itoa = ft_lltoa(info->width);	
+		itoa = ft_lltoa(info->width);
 	}
 	else
 	{
@@ -18,24 +18,7 @@ static void	ft_eval_digit(t_print *info)
 	free (itoa);
 }
 
-void	ft_format_precision(t_print *info)
-{
-	info->has_precision = true;
-	info->format++;
-	while (*info->format == '0' && ft_isdigit(*(info->format + 1)))
-		info->format++;
-	if (ft_isdigit(*info->format))
-		ft_eval_digit(info);
-	if (*info->format == '*')
-	{
-		info->precision = va_arg(info->args, int);
-		if (info->precision < 0)
-			info->has_precision = false;
-		info->format++;
-	}
-}
-
-void	ft_format_specifier(t_print *info)
+static void	ft_format_specifier(t_print *info)
 {
 	while (ft_strchr("-0 +#", *info->format))
 	{
@@ -65,14 +48,31 @@ void	ft_format_specifier(t_print *info)
 	}
 }
 
+static void	ft_format_precision(t_print *info)
+{
+	info->has_precision = true;
+	info->format++;
+	while (*info->format == '0' && ft_isdigit(*(info->format + 1)))
+		info->format++;
+	if (ft_isdigit(*info->format))
+		ft_eval_digit(info);
+	if (*info->format == '*')
+	{
+		info->precision = va_arg(info->args, int);
+		if (info->precision < 0)
+			info->has_precision = false;
+		info->format++;
+	}
+}
+
 static void	ft_format_length_modifier(t_print *info)
 {
-	char c;
-	c = *info->format;
+	char	c;
 
-	if(*info->format == c && *(info->format + 1) == c)
+	c = *info->format;
+	if (*info->format == c && *(info->format + 1) == c)
 	{
-		if(c == 'l')
+		if (c == 'l')
 			info->len_mod_ll = true;
 		else if (c == 'h')
 			info->len_mod_hh = true;
@@ -88,7 +88,7 @@ static void	ft_format_length_modifier(t_print *info)
 	}
 }
 
-void		ft_format_flag(t_print *info)
+void	ft_format_flag(t_print *info)
 {
 	info->format++;
 	ft_format_specifier(info);

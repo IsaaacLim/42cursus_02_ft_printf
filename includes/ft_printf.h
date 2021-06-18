@@ -12,24 +12,21 @@ typedef struct	s_print
 	const char	*format;
 	int			argument_length;
 	int			total_length;
-	
+	int			precision;
+	int			width;
 	bool		dash;
 	bool		has_precision;
 	bool		hash;
-	bool		len_mod_l;
-	bool		len_mod_ll;
 	bool		len_mod_h;
 	bool		len_mod_hh;
+	bool		len_mod_l;
+	bool		len_mod_ll;
 	bool		plus;
 	bool		space;
 	bool		zero;
-	int			precision;
-	int			width;
 }	t_print;
 
 void		ft_format_flag(t_print *info);
-void	ft_format_precision(t_print *info); //removed static, 
-void	ft_format_specifier(t_print *info); //static cannot not be here?
 void	ft_reset_arg_info(t_print *info);
 void		ft_mod_right_alpha(t_print *info, int argument_len);
 void		ft_mod_left_alpha(t_print *info, int argument_len);
