@@ -1,18 +1,14 @@
 #include "../includes/ft_printf.h"
 
-void	ft_mod_right_alpha(t_print *info, int argument_len)
+void	ft_mod_right_alpha(t_print *info)
 {
-	while (info->width-- > argument_len)
+	while (info->width-- > info->argument_length)
+	{
 		if (info->zero && !info->has_precision)
 			info->total_length += ft_putchar('0');
 		else
 			info->total_length += ft_putchar(' ');
-}
-
-void	ft_mod_left_alpha(t_print *info, int argument_len)
-{
-	while (info->width-- > argument_len)
-		info->total_length += ft_putchar(' ');
+	}
 }
 
 void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
@@ -60,7 +56,7 @@ void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
 
 void	ft_mod_right_pointer(t_print *info, char *ulltoa)
 {
-	int num_len;
+	int	num_len;
 
 	num_len = ft_strlen(ulltoa);
 	num_len += 2;
@@ -88,8 +84,8 @@ void	ft_mod_right_pointer(t_print *info, char *ulltoa)
 	}
 }
 
-void	ft_mod_left_digit(t_print *info)
+void	ft_mod_left(t_print *info)
 {
 	while (info->width-- > info->argument_length)
-			info->total_length += ft_putchar(' ');
+		info->total_length += ft_putchar(' ');
 }
