@@ -48,7 +48,7 @@ void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
 		while (info->width > num_len && info->width-- > (info->precision + gap))
 			info->argument_length += ft_putchar(' ');
 	}
-	ft_mod_right_digit_part2(info, itoa, neg, num_len);
+	ft_mod_right_digit2(info, itoa, neg, num_len);
 }
 
 void	ft_mod_right_pointer(t_print *info, char *ulltoa)
