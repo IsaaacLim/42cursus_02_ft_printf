@@ -4,14 +4,12 @@ LIBDIR	=	./libft
 SRCDIR	=	./source
 INCLUDES = 	./includes
 
-SRCS	=	$(LIBDIR)/ft*.c \
-			$(SRCDIR)/src_format.c $(SRCDIR)/ft_reset_arg_info.c \
-			$(SRCDIR)/src_modify.c \
-			$(SRCDIR)/src_output_alpha.c $(SRCDIR)/ft_output_num.c \
-			$(SRCDIR)/ft_printf.c $(SRCDIR)/src_length_mod.c 
-#./source/ft*.c
+SRCS	=	$(SRCDIR)/ft_printf.c	$(SRCDIR)/ft_reset_arg_info.c \
+			$(SRCDIR)/src_format.c	$(SRCDIR)/src_length_mod.c \
+			$(SRCDIR)/src_modify.c	$(SRCDIR)/src_output_alpha.c \
+			$(SRCDIR)/src_output_num.c \
+			$(LIBDIR)/ft*.c
 
-#OBJS	=	$(SRCS:%.c=%.o)
 OBJS	=	ft*.o src*.o
 
 CC		=	gcc
@@ -32,7 +30,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME) $(LIBDIR)/libft.a
-#rm -f $(LIBDIR)/*.a
 
 re: fclean all
 
