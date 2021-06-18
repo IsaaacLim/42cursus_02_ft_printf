@@ -90,6 +90,7 @@ static void	ft_format_length_modifier(t_print *info)
 
 void		ft_format_flag(t_print *info)
 {
+	ft_reset_arg_info(info);
 	info->format++;
 	ft_format_specifier(info);
 	if (*info->format == '.')
@@ -113,5 +114,4 @@ void		ft_format_flag(t_print *info)
 	else
 		ft_putstr("UNKNOWN SPECIFIER");
 	info->format++;
-	ft_reset_arg_info(info);
 }

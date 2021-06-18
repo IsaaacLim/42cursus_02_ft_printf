@@ -707,6 +707,47 @@ void	print_len_mod(void)
 	*/
 }
 
+void print_nothing()
+{
+	//%n doesn't increment total length
+	int i;
+
+	printf("%n\n", &i);
+	printf("i: %d\n", i);
+	printf("%s%n\n", "tripouille", &i);
+	printf("i: %d\n", i);
+	printf("%s%n42\n", "tripouille", &i);
+	printf("i: %d\n", i);
+	printf("%s%i%n42\n", "tripouille", INT_MAX, &i);
+	printf("i: %d\n", i);
+	printf("%s%i%n42\n", "tripouille", INT_MIN, &i);
+	printf("i: %d\n", i);
+	printf("%s%lx%n42\n", "tripouille", LONG_MAX, &i);
+	printf("i: %d\n", i);
+	printf("%s%lx%n42\n", "tripouille", LONG_MIN, &i);
+	printf("i: %d\n", i);
+	printf("%s%x%n42\n", "", 0, &i);
+	printf("i: %d\n", i);
+	printf("n%.s%x%n\n ", "42", -1, &i);
+	printf("i: %d\n", i);
+	printf("%%n%.s%x%n\n ", "42", -1, &i);
+	printf("i: %d\n", i);
+	printf("%%n%.s%p%n\n ", "42", (void*)1, &i);
+	printf("i: %d\n", i);
+	printf("%.s%n\n", "12345", &i);
+	printf("i: %d\n", i);
+	printf("%s%c42%n\n", "12345", 0, &i);
+	printf("i: %d\n", i);
+	printf("%s%c%i42%n\n", "12345", 0, 42, &i);
+	printf("i: %d\n", i);
+	printf("%s%c42%n\n", "12345", 'A', &i);
+	printf("i: %d\n", i);
+	printf("%s%d42%n\n", "12345", -42, &i);
+	printf("i: %d\n", i);
+	printf("%s%X42%n\n", "12345", 42, &i);
+	printf("i: %d\n", i);
+}
+
 int	main ()
 {
 	//int ret;
@@ -720,10 +761,7 @@ int	main ()
 	//print_pointer();
 	//mazoise();
 	//print_len_mod();
-
-	char c = 'a';
-	printf("hellothere %hhn world\n", &c);
-	printf("%d\n", c);
+	print_nothing();
 
 	//add test when no argument is given / incomplete number of arguments
 }
