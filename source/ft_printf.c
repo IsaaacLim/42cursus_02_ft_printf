@@ -20,6 +20,7 @@ int	ft_printf(const char *format, ...)
 		}
 		if (*info->format == '%')
 			ft_format_flag(info);
+		ft_reset_arg_info(info);
 	}
 	va_end(info->args);
 	len = info->total_length;

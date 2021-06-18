@@ -5,7 +5,7 @@ SRCDIR	=	./source
 INCLUDES = 	./includes
 
 SRCS	=	$(LIBDIR)/ft*.c \
-			$(SRCDIR)/format.c $(SRCDIR)/ft_initialize_info.c \
+			$(SRCDIR)/format.c $(SRCDIR)/ft_reset_arg_info.c \
 			$(SRCDIR)/modify.c \
 			$(SRCDIR)/ft_output_alpha.c $(SRCDIR)/ft_output_num.c \
 			$(SRCDIR)/ft_printf.c 

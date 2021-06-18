@@ -90,7 +90,6 @@ static void	ft_format_length_modifier(t_print *info)
 
 void		ft_format_flag(t_print *info)
 {
-	ft_reset_arg_info(info);
 	info->format++;
 	ft_format_specifier(info);
 	if (*info->format == '.')
