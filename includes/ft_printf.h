@@ -4,9 +4,8 @@
 # include "../libft/libft.h"
 # include <stdarg.h>
 # include <stdbool.h>
-# include <stdio.h> //remove
 
-typedef struct	s_print
+typedef struct s_print
 {
 	va_list		args;
 	const char	*format;
@@ -26,23 +25,21 @@ typedef struct	s_print
 	bool		zero;
 }	t_print;
 
-int		ft_printf(const char *format, ...);
-
-void	ft_format_flag(t_print *info);
-void	ft_mod_right_alpha(t_print *info);
-void	ft_mod_right_digit(t_print *info, char *itoa, int neg);
-void	ft_mod_right_pointer(t_print *info, char *ulltoa);
-void	ft_mod_left(t_print *info);
-void	ft_output_char(t_print *info);
-void	ft_output_hex(t_print *info);
-void	ft_output_int(t_print *info);
-void	ft_output_nothing(t_print *info);
-void	ft_output_pointer(t_print *info);
-void	ft_output_string(t_print *info);
-void	ft_output_unsigned(t_print *info);
-void	ft_reset_arg_info(t_print *info);
-
-long long	ft_length_modifier_id(t_print *info);
+int					ft_printf(const char *format, ...);
+void				ft_format_flag(t_print *info);
+void				ft_mod_right_alpha(t_print *info);
+void				ft_mod_right_digit(t_print *info, char *itoa, int neg);
+void				ft_mod_right_pointer(t_print *info, char *ulltoa);
+void				ft_mod_left(t_print *info);
+void				ft_output_char(t_print *info);
+void				ft_output_hex(t_print *info);
+void				ft_output_int(t_print *info);
+void				ft_output_nothing(t_print *info);
+void				ft_output_pointer(t_print *info);
+void				ft_output_string(t_print *info);
+void				ft_output_unsigned(t_print *info);
+void				ft_reset_arg_info(t_print *info);
+long long			ft_length_modifier_id(t_print *info);
 unsigned long long	ft_length_modifier_uxX(t_print *info);
 
 #endif

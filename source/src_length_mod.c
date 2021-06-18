@@ -2,8 +2,8 @@
 
 long long	ft_length_modifier_id(t_print *info)
 {
-	long long 	number;
-	
+	long long	number;
+
 	number = va_arg(info->args, long long);
 	if (info->len_mod_l)
 		number = (long)number;
