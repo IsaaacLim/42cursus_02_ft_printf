@@ -19,7 +19,7 @@ all:	$(NAME)
 
 $(NAME):
 	make re -C $(LIBDIR)
-	$(CC) -g3 $(CFLAGS) $(SRCS) -I $(INCLUDES)
+	$(CC) $(CFLAGS) $(SRCS) -I $(INCLUDES)
 	ar rcs $(NAME) $(OBJS) $(LIBDIR)/*.o
 
 bonus:	re
