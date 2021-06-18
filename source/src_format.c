@@ -4,6 +4,17 @@ static void	ft_eval_digit(t_print *info)
 {
 	char	*itoa;
 
+	if (*info->format == '*')
+	{
+		info->width = va_arg(info->args, int);
+		if (info->width < 0)
+		{
+			info->dash = true;
+			info->width *= -1;
+		}
+		info->format++;
+		return ;
+	}
 	if (!info->has_precision)
 	{
 		info->width = ft_atoi(info->format);
@@ -37,15 +48,7 @@ static void	ft_format_specifier(t_print *info)
 	if (ft_isdigit(*info->format))
 		ft_eval_digit(info);
 	if (*info->format == '*')
-	{
-		info->width = va_arg(info->args, int);
-		if (info->width < 0)
-		{
-			info->dash = true;
-			info->width *= -1;
-		}
-		info->format++;
-	}
+		ft_eval_digit(info);
 }
 
 static void	ft_format_precision(t_print *info)
