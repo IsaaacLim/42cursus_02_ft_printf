@@ -3,7 +3,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "../includes/ft_printf.h" //don't need?
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -17,7 +16,7 @@ char	*ft_strdup(const char *s1);
 char	*ft_strndup(const char *s1, size_t dstsize);
 size_t	ft_strlen(const char *s);
 void	ft_toupper(char *string);
-char	*ft_ulltoa_hex(unsigned long long dec_num);
 char	*ft_ulltoa(unsigned long long n);
+char	*ft_ulltoa_hex(unsigned long long dec_num);
 
 #endif

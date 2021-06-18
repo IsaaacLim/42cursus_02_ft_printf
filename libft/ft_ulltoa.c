@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	ft_ull_len(unsigned long long n)
+static int	ft_ull_len(unsigned long long n)
 {
 	int	len;
 
@@ -28,7 +28,7 @@ char	*ft_ulltoa(unsigned long long n)
 		str[0] = '0';
 	while (n)
 	{
-		str[ull_len-- -1] = n % 10 + '0';
+		str[ull_len-- - 1] = n % 10 + '0';
 		n /= 10;
 	}
 	return (str);

@@ -2,7 +2,7 @@
 
 int	ft_putstr(char *string)
 {
-	int ret;
+	int	ret;
 
 	ret = 0;
 	while (*string)

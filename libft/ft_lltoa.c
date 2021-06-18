@@ -44,7 +44,7 @@ char	*ft_lltoa(long long n)
 		str[0] = '0';
 	while (n)
 	{
-		str[num_len-- -1] = n % 10 + '0';
+		str[num_len-- - 1] = n % 10 + '0';
 		n /= 10;
 	}
 	return (str);

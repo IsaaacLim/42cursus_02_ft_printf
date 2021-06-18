@@ -3,7 +3,7 @@
 void	ft_toupper(char *string)
 {
 	if (!string)
-		return;
+		return ;
 	while (*string)
 	{
 		if (*string >= 'a' && *string <= 'z')

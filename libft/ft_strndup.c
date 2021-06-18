@@ -2,9 +2,9 @@
 
 char	*ft_strndup(const char *s1, size_t dstsize)
 {
-	size_t		len;
 	char	*dst;
-	size_t		i;
+	size_t	len;
+	size_t	i;
 
 	len = 0;
 	while (s1[len] && len < (dstsize - 1))
