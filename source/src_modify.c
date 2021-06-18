@@ -11,41 +11,18 @@ void	ft_mod_right_alpha(t_print *info)
 	}
 }
 
-void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
+static void	ft_mod_right_digit2(t_print *info, char *itoa, int neg, int num_len)
 {
-	int num_len;
-	int gap;
-
-	gap = neg;
-	num_len = ft_strlen(itoa);
-	if ((info->space || info->plus) && !neg)
-	{
-		num_len++;
-		gap = 1;
-	}
-	
-	
-	if (!info->dash && (!info->zero || info->has_precision))
-	{
-		while (info->width > num_len && info->width-- > (info->precision + gap))
-			info->argument_length += ft_putchar(' ');
-	}
-	
-	
-	
 	if (neg)
 		info->argument_length += ft_putchar('-');
 	else if (info->plus)
 		info->argument_length += ft_putchar('+');
-	else if(info->space)
+	else if (info->space)
 		info->argument_length += ft_putchar(' ');
-	
-	
-	
 	if ((info->zero && !info->has_precision && !info->dash))
 	{
 		while (info->width-- > num_len)
-			info->argument_length += ft_putchar('0'); 
+			info->argument_length += ft_putchar('0');
 	}
 	else if (info->has_precision)
 	{
@@ -54,12 +31,31 @@ void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
 	}
 }
 
+void	ft_mod_right_digit(t_print *info, char *itoa, int neg)
+{
+	int	num_len;
+	int	gap;
+
+	gap = neg;
+	num_len = ft_strlen(itoa);
+	if ((info->space || info->plus) && !neg)
+	{
+		num_len++;
+		gap = 1;
+	}
+	if (!info->dash && (!info->zero || info->has_precision))
+	{
+		while (info->width > num_len && info->width-- > (info->precision + gap))
+			info->argument_length += ft_putchar(' ');
+	}
+	ft_mod_right_digit_part2(info, itoa, neg, num_len);
+}
+
 void	ft_mod_right_pointer(t_print *info, char *ulltoa)
 {
 	int	num_len;
 
-	num_len = ft_strlen(ulltoa);
-	num_len += 2;
+	num_len = ft_strlen(ulltoa) + 2;
 	if (!info->dash && (!info->zero || info->has_precision))
 	{
 		while (info->width > num_len && info->width-- > (info->precision + 2))
@@ -72,7 +68,7 @@ void	ft_mod_right_pointer(t_print *info, char *ulltoa)
 	if ((info->zero && !info->has_precision && !info->dash))
 	{
 		while (info->width-- > num_len)
-			info->argument_length += ft_putchar('0'); 
+			info->argument_length += ft_putchar('0');
 	}
 	else if (info->has_precision)
 	{
