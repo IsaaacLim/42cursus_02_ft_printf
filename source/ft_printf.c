@@ -1,5 +1,4 @@
 #include "../includes/ft_printf.h"
-#include "../includes/ft_printf.h"
 
 int	ft_printf(const char *format, ...)
 {
@@ -12,7 +11,7 @@ int	ft_printf(const char *format, ...)
 	va_start(info->args, format);
 	info->format = format;
 	info->total_length = 0;
-	while(*info->format)
+	while (*info->format)
 	{
 		while (*info->format != '%' && *info->format != '\0')
 		{
