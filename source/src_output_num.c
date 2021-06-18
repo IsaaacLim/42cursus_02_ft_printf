@@ -1,28 +1,28 @@
 #include "../includes/ft_printf.h"
 
 /*
-/** Print sequence:	| Criteria:
-/** 1. right spaces	| !dash && (width > num_len && width > precision + neg)
-/** 2. neg sign		| num < 0
-/** 3. zeros			| (zero && !precision) || precision > len(abs_num)
-/** 4. arg values	| absolute_num
-/** 5. left spaces	| width > len(absolute_num) && dash
-/**
-/** *. If has_precision && precision==0 && num == 0, nothing exist
-/**	
-/** Example:
-/** -000000123456$
-/**      -123456$
-/**   -0000123456$
-/** -0000123456$
-/** -123456$
-/** -123456      $
-/** -0001234     $
-/** 
-/** l == long
-/** ll == long long
-/** h = short
-/** hh = signed char
+** Print sequence:	| Criteria:
+** 1. right spaces	| !dash && (width > num_len && width > precision + neg)
+** 2. neg sign		| num < 0
+** 3. zeros			| (zero && !precision) || precision > len(abs_num)
+** 4. arg values	| absolute_num
+** 5. left spaces	| width > len(absolute_num) && dash
+**
+** *. If has_precision && precision==0 && num == 0, nothing exist
+**	
+** Example:
+** -000000123456$
+**      -123456$
+**   -0000123456$
+** -0000123456$
+** -123456$
+** -123456      $
+** -0001234     $
+** 
+** l == long
+** ll == long long
+** h = short
+** hh = signed char
 */
 
 static void	ft_output_blank(t_print *info)
