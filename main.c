@@ -1,6 +1,7 @@
 #include "includes/ft_printf.h"
 #include <limits.h>
 #include <wchar.h>
+#include <stdio.h>
 
 void	print_char(void)
 {
@@ -761,7 +762,7 @@ int	main ()
 	//print_pointer();
 	//mazoise();
 	//print_len_mod();
-	print_nothing();
-
+	//rint_nothing();
+	printf("%05.s\n", "helloworld");
 	//add test when no argument is given / incomplete number of arguments
 }
