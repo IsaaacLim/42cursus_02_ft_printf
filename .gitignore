@@ -1,0 +1,9 @@
+**/*.o
+libftprintf.a
+libft/libft.a
+a.out
+
+pft/
+a.outpft/
+42TESTERS-PRINTF
+42TESTERS*
