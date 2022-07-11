@@ -1,4 +1,4 @@
-# Printf 🐙 
+# Printf 🖨
 
 ## Grade: 108/100
 
